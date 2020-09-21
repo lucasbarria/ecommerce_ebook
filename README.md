@@ -7,11 +7,11 @@ Integrantes:
 3. Mariano Lo Cane: 32 años, padre de Bianca y Enzo. Esposo de Gala. Emprendedor serial. Founder de Cinemad.tv y Fatto in Moto. Fanático de River. Próximamente full stack dev.
 
 Referentes:
-https://www.bajalibros.com/AR
-https://www.casadellibro.com/ebooks
-https://www.tematika.com/
-https://www.cuspide.com/
-https://www.amazon.es/ebooks-kindle/b?ie=UTF8&node=827231031
+* https://www.bajalibros.com/AR
+* https://www.casadellibro.com/ebooks
+* https://www.tematika.com/
+* https://www.cuspide.com/
+* https://www.amazon.es/ebooks-kindle/b?ie=UTF8&node=827231031
 
 
 
