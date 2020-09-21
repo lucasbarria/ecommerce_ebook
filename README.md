@@ -1,5 +1,5 @@
 # ecommerce_ebook
-Venta de ebooks.Es un ecommerce de ebooks para la educación enfocado en estudiantes y categorizado por carreras. El target son estudiantes universitarios y la oferta será ajustada por las materias.
+Venta de ebooks. Es un ecommerce de ebooks para la educación enfocado en estudiantes y categorizado por carreras. El target son estudiantes universitarios y la oferta será ajustada por las materias.
 
 Integrantes:
 1. Lucas Barria: tengo 18 años, apasionado por los autos y todo deporte motor, jugador frustrado de basquet con aspiracion a ser entrenador. 
