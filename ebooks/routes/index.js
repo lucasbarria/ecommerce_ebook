@@ -13,4 +13,8 @@ router.get('/paginaDeProducto', function(req, res, next) {
 router.get('/registro', function(req, res, next) {
   res.render("registro");
 });
+
+router.get('/singin', function(req, res, next) {
+  res.render("singin");
+});
 module.exports = router;

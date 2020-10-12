@@ -1,0 +1,15 @@
+div main {
+    background-color: aqua;
+}
+h1 {
+    text-align: center;
+}
+p, a {
+    display: inline-block;
+}
+input {
+    display: block;
+}
+input {
+    align-items: center;
+}
