@@ -10,4 +10,7 @@ router.get('/paginaDeProducto', function(req, res, next) {
   res.render("productDetail");
 });
 
+router.get('/registro', function(req, res, next) {
+  res.render("registro");
+});
 module.exports = router;
