@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+
+div {
+  margin: 40px;
+}
+
+#product img {
+  float: left;
+}
+
+div img {
+  display: inline-block;
+  margin: 30px;
+}
