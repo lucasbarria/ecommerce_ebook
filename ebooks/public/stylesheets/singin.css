@@ -10,6 +10,8 @@ p, a {
 input {
     display: block;
 }
-input {
+a, form div, p {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
