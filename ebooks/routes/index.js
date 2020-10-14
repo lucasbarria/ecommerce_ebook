@@ -14,7 +14,7 @@ router.get('/registro', function(req, res, next) {
   res.render("registro");
 });
 
-router.get('/singin', function(req, res, next) {
-  res.render("singin");
+router.get('/iniciasesion', function(req, res, next) {
+  res.render("iniciasesion");
 });
 module.exports = router;

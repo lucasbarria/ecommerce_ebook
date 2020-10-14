@@ -1,3 +1,62 @@
+body {
+    box-sizing: border-box;
+}
 h1 {
     text-align: center;
+}
+img {
+    padding: 10px 45%;
+}
+a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 100px;
+}
+header {
+    background-color: white;
+}
+main {
+    background-color: rgb(179, 223, 255);
+    height: 50%;
+}
+#email, #pass {
+    display: block;
+    margin-top: 30px;
+}
+#name, #lastname, #email, #pass {
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 250px;
+}
+form div {
+    margin-left: 250px;
+    margin-top: 40px;
+}
+form div input {
+    width: 150px;
+    height: 40px;
+}
+section {
+    margin-left: 250px;
+}
+footer {
+    background-color: red;
+    height: 200px;
+}
+#ingresa {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+    margin-left: 36%;
+}
+p {
+    font-size: 20px;
+    margin-left: 33%;
+}
+form {
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
