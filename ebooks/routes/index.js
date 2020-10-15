@@ -17,4 +17,8 @@ router.get('/registro', function(req, res, next) {
 router.get('/iniciasesion', function(req, res, next) {
   res.render("iniciasesion");
 });
+
+router.get('/carrito', function(req, res, next) {
+  res.render("productCart");
+});
 module.exports = router;
