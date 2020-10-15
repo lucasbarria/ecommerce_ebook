@@ -23,10 +23,10 @@ main {
 #email, #pass {
     display: block;
     margin-top: 30px;
+    width: 865px;
 }
 #name, #lastname, #email, #pass {
     height: 40px;
-    width: 300px;
     border-radius: 10px;
     margin-left: 250px;
 }
@@ -59,4 +59,7 @@ p {
 form {
     padding-top: 40px;
     padding-bottom: 40px;
+}
+#name, #lastname {
+    width: 300px;
 }
