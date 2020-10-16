@@ -20,8 +20,6 @@ router.get('/iniciasesion', function(req, res, next) {
 
 router.get('/carrito', function(req, res, next) {
   res.render("productCart");
-  
-router.get('/home', function(req, res, next) {
-  res.render("home");
 });
+
 module.exports = router;
