@@ -23,7 +23,7 @@ main {
 #email, #pass {
     display: block;
     margin-top: 30px;
-    width: 865px;
+    width: 65%;
 }
 #name, #lastname, #email, #pass {
     height: 40px;
