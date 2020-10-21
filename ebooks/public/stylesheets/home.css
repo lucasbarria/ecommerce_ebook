@@ -1,0 +1,21 @@
+#carrusel h2 {
+    background-color: #081291;
+    border: 2px solid black;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 120px;
+}
+
+body #carrusel {
+    display: flex;
+    justify-content: center;
+}
+
+body #carrusel i {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    font-size: 20px;
+}
