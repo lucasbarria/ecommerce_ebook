@@ -19,6 +19,16 @@ body #carrusel i {
     margin: 8px;
     font-size: 20px;
 }
+
 footer {
     background-color: cyan;
+}
+img {
+    width: 90px;
+    height: 110px;
+}
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
