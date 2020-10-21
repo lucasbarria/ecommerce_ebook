@@ -19,6 +19,7 @@ header {
 main {
     background-color: rgb(179, 223, 255);
     height: 50%;
+    width: 80%;
 }
 #email, #pass {
     display: block;
