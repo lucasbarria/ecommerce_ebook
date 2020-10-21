@@ -15,7 +15,26 @@ div {
   float: left;
 }
 
-div img {
-  display: inline-block;
-  margin: 30px;
+div img, #compra {
+  margin: 40px;
+  padding: 30px;
 }
+
+body :nth-child(1){
+  display: flex;
+}
+
+#compra {
+  margin-left: 400px;
+}
+
+#product p {
+  position: relative;
+  top: 50px;
+  right: 50px;
+}
+
+div h4 {
+  margin-left: 50px;
+}
+
