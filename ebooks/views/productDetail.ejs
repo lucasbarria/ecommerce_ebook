@@ -5,8 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/producto.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="stylesheets\header-footer.css">
     </head>
     <body>
+
+        <header>
+            <div class="content">
+              <div class="header-brand inlineblock">
+                <img class="logo" src="/imagenes/logo.png" alt="E-coomerces Ebooks Universirarios" >
+              </div>
+              <div class="header-search ">
+                <form method="post">
+                  <input type="text" class="textbox" placeholder="Busca por autor titulo o palabra">
+                  <input title="Search" value="" type="submit" class="button">
+                </form>
+              </div>
+              <div  class="header-personal"> 
+                <a href="/categorias">Categorias -</a>
+                <a href="/registro"> Registrarse -</a>
+                <a href="/iniciasesion"> Ingresar</a>
+                <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
+              </div>
+            </div>
+          </header>
+
         <div>
             <div id="product">
                 <img src="" alt="book">
@@ -27,5 +49,22 @@
             <img src="" alt="book">
             <img src="" alt="book"><i class="fas fa-arrow-right"></i>
         </div>
+
+        <footer class="footer-distributed">
+            <div class="footer-right">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+            </div>
+            <div class="footer-left">
+                <p class="footer-links">
+                    <a href="#">Politcas de privacidad -</a>
+                    <a href="#"> Preguntas frecuentes -</a>
+                    <a href="#"> Terminos y condiciones -</a>
+                    <a href="#"> Ayuda -</a>
+                    <a href="#"> Contacto</a>
+                </p>
+                <p>University E-books &copy; 2020</p>
+            </div>
+        </footer>
     </body>
 </html>
