@@ -34,3 +34,11 @@ img {
 main #novedades h2, p {
     text-align: center;
 }
+
+#categorias ul li {
+    margin: 15px;
+}
+
+#categorias ul li a:hover {
+    color: rgba(38, 135, 190, 0.781);
+}
