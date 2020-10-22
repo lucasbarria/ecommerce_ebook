@@ -1,11 +1,14 @@
-body {
+* {
     box-sizing: border-box;
+    margin: 0z;
 }
 h1 {
     text-align: center;
 }
-img {
-    padding: 10px 45%;
+header div {
+    background-color: white;
+    display: flex;
+    justify-content: center;
 }
 a {
     display: flex;
@@ -13,13 +16,9 @@ a {
     align-items: flex-end;
     padding-right: 100px;
 }
-header {
-    background-color: white;
-}
 main {
-    background-color: rgb(179, 223, 255);
     height: 50%;
-    width: 80%;
+    width: 100%;
 }
 #email, #pass {
     display: block;
@@ -42,10 +41,6 @@ form div input {
 section {
     margin-left: 250px;
 }
-footer {
-    background-color: red;
-    height: 200px;
-}
 #ingresa {
     width: 30%;
     height: 30px;
@@ -57,10 +52,89 @@ p {
     font-size: 20px;
     margin-left: 33%;
 }
-form {
+#form {
     padding-top: 40px;
     padding-bottom: 40px;
 }
 #name, #lastname {
     width: 300px;
 }
+
+hr {
+    border-top: 1px solid grey ;
+}
+
+
+/*footer*/
+.footer-distributed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    height: 250px;
+    width: 100%;
+    text-align: left;
+    font: normal normal normal 14px/1 FontAwesome;
+    padding: 45px 50px;
+  }
+  
+  .footer-distributed .footer-left p, span {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  
+  .footer-distributed p.footer-links {
+      font-size: 14px;
+      font-weight: bold;
+      color: #ffffff;
+      margin: 0 0 10px;
+      padding: 0;
+      transition: ease .25s;
+    }
+    
+    .footer-distributed p.footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color: inherit;
+      transition: ease .25s;
+    }
+    
+    .footer-distributed .footer-links a:before {
+      font-size: 20px;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+    
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+    
+    .footer-distributed .footer-right {
+      float: right;
+      margin-top: 6px;
+      max-width: 180px;
+    }
+    
+    .footer-distributed .footer-right a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background-color: #33383b;
+      border-radius: 2px;
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+      margin-left: 3px;
+      transition:all .25s;
+    }
+    span {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        position: relative;
+        top: 80px;
+    }
