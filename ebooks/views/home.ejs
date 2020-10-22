@@ -6,92 +6,121 @@
     <title>University ebooks</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="stylesheets/home.css">
+    <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
   <div id="container">
-
-    <div id="carrusel">
-      <i class="fas fa-chevron-left"></i>
-      <h2>Carrusel</h2>
-      <i class="fas fa-chevron-right"></i>
-    </div>
-
-  <div id="novedades">
-    <h2>Novedades</h2>
-    <p>Lo ultimo en libros universitarios</p> 
-    <a href="/novedades">Ver mas</a>
-
-      <ul id="imagenes">
-        <div>
-          <li><img src="/imagenes/Roos.jpg" alt="portada libro Roos"></li>
-        <p>Histologia, texto y atlas</p>
-        <p>por <strong>Roos</strong></p>
-        <p>$</p>
-      </div>
-        <div>
-          <li><img src="/imagenes/la politica economica.jpg" alt="portada libro politica economica si importa"></li>
-        <p>La politica economica si importa</p>
-        <p>por <strong>Expansion</strong></p>
-        <p>$</p>
-      </div>
-        <div>
-          <li><img src="/imagenes/lo que no te contaron.jpg" alt="portada libro lo que no te contaron del autismo"></li>
-        <p>Lo que no te contaron del autismo</p>
-        <p>por <strong>Alexia Rattazzi</strong></p>
-        <p>$</p>
-      </div>
-        <div>
-          <li><img src="/imagenes/la era de la revolucion.webp" alt="portada libro la era de la revolucion"></li>
-        <p>La era de la revolucion</p>
-        <p>por <strong>Eric Hobsbawn</strong></p>
-        <p>$</p>
-      </div>
-
-        <div>
-          <li><img src="/imagenes/500-modelos-escritos-judiciales-wb-300x300.jpg" alt="portada libro derecho"></li>
-        <p>500 modelos escritos judiciales</p>
-        <p>por <strong>Victor de santo</strong></p>
-        <p>$</p>
-      </div>
-        <div>
-          <li><img src="/imagenes/administracion de empresas.jpg" alt="portada libro Administrastive Behavior"></li>
-        <p>Administrastive Behavior</p>
-        <p>por <strong>Herbert A. Simon</strong></p>
-        <p>$</p>
-      </div>
-      </ul>
-    
-  </div>
-
-    <div id="categorias">
-      <h2>Categorias</h2>
-      <ul>
-        <li><a href="#">Arquitectura y Diseño</a></li>
-        <li><a href="#">Ciencias Economicas</a></li>
-        <li><a href="#">Ciencias Sociales</a></li>
-        <li><a href="#">Derecho</a></li>
-        <li><a href="#">Farmacia y Bioquímica</a></li>
-        <li><a href="#">Ingenieria</a></li>
-        <li><a href="#">Medicina</a></li>
-        <li><a href="#">Psicología</a></li>
-      </ul>
-    </div>
-
-    <footer>
-        <div>
-          <p>Politcas de privacidad</p>
-          <p>Preguntas frecuentes</p>
-          <p>Terminos y condiciones</p>
-          <p>Ayuda</p>
+    <header>
+      <div class="content">
+        <div class="header-brand inlineblock">
+          <img class="logo" src="/imagenes/logo.png" alt="E-coomerces Ebooks Universirarios" >
         </div>
-        <div>
-          <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-          <img src="imagenes/datafiscal.jpg" alt="data fiscal">
+        <div class="header-search ">
+          <form method="post">
+            <input type="text" class="textbox" placeholder="Busca por autor titulo o palabra">
+            <input title="Search" value="" type="submit" class="button">
+          </form>
         </div>
-      </footer>
+        <div  class="header-personal"> 
+          <a href="/categorias">Categorias -</a>
+          <a href="/registro"> Registrarse -</a>
+          <a href="/iniciasesion"> Ingresar</a>
+          <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="carrusel">
+        <i class="fas fa-chevron-left"></i>
+        <h2>Carrusel</h2>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+  
+    <div id="novedades">
+      <h2>Novedades</h2>
+      <p>Lo ultimo en libros universitarios</p> 
+      <a href="/novedades">Ver mas</a>
+  
+        <ul id="imagenes">
+
+          <div>
+            <li><img src="/imagenes/Roos.jpg" alt="portada libro Roos"></li>
+          <p>Histologia, texto y atlas</p>
+          <p>por <strong>Roos</strong></p>
+          <p>$</p>
+        </div>
+
+          <div>
+            <li><img src="/imagenes/la politica economica.jpg" alt="portada libro politica economica si importa"></li>
+          <p>La politica economica si importa</p>
+          <p>por <strong>Expansion</strong></p>
+          <p>$</p>
+        </div>
+
+          <div>
+            <li><img src="/imagenes/lo que no te contaron.jpg" alt="portada libro lo que no te contaron del autismo"></li>
+          <p>Lo que no te contaron del autismo</p>
+          <p>por <strong>Alexia Rattazzi</strong></p>
+          <p>$</p>
+        </div>
+
+          <div>
+            <li><img src="/imagenes/la era de la revolucion.webp" alt="portada libro la era de la revolucion"></li>
+          <p>La era de la revolucion</p>
+          <p>por <strong>Eric Hobsbawn</strong></p>
+          <p>$</p>
+        </div>
+  
+          <div>
+            <li><img src="/imagenes/500-modelos-escritos-judiciales-wb-300x300.jpg" alt="portada libro derecho"></li>
+          <p>500 modelos escritos judiciales</p>
+          <p>por <strong>Victor de santo</strong></p>
+          <p>$</p>
+        </div>
+
+          <div>
+            <li><img src="/imagenes/administracion de empresas.jpg" alt="portada libro Administrastive Behavior"></li>
+          <p>Administrastive Behavior</p>
+          <p>por <strong>Herbert A. Simon</strong></p>
+          <p>$</p>
+        </div>
+        </ul>
+      
+    </div>
+  
+      <div id="categorias">
+        <h2>Categorias</h2>
+        <ul>
+          <li><a href="#">Arquitectura y Diseño</a></li>
+          <li><a href="#">Ciencias Economicas</a></li>
+          <li><a href="#">Ciencias Sociales</a></li>
+          <li><a href="#">Derecho</a></li>
+          <li><a href="#">Farmacia y Bioquímica</a></li>
+          <li><a href="#">Ingenieria</a></li>
+          <li><a href="#">Medicina</a></li>
+          <li><a href="#">Psicología</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer class="footer-distributed">
+        <div class="footer-right">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="footer-left">
+            <p class="footer-links">
+                <a href="#">Politcas de privacidad -</a>
+                <a href="#"> Preguntas frecuentes -</a>
+                <a href="#"> Terminos y condiciones -</a>
+                <a href="#"> Ayuda -</a>
+                <a href="#"> Contacto</a>
+            </p>
+            <p>University E-books &copy; 2020</p>
+        </div>
+    </footer>
    </div>
 </body>
 </html>
