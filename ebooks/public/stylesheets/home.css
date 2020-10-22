@@ -28,6 +28,7 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    list-style: none;
 }
 
 main #novedades h2, p {
