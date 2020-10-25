@@ -2,9 +2,7 @@
     box-sizing: border-box;
     margin: 0;
 }
-h1 {
-    text-align: center;
-}
+/* HEADER*/
 header div {
     background-color: white;
     display: flex;
@@ -15,62 +13,93 @@ a {
     justify-content: flex-end;
     align-items: flex-end;
     padding-right: 100px;
-}
-main {
-    height: 50%;
-    width: 100vw;
-}
-form #nombre-email-pass {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-form #nombre-email-pass input {
-    width: 30vw;
-    height: 40px;
-    border-radius: 10px;
-}
-#fecha-de-nacimiento {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-        /*margin-left: 250px;
-        margin-top: 40px;*/
-    
-}
-form div input {
-    width: 150px;
-    height: 40px;
-}
-section {
-    margin-left: 250px;
-    padding-top: 30px;
-}
-#ingresa {
-    width: 30%;
-    height: 30px;
-    margin-top: 20px;
-    border-radius: 10px;
-    margin-left: 36%;
-}
-p {
-    font-size: 20px;
-    margin-left: 33%;
-}
-#form {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    width: 60vw;
-}
-#name, #lastname {
-    width: 300px;
+    color: black;
+    text-decoration: none;
 }
 
 hr {
     border-top: 1px solid grey ;
 }
 
+/* MAIN*/
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+#nombre-email-pass{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+width: 100vw;
+}
+
+form #nombre-email-pass input {
+    font-size: large;
+    width: 33vw;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+#fecha-de-nacimiento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    padding-top: 15px;
+}
+
+form div input {
+    width: 150px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+    padding-top: 15px;
+}
+section input {
+    margin: 7px;
+}
+#ingresa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#ingresa input {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+p {
+    margin-top: 5px;
+    font-size: 10px;
+}
+#form {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width: 100vw;
+}
+ h3 {
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+ }
 
 /*footer*/
 .footer-distributed {
@@ -84,10 +113,14 @@ hr {
     padding: 45px 50px;
   }
   
-  .footer-distributed .footer-left p, span {
+  .footer-distributed span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     color: #8f9296;
     font-size: 14px;
-    margin: 0;
+    padding-top: 60px;
   }
   
   
