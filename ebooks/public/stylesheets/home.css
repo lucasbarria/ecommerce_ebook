@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
+
 #carrusel h2 {
     background-color: #081291;
     border: 2px solid black;    

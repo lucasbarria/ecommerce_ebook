@@ -27,8 +27,22 @@ main {
 }
 
 .extra {
-  margin: 100px;
-  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 85vw;
+  border: 0.5px rgba(38, 135, 190, 0.2) solid;
+  margin: 20px;
+  padding: 15px;
+}
+
+div .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px;
 }
 
 .extra ul {
@@ -37,6 +51,19 @@ main {
   align-items: center;
   list-style: none;
 }
+
+#imagenes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 10px;
+}
+
+
+
+
 
 
 
