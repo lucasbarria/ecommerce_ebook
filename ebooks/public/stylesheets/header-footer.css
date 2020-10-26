@@ -110,6 +110,7 @@ section {
   color: #8f9296;
   font-size: 14px;
   margin: 0;
+  text-align: left;
 }
 
 
@@ -160,3 +161,16 @@ section {
     margin-left: 3px;
     transition:all .25s;
   }
+
+  @media (min-width: 320px){
+    .footer-distributed .footer-right {
+      float: center;
+    }
+    .footer-distributed .footer-left p {
+      text-align: center;
+    }
+    .footer-distributed .footer-left p .desaparece-en-mobile{
+      display: none;
+    }
+
+    }
