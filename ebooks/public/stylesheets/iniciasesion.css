@@ -1,15 +1,16 @@
 body {
     box-sizing: border-box;
+    margin: 0;
 }
 main {
-    background-color: rgb(0, 61, 102);
+    background-color: #FAF6F6;
     margin: 50px;
     height: 500px;
     border-radius: 5px;
+    border: 0.5px solid black;
 }
 h1 {
     text-align: center;
-    color: whitesmoke;
 }
 #email {
     margin-top: 30px;
@@ -26,7 +27,7 @@ h1 {
 #ingresar {
     width: 30%;
     height: 30px;
-    margin-top: 20px;
+    margin-top: 40px;
     border-radius: 10px;
 }
 form div {
@@ -34,25 +35,28 @@ form div {
     justify-content: center;
     align-items: center;
 }
-img {
-    padding: 10px 575px;
-}
-#container {
-    background-color: white;
-}
-footer {
-    background-color: brown;
-    height: 200px;
+header {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
 }
 section {
-    margin: 5% 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
 }
 section a, section p {
     display: inline-block;
-    color: whitesmoke;
+    margin: 5px;
+    text-decoration: none;
+    color: black
 }
 form {
    padding-top: 50px;
+}
+input:hover {
+  border: none;
 }
 
 /*footer*/
@@ -61,19 +65,26 @@ form {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
+    height: 150px;
     text-align: left;
     font: normal normal normal 14px/1 FontAwesome;
     padding: 45px 50px;
   }
   
-  .footer-distributed .footer-left p {
+  .footer-distributed span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     color: #8f9296;
     font-size: 14px;
-    margin: 0;
+    padding-top: 35px;
   }
   
   
   .footer-distributed p.footer-links {
+      display: flex;
+      justify-content: center;
       font-size: 14px;
       font-weight: bold;
       color: #ffffff;
