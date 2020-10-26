@@ -11,7 +11,7 @@ router.get('/paginadeproducto', function(req, res, next) {
 });
 
 router.get('/registro', function(req, res, next) {
-  res.render("registro");
+  res.render("register");
 });
 
 router.get('/iniciasesion', function(req, res, next) {

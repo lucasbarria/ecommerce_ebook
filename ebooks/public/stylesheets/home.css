@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 #carrusel h2 {
     background-color: #081291;
     border: 2px solid black;    
@@ -21,22 +25,72 @@ body #carrusel i {
 }
 
 img {
-    width: 90px;
-    height: 110px;
+    width: 130px;
+    height: 190px;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+div .novedades, #categorias {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 85vw;
+    border: 0.5px rgba(38, 135, 190, 0.2) solid;
+    margin: 20px;
+    padding: 15px;
+}
+#ver-mas a:hover {
+    color: rgba(38, 135, 190, 0.781);
+}
+div .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 #imagenes {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+    margin: 10px;
+}
+ul div p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 main #novedades h2, p {
     text-align: center;
 }
 
+div #categorias ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+hr {
+    position: relative;
+    top: 50px;
+    width: 100%;
+}
 #categorias ul li {
-    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    z-index: 1;
+    font-size: 20px;
+    list-style: none;
+    background-color: white;
+    padding: 5px;
 }
 
 #categorias ul li a:hover {
