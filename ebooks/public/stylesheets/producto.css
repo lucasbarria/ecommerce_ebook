@@ -50,7 +50,7 @@ div .img {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: auto 40px;
+  margin: 40px;
 }
 
 #imagenes {
