@@ -62,8 +62,33 @@ div .img {
   flex-wrap: wrap;
 }
 
+@media (max-width: 768px){
+  #compra {
+    display: flex;
+    flex-direction: column;
+  }
+  #compra p {
+    text-align: center;
+  }
+  #compra button {
+    margin: 2px;
+  }
+}
 
-
+@media (max-width: 425px){
+  #compra, #product {
+    margin: 20px;
+  }
+  #product p, #product h3{
+    position: relative;
+    top: 10px;
+  }
+  #compra {
+    display: flex;
+    position: relative;
+    top: 80px;
+  }
+}
 
 
 

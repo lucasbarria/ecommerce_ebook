@@ -38,8 +38,8 @@ main {
 }
 
 #compra div {
-    position: relative;
-    left: 400px;
+    position: absolute;
+    left: 62%;
     border-top: 1px black solid;
 }
 
@@ -47,3 +47,22 @@ main {
     margin-left: 20px;
 }
 
+@media (max-width: 768px){
+    #compra {
+        position: relative;
+        right: 20px;
+    }
+}
+
+@media (max-width: 425px){
+    #compra {
+        position: relative;
+        right: 80px;
+    }
+    #compra button {
+        margin: 5px;
+    }
+    main {
+        margin: 7.5%;
+    }
+}
