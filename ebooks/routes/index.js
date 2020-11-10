@@ -5,20 +5,12 @@ const indexController = require('../controllers/indexController');
 /* GET home page. */
 router.get('/', indexController.home);
 
-router.get('/paginadeproducto', function(req, res, next) {
-  res.render("productDetail");
-});
+router.get('/paginadeproducto', indexController.productDetail);
 
-router.get('/registro', function(req, res, next) {
-  res.render("register");
-});
+router.get('/registro', indexController.register);
 
-router.get('/iniciasesion', function(req, res, next) {
-  res.render("iniciasesion");
-});
+router.get('/iniciasesion', indexController.iniciasesion);
 
-router.get('/carrito', function(req, res, next) {
-  res.render("productCart");
-});
+router.get('/carrito', indexController.productCart);
 
 module.exports = router;
