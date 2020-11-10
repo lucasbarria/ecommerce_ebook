@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('./partials/header') %> 
+    <form action="/dataBase/products.json" method="POST">
+ 
+        <label for="nombre">Nombre del producto</label>
+        <input type="text">
+        <label for="descripcion">descripcion</label>
+        <input type="text">
+        <label for="img">inserte una imagen</label>
+        <input type="file">
+        <label for="categoria">Indique categoria</label>
+        <input type="text">
+        <label for="precio">Precio</label>
+        <input type="text">
+    </form>
+    <%-include('./partials/footer') %> 
+</body>
+</html>
