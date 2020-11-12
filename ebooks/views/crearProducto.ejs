@@ -10,7 +10,7 @@
 </head>
 <body>
     <%-include('./partials/header') %> 
-    <form action="/dataBase/products.json" method="POST">
+    <form action="/products/crearproducto" method="POST">
         <label for="nombre">Nombre del producto</label>
         <input type="text" name="nombre">
         <label for="descripcion">descripcion</label>
@@ -21,6 +21,7 @@
         <input type="text" name="categoria">
         <label for="precio">Precio</label>
         <input type="text" name="precio">
+        <button type="submit">Enviar</button>
     </form>
     <%-include('./partials/footer') %> 
 </body>
