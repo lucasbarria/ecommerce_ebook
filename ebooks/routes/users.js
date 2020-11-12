@@ -7,9 +7,4 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-// Creación y edición de productos
-
-router.get('/crearProducto', productController.crearProducto);
-router.post('/crearProducto', productController.create)
-
 module.exports = router;

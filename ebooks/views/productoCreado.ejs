@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%-include('./partials/header') %> 
+
+    <ul>
+        <% productos.forEach(function(productos){ %>
+            <li>
+                Nombre: <%= productos.nombre %> - 
+                Email: <%= productos.email %> - 
+                <a href="/users/edit/<%= productos.id %>">EDITAR</a> - <a href="/users/destroy/<%= productos.id %>">BORRAR</a>        
+            </li>
+        <% }); %>
+        </ul>
+
+    <%-include('./partials/footer') %> 
+</body>
+</html>
