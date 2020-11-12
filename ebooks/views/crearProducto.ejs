@@ -6,7 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <%-include('./partials/header') %> 
+    <%-include('./partials/header') %>
+     
     <form action="/dataBase/products.json" method="POST">
  
         <label for="nombre">Nombre del producto</label>
@@ -20,6 +21,7 @@
         <label for="precio">Precio</label>
         <input type="text">
     </form>
+
     <%-include('./partials/footer') %> 
 </body>
 </html>

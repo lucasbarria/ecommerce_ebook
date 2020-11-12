@@ -1,6 +1,6 @@
 const productController = {
     crearProducto : function (req, res) {
-        res.render ('crearProducto');
+        res.render('crearProducto');
     },
 }
 
