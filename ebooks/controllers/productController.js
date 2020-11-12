@@ -1,3 +1,7 @@
+const fs = require('fs');
+var productos = fs.readFileSync("./database/products.json");
+productos = JSON.parse(productos);
+
 const productController = {
     crearProducto : function (req, res) {
         res.render('crearProducto');
@@ -6,16 +10,18 @@ const productController = {
         let producto = {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
-            imagen: req.body.img,
+            imagen: req.body.imagen,
             categoria: req.body.categoria,
             precio: req.body.precio
-        } //tomar json de producto
-        //convertirlo a js
-        //pushear nuevo producto
-        //convertirlo a json
-        //sobrescribir el json
-        res.send ('producto creado')
-    } 
+        } 
+        productos.push(producto);
+        let productosJSON = JSON.stringify(productos)
+        fs.writeFileSync("./database/products.json", productosJSON);
+        res.redirect ('/products/crearproducto')
+    },
+    edit: function (req,res) {
+        
+    }
 }
 
 module.exports = productController;
