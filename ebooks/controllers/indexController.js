@@ -13,7 +13,7 @@ const indexController = {
       },
     productCart: function(req, res, next) {
         res.render("productCart");
-      }
-};
+      },
+}
 
 module.exports = indexController

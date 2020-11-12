@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/header-footer.css">
+    <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <%-include('./partials/header') %>
      
     <form action="/dataBase/products.json" method="POST">
- 
-        <label for="nombre">Nombre del producto</label>
-        <input type="text">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre">
         <label for="descripcion">descripcion</label>
-        <input type="text">
-        <label for="img">inserte una imagen</label>
-        <input type="file">
-        <label for="categoria">Indique categoria</label>
-        <input type="text">
+        <input type="text" name="descripcion">
+        <label for="img">imagen </label>
+        <input type="file" name="imagen">
+        <label for="categoria">categoria</label>
+        <input type="text" name="categoria">
         <label for="precio">Precio</label>
-        <input type="text">
+        <input type="text" name="precio">
     </form>
 
     <%-include('./partials/footer') %> 

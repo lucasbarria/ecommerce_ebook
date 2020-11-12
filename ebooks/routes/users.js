@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 // Creación y edición de productos
 
-router.get ('/crearProducto', productController.crearProducto);
+router.get('/crearProducto', productController.crearProducto);
+router.post('/crearProducto', productController.create)
 
 module.exports = router;
