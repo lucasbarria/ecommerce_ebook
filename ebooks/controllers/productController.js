@@ -12,10 +12,11 @@ const productController = {
             descripcion: req.body.descripcion,
             imagen: req.body.imagen,
             categoria: req.body.categoria,
+            id: req.body.id,
             precio: req.body.precio
         } 
         productos.push(producto);
-        let productosJSON = JSON.stringify(productos)
+        let productosJSON = JSON.stringify(productos);
         fs.writeFileSync("./database/products.json", productosJSON);
         res.redirect ('/products/crearproducto')
     },
