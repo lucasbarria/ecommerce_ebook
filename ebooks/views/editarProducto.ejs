@@ -9,18 +9,19 @@
     <title>Document</title>
 </head>
 <body>
-    <%-include('./partials/header') %> 
-    <form action="/products/crearproducto" method="POST">
+    <%-include('./partials/header') %>
+
+    <form action="/products/editarproducto/<%= producto.id %>" method="POST">
         <label for="nombre">Nombre del producto</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" value="<%= producto.nombre %>">
         <label for="descripcion">descripcion</label>
-        <input type="text" name="descripcion">
+        <input type="text" name="descripcion" value="<%= producto.descripcion %>">
         <label for="img">imagen </label>
         <input type="file" name="imagen">
         <label for="categoria">categoria</label>
-        <input type="text" name="categoria">
-        <label for="id">id</label>
-        <input type="text" name="precio">
+        <input type="text" name="categoria" value="<%= producto.categoria %>">
+        <label for="precio">Precio</label>
+        <input type="text" name="precio" value="<%= producto.precio %>">
         <button type="submit">Enviar</button>
     </form>
 
