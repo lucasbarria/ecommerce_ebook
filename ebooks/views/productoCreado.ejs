@@ -9,10 +9,10 @@
     <%-include('./partials/header') %> 
 
     <ul>
-        <% productos.forEach(function(productos){ %>
+        <% productos.forEach(function(producto){ %>
             <li>
-                Nombre: <%= productos.nombre %> - 
-                Email: <%= productos.email %> - 
+                Nombre: <%= producto.nombre %> - 
+                Email: <%= producto.email %> - 
                 <a href="/users/edit/<%= productos.id %>">EDITAR</a> - <a href="/users/destroy/<%= productos.id %>">BORRAR</a>        
             </li>
         <% }); %>

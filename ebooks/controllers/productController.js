@@ -21,7 +21,11 @@ const productController = {
     },
     edit: function (req,res) {
         
-    }
+    },
+    productoCreado:  function (req, res) {
+        res.render('productoCreado');
+
+    },
 }
 
 module.exports = productController;
