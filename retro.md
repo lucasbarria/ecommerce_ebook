@@ -1,0 +1,3 @@
+Sprint 1: No tuvimos problemas con los bocetos. Tuvimos varias reuniones para definirlos y lo llevamos a cabo rapidamente.
+Sprint 2: Como equipo tenemos buena comunicacion, hicimos una reunion por semana para controlar entre los 3. 
+Sprint 3: En este sprint tuvimos dificultades individualmente con lo que conlleva la logica del sitio. Ahora que somos dos se nos hace complicado porque es mas trabajo pero a la vez la comunicacion es mas fluida y podemos trabajar mas tranquilos.
