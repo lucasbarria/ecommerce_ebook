@@ -19,13 +19,16 @@ const indexController = {
             date: req.body.date,
             usuario: req.body.usuario
         }
-        let nuevoId = registro.length > 0 ? registro[registro.length - 1].id + 1 : 1; 
-        registro.id = nuevoId;
+        let nuevoId = registrado.length > 0 ? registrado[registrado.length - 1].id + 1 : 1; 
+        registrado.id = nuevoId;
 
         registro.push(registrado);
         let registroJSON = JSON.stringify(registro,null,2);
         fs.writeFileSync("./database/registro.json", registroJSON);
-        res.redirect('/index/register ')
+        res.redirect('/')
+    },
+    editar: function(req, res, next) {
+      
     },
     iniciasesion: function(req, res, next) {
         res.render("iniciasesion");

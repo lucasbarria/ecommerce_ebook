@@ -20,7 +20,7 @@ const productController = {
         productos.push(producto);
         let productosJSON = JSON.stringify(productos,null,2);
         fs.writeFileSync("./database/products.json", productosJSON);
-        res.redirect('/products/editar');
+        res.redirect('/products/crearproducto')
     },
     edit: function (req, res) {
         let id = req.params.id;
