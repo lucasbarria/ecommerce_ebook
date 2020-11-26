@@ -1,0 +1,10 @@
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+};
+form div label, input{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}

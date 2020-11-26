@@ -1,3 +1,22 @@
 [
+<<<<<<< HEAD
 
+=======
+  {
+    "nombre": "zapatilla",
+    "descripcion": "blanca",
+    "imagen": "",
+    "categoria": "nada",
+    "precio": "1200",
+    "id": 1
+  },
+  {
+    "nombre": "al;ksdjf;",
+    "descripcion": ";ljkskjhjdf",
+    "imagen": "",
+    "categoria": "fdsjlkhgjkl",
+    "precio": "fgsadkjlghfdl",
+    "id": 2
+  }
+>>>>>>> c77d79eea217abb4ab17cdf465755397bcf2970e
 ]
