@@ -10,7 +10,9 @@
 </head>
 <body>
     <%-include('./partials/header') %> 
-    <form action="/products/crearproducto" method="POST">
+    <form action="/products/crear" method="POST">
+        <label for="id">id</label>
+        <input type="text" name="id">
         <label for="nombre">Nombre del producto</label>
         <input type="text" name="nombre">
         <label for="descripcion">descripcion</label>
@@ -19,8 +21,6 @@
         <input type="file" name="imagen">
         <label for="categoria">categoria</label>
         <input type="text" name="categoria">
-        <label for="id">id</label>
-        <input type="text" name="id">
         <label for="precio">Precio</label>
         <input type="text" name="precio">
         <button type="submit">Enviar</button>

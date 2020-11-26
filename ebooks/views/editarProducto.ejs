@@ -11,7 +11,7 @@
 <body>
     <%-include('./partials/header') %>
 
-    <form action="/products/editarproducto/<%= producto.id %>" method="POST">
+    <form action="/products/editar/<%= producto.id %>" method="POST">
         <label for="nombre">Nombre del producto</label>
         <input type="text" name="nombre" value="<%= producto.nombre %>">
         <label for="descripcion">descripcion</label>
@@ -22,7 +22,8 @@
         <input type="text" name="categoria" value="<%= producto.categoria %>">
         <label for="precio">Precio</label>
         <input type="text" name="precio" value="<%= producto.precio %>">
-        <button type="submit">Enviar</button>
+        <button type="submit">Editar</button>
+        <a href="/products/borrar/<%= producto.id %>">Borrar</a>
     </form>
 
     <%-include('./partials/footer') %> 

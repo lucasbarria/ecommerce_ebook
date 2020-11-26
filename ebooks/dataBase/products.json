@@ -1,3 +1,26 @@
 [
-    
+  {
+    "nombre": "",
+    "descripcion": "",
+    "imagen": "",
+    "categoria": "",
+    "precio": "500",
+    "id": 1
+  },
+  {
+    "id": "2",
+    "nombre": "",
+    "descripcion": "",
+    "imagen": "",
+    "categoria": "",
+    "precio": "500"
+  },
+  {
+    "id": "2",
+    "nombre": "",
+    "descripcion": "",
+    "imagen": "",
+    "categoria": "",
+    "precio": "180"
+  }
 ]

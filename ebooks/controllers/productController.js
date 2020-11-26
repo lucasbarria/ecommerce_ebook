@@ -8,19 +8,23 @@ const productController = {
     },
     store: function (req, res) {
         let producto = {
+            id: req.body.id,
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             imagen: req.body.imagen,
             categoria: req.body.categoria,
             precio: req.body.precio
         }
+
+        /*
         let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
         producto.id = nuevoId;
+        */
 
         productos.push(producto);
         let productosJSON = JSON.stringify(productos,null,2);
         fs.writeFileSync("./database/products.json", productosJSON);
-        res.redirect('/products/crearproducto')
+        res.redirect("/paginadeproducto");
     },
     edit: function (req, res) {
         let id = req.params.id;
@@ -46,6 +50,22 @@ const productController = {
         });
         fs.writeFileSync("./database/products.json",JSON.stringify(arrayNuevo,null,2));
         return res.redirect('/');
+    },
+    delete: (req, res) => {
+        let id = req.params.id;
+        let productoEncontrado = productos.find(function (producto) {
+            return producto.id == id;
+        });
+        if (productoEncontrado){
+          let productoNoEliminado = productos.filter(function (producto){
+              return producto.id != id;
+            });
+            productoEliminadoJSON = JSON.stringify(productoNoEliminado);
+            fs.writeFileSync("./database/products.json", productoEliminadoJSON);
+            res.send("producto eliminado");
+        } else {
+            res.send("producto no encontrado");
+        }
     }
 }
 
