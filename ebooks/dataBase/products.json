@@ -1,4 +1,7 @@
 [
+<<<<<<< HEAD
+
+=======
   {
     "nombre": "zapatilla",
     "descripcion": "blanca",
@@ -23,4 +26,5 @@
     "precio": "ASDF",
     "id": 3
   }
+>>>>>>> c77d79eea217abb4ab17cdf465755397bcf2970e
 ]
