@@ -24,11 +24,7 @@ const productController = {
         productos.push(producto);
         let productosJSON = JSON.stringify(productos,null,2);
         fs.writeFileSync("./database/products.json", productosJSON);
-<<<<<<< HEAD
         res.redirect("/paginadeproducto");
-=======
-        res.redirect('/products/editar');
->>>>>>> c77d79eea217abb4ab17cdf465755397bcf2970e
     },
     edit: function (req, res) {
         let id = req.params.id;
@@ -53,7 +49,7 @@ const productController = {
             return producto;
         });
         fs.writeFileSync("./database/products.json",JSON.stringify(arrayNuevo,null,2));
-        return res.redirect('/');
+        return res.redirect('/paginadeproducto');
     },
     delete: (req, res) => {
         let id = req.params.id;
