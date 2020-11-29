@@ -1,5 +1,5 @@
 const fs = require('fs');
-var productos = fs.readFileSync("./database/products.json");
+let productos = fs.readFileSync("./database/products.json");
 productos = JSON.parse(productos);
 
 const productController = {
