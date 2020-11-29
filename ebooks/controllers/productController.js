@@ -24,19 +24,7 @@ const productController = {
         productos.push(producto);
         let productosJSON = JSON.stringify(productos,null,2);
         fs.writeFileSync("./database/products.json", productosJSON);
-<<<<<<< HEAD
-<<<<<<< HEAD
-        res.redirect('/products/crearproducto')
-=======
-<<<<<<< HEAD
         res.redirect("/paginadeproducto");
-=======
-        res.redirect('/products/editar');
->>>>>>> c77d79eea217abb4ab17cdf465755397bcf2970e
->>>>>>> 948c91a571c6ef7cbe8c2860d36a06d37d00635a
-=======
-        res.redirect("/paginadeproducto");
->>>>>>> 2b75cbadeedf852293cae1c43d0f32af5d7d7903
     },
     edit: function (req, res) {
         let id = req.params.id;
