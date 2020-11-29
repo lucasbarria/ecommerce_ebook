@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/registro.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -20,29 +22,36 @@
             <form action="/users/editar/<%= userFound.id %>" id="form" method="POST">
                 <h1>Crear cuenta</h1>
                 <div id="nombre-email-pass">
-                    <input type="text" name="name" id="name" placeholder="Nombre y apellido" value="<%= userFound.name %>" required>
-                    <input type="email" name="email" id="email" placeholder="E-mail" value="<%= userFound.email %>" required>
-                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" value="<%= userFound.pass %>" required>
+                    <input type="text" name="name" id="name" placeholder="Nombre y apellido"
+                        value="<%= userFound.name %>" required>
+                    <input type="email" name="email" id="email" placeholder="E-mail" value="<%= userFound.email %>"
+                        required>
+                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña"
+                        value="<%= userFound.pass %>" required>
                 </div>
                 <div id="fecha-de-nacimiento">
-                <h3>Fecha de nacimiento</h3>
-                <input type="date" name="date" id="date" value="<%= userFound.date %>" required>
+                    <h3>Fecha de nacimiento</h3>
+                    <input type="date" name="date" id="date" value="<%= userFound.date %>" required>
                 </div>
                 <h3>Genero</h3>
                 <section>
-                <input type="radio" name="usuario" value="mas" id="masculino" required> <label for="masculino"> Masculino</label>
-                <input type="radio" name="usuario" value="fem" id="femenino" required> <label for="femenino"> Femenino</label>
-                <input type="radio" name="usuario" value="otr" id="otro" required> <label for="otro"> Otro</label>
+                    <input type="radio" name="usuario" value="mas" id="masculino" required> <label for="masculino">
+                        Masculino</label>
+                    <input type="radio" name="usuario" value="fem" id="femenino" required> <label for="femenino">
+                        Femenino</label>
+                    <input type="radio" name="usuario" value="otr" id="otro" required> <label for="otro"> Otro</label>
                 </section>
-                <div id="ingresa">
-                <input type="submit" value="Ingresar">
-                <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
+                <div id="Ingresar">
+                    <button type="submit">Editar</button>
+                    <a href="/users/borrar/<%= userFound.id %>">Borrar</a>
+                    <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
                 </div>
             </form>
         </main>
 
         <%-include('./partials/footer') %>
-        
+
     </div>
 </body>
+
 </html>
