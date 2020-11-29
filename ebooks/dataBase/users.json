@@ -1,3 +1,26 @@
 [
-    
+  {
+    "name": "lucas barria",
+    "email": "lucasbarria2002@gmail.com",
+    "password": "a;lksdfj",
+    "date": "21212-12-13",
+    "usuario": "fem"
+  },
+  1,
+  {
+    "name": "lucas barria",
+    "email": "lucasbarria2002@gmail.com",
+    "password": "adsf",
+    "date": "0021-12-12",
+    "usuario": "fem"
+  },
+  2,
+  {
+    "name": "lucas barria",
+    "email": "lucasbarria2002@gmail.com",
+    "password": "asdf",
+    "date": "0012-12-12",
+    "usuario": "mas"
+  },
+  null
 ]
