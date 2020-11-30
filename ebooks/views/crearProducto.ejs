@@ -6,35 +6,57 @@
     <link rel="stylesheet" href="/stylesheets/header-footer.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/crearproducto.css">
     <title>Document</title>
 </head>
 <body>
     <%-include('./partials/header') %> 
-    <form action="/products/crear" method="POST">
+    <form class="formulario" action="/products/crear" method="POST">
         <div>
-            <label for="id">ID</label>
+            <label for="id">Id de producto:</label>
             <input type="text" name="id">
         </div>
+        <hr>
         <div>
-            <label for="nombre">Nombre del producto</label>
+            <label for="nombre">Nombre del producto:</label>
             <input type="text" name="nombre">
         </div>
+        <hr>
         <div>
             <label for="descripcion">Descripcion:</label>
             <input type="text" name="descripcion">
         </div>
+        <hr>
         <div>
-            <label for="img">imagen: </label>
+            <label for="img">Imagen:</label>
             <input type="file" name="imagen">
         </div>
-        <div>
-            <label for="categoria">Categoria:</label>
-            <input type="text" name="categoria">
+        <hr>
+        <div id="categoria">
+            <h2>Categoria:</h2>
+            <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
+            <input type="checkbox" name="categoria" id="Arquitectura y Diseño">
+            <label for="Ciencias Economicas">Ciencias Economicas</label>
+            <input type="checkbox" name="categoria" id="Ciencias Economicas">
+            <label for="Ciencias Sociales">Ciencias Sociales</label>
+            <input type="checkbox" name="categoria" id="Ciencias Sociales">
+            <label for="Derecho">Derecho</label>
+            <input type="checkbox" name="categoria" id="Derecho">
+            <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
+            <input type="checkbox" name="categoria" id="Farmacia y Bioquímica">
+            <label for="Arquitectura y Diseño">Ingenieria</label>
+            <input type="checkbox" name="categoria" id="Ingenieria">
+            <label for="Medicina">Medicina</label>
+            <input type="checkbox" name="categoria" id="Medicina">
+            <label for="Psicología">Psicología</label>
+            <input type="checkbox" name="categoria" id="Psicología">
         </div>
+        <hr>
         <div>
-            <label for="precio">Precio</label>
+            <label for="precio">Precio:</label>
             <input type="text" name="precio">
         </div>
+        <hr>
         <button type="submit">Enviar</button>
     </form>
 

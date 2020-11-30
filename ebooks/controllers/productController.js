@@ -1,5 +1,5 @@
 const fs = require('fs');
-var productos = fs.readFileSync("./database/products.json");
+let productos = fs.readFileSync("./database/products.json");
 productos = JSON.parse(productos);
 
 const productController = {
@@ -62,9 +62,9 @@ const productController = {
             });
             productoEliminadoJSON = JSON.stringify(productoNoEliminado);
             fs.writeFileSync("./database/products.json", productoEliminadoJSON);
-            res.send("producto eliminado");
+            res.send("Producto Eliminado");
         } else {
-            res.send("producto no encontrado");
+            res.send("Producto No Encontrado");
         }
     }
 }
