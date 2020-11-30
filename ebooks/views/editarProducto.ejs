@@ -1,31 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/header-footer.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/crearproducto.css">
+    <title>University ebooks</title>
 </head>
+
 <body>
     <%-include('./partials/header') %>
-
-    <form action="/products/editar/<%= producto.id %>" method="POST">
-        <label for="nombre">Nombre del producto</label>
-        <input type="text" name="nombre" value="<%= producto.nombre %>">
-        <label for="descripcion">descripcion</label>
-        <input type="text" name="descripcion" value="<%= producto.descripcion %>">
-        <label for="img">imagen </label>
-        <input type="file" name="imagen">
-        <label for="categoria">categoria</label>
-        <input type="text" name="categoria" value="<%= producto.categoria %>">
-        <label for="precio">Precio</label>
-        <input type="text" name="precio" value="<%= producto.precio %>">
-        <button type="submit">Editar</button>
-        <a href="/products/borrar/<%= producto.id %>">Borrar</a>
+    <form class="formulario" action="/products/editar/<%= producto.id %>" method="POST">
+        <div>
+            <label for="nombre">Nombre del producto:</label>
+            <input type="text" name="nombre" value="<%= producto.nombre %>">
+        </div>
+        <hr>
+        <div>
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" name="descripcion" value="<%= producto.descripcion %>">
+        </div>
+        <hr>
+        <div>
+            <label for="img">Imagen:</label>
+            <input type="file" name="imagen">
+        </div>
+        <hr>
+        <h2>Categoria:</h2>
+        <div id="categorias">
+            <div class="categoria">
+                <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
+                <input type="radio" name="categoria" id="Arquitectura y Diseño" value="<%= producto.categoria %>">
+                <label for="Ciencias Economicas">Ciencias Economicas</label>
+                <input type="radio" name="categoria" id="Ciencias Economicas" value="<%= producto.categoria %>">
+                <label for="Ciencias Sociales">Ciencias Sociales</label>
+                <input type="radio" name="categoria" id="Ciencias Sociales" value="<%= producto.categoria %>">
+                <label for="Derecho">Derecho</label>
+                <input type="radio" name="categoria" id="Derecho" value="<%= producto.categoria %>">
+            </div>
+            <div class="categoria">
+                <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
+                <input type="radio" name="categoria" id="Farmacia y Bioquímica" value="<%= producto.categoria %>">
+                <label for="Ingenieria">Ingenieria</label>
+                <input type="radio" name="categoria" id="Ingenieria" value="<%= producto.categoria %>">
+                <label for="Medicina">Medicina</label>
+                <input type="radio" name="categoria" id="Medicina" value="<%= producto.categoria %>">
+                <label for="Psicología">Psicología</label>
+                <input type="radio" name="categoria" id="Psicología" value="<%= producto.categoria %>">
+            </div>
+        </div>
+        <hr>
+        <div>
+            <label for="precio">Precio:</label>
+            <input type="text" name="precio" value="<%= producto.precio %>">
+        </div>
+        <hr>
+        <div id="botones">
+            <button type="submit">Enviar</button>
+            <a id="borrar" href="/products/borrar/<%= producto.id %>">Borrar</a>
+        </div>
     </form>
 
-    <%-include('./partials/footer') %> 
+    <%-include('./partials/footer') %>
 </body>
+
 </html>

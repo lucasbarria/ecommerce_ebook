@@ -49,3 +49,20 @@ hr {
     border-top: 1px solid grey ;
     width: 50%;
 }
+
+#botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#borrar{
+    border: 1px solid #626567;
+    padding: 2px 13px;
+    background-color: #E5E7E9;
+    border-radius: 2px;
+}
+
+#borrar:hover {
+    color: #E52626;
+}

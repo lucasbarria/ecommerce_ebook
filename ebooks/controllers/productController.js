@@ -34,7 +34,7 @@ const productController = {
         if(productoEncontrado){
             return res.render('editarProducto', { producto: productoEncontrado });
         }else{
-            return res.render('productoNoEncontrado');
+            return res.send("Producto No Encontrado");
         }
     },
     update: (req, res) => {
