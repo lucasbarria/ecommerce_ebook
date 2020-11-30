@@ -21,6 +21,16 @@ form  div{
     flex-direction: row;
 }
 
+#categorias input {
+    margin: 10px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
 input {
     border-radius: 5px;
     width: 60vh;

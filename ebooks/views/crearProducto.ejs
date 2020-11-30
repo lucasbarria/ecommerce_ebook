@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link rel="stylesheet" href="/stylesheets/crearproducto.css">
     <title>Document</title>
 </head>
+
 <body>
-    <%-include('./partials/header') %> 
+    <%-include('./partials/header') %>
     <form class="formulario" action="/products/crear" method="POST">
         <div>
             <label for="id">Id de producto:</label>
@@ -32,24 +34,28 @@
             <input type="file" name="imagen">
         </div>
         <hr>
-        <div id="categoria">
-            <h2>Categoria:</h2>
-            <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
-            <input type="checkbox" name="categoria" id="Arquitectura y Diseño">
-            <label for="Ciencias Economicas">Ciencias Economicas</label>
-            <input type="checkbox" name="categoria" id="Ciencias Economicas">
-            <label for="Ciencias Sociales">Ciencias Sociales</label>
-            <input type="checkbox" name="categoria" id="Ciencias Sociales">
-            <label for="Derecho">Derecho</label>
-            <input type="checkbox" name="categoria" id="Derecho">
-            <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
-            <input type="checkbox" name="categoria" id="Farmacia y Bioquímica">
-            <label for="Arquitectura y Diseño">Ingenieria</label>
-            <input type="checkbox" name="categoria" id="Ingenieria">
-            <label for="Medicina">Medicina</label>
-            <input type="checkbox" name="categoria" id="Medicina">
-            <label for="Psicología">Psicología</label>
-            <input type="checkbox" name="categoria" id="Psicología">
+        <h2>Categoria:</h2>
+        <div id="categorias">
+            <div class="categoria">
+                <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
+                <input type="radio" name="categoria" id="Arquitectura y Diseño">
+                <label for="Ciencias Economicas">Ciencias Economicas</label>
+                <input type="radio" name="categoria" id="Ciencias Economicas">
+                <label for="Ciencias Sociales">Ciencias Sociales</label>
+                <input type="radio" name="categoria" id="Ciencias Sociales">
+                <label for="Derecho">Derecho</label>
+                <input type="radio" name="categoria" id="Derecho">
+            </div>
+            <div class="categoria">
+                <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
+                <input type="radio" name="categoria" id="Farmacia y Bioquímica">
+                <label for="Ingenieria">Ingenieria</label>
+                <input type="radio" name="categoria" id="Ingenieria">
+                <label for="Medicina">Medicina</label>
+                <input type="radio" name="categoria" id="Medicina">
+                <label for="Psicología">Psicología</label>
+                <input type="radio" name="categoria" id="Psicología">
+            </div>
         </div>
         <hr>
         <div>
@@ -60,6 +66,7 @@
         <button type="submit">Enviar</button>
     </form>
 
-    <%-include('./partials/footer') %> 
+    <%-include('./partials/footer') %>
 </body>
+
 </html>
