@@ -7,9 +7,7 @@ const productController = {
         res.render('crearProducto');
     },
     store: function (req, res) {
-        
 
-        
         let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
         //producto.id = nuevoId;
         let producto = {
