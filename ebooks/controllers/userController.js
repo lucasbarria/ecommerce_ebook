@@ -6,7 +6,17 @@ const userController = {
         res.render('register')
     },
     store: function (req, res){
-        usersList.push(req.body);
+        let nuevoId = usersList.length > 0 ? usersList[usersList.length - 1].id + 1 : 1;
+        let users = {
+            // id: req.body.id,
+            id: nuevoId,
+            nombre: req.body.name,
+            email: req.body.email,
+            pass: req.body.pass,
+            date: req.body.date,
+            Usuario: req.body.usuario
+        }
+        usersList.push(users);
         let usersListJSON = JSON.stringify(usersList,null,2);
         fs.writeFileSync('./database/users.json', usersListJSON);
         res.redirect('/');
