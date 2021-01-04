@@ -5,9 +5,6 @@ const indexController = {
     productDetail: function(req, res, next) {
         res.render("productDetail");
       },
-    iniciasesion: function(req, res, next) {
-        res.render("iniciasesion");
-      },
     productCart: function(req, res, next) {
         res.render("productCart");
       },
