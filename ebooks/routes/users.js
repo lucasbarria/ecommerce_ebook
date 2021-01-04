@@ -4,7 +4,7 @@ var router = express.Router();
 
 // Creación de usuarios
 router.get('/registro', userController.create);
-router.post('/registro', userController.store);
+router.post('/registro',  userController.store);
 
 // Edicion de usuarios 
 router.get('/editar/:id', userController.edit);
