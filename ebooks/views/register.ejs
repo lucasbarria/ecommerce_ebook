@@ -17,22 +17,31 @@
         </header>
         <hr>
         <main id="register">
+            <% if(typeof errors != 'undefined'){ %>
+                <ul>
+                    <% for(i=0; i<errors.lenght; i++){ %>
+                        <li>
+                            <%= errors[i].msg %>
+                        </li>
+                   <% } %>
+                </ul>
+                <% } %>
             <form action="/users/registro" id="form" method="POST">
                 <h1>Crear cuenta</h1>
                 <div id="nombre-email-pass">
-                    <input type="text" name="name" id="name" placeholder="Nombre y apellido" required>
-                    <input type="email" name="email" id="email" placeholder="E-mail" required>
-                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" required>
+                    <input type="text" name="name" id="name" placeholder="Nombre y apellido" >
+                    <input type="email" name="email" id="email" placeholder="E-mail" >
+                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" >
                 </div>
                 <div id="fecha-de-nacimiento">
                 <h3>Fecha de nacimiento</h3>
-                <input type="date" name="date" id="date" required>
+                <input type="date" name="date" id="date" >
                 </div>
                 <h3>Genero</h3>
                 <section>
-                <input type="radio" name="usuario" value="mas" id="masculino" required> <label for="masculino"> Masculino</label>
-                <input type="radio" name="usuario" value="fem" id="femenino" required> <label for="femenino"> Femenino</label>
-                <input type="radio" name="usuario" value="otr" id="otro" required> <label for="otro"> Otro</label>
+                <input type="radio" name="usuario" value="mas" id="masculino" > <label for="masculino"> Masculino</label>
+                <input type="radio" name="usuario" value="fem" id="femenino" > <label for="femenino"> Femenino</label>
+                <input type="radio" name="usuario" value="otr" id="otro" > <label for="otro"> Otro</label>
                 </section>
                 <div id="ingresa">
                 <input type="submit" value="Ingresar">

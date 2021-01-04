@@ -5,7 +5,6 @@ const indexController = require('../controllers/indexController');
 /* GET home page. */
 router.get('/', indexController.home);
 router.get('/paginadeproducto', indexController.productDetail);
-router.get('/iniciasesion', indexController.iniciasesion);
 router.get('/carrito', indexController.productCart);
 
 module.exports = router;

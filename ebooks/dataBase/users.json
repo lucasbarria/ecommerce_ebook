@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1,
+    "nombre": "lucas barria",
+    "email": "lucasbarria2002@gmail.com",
+    "pass": "123",
+    "date": "0012-12-12",
+    "Usuario": "mas"
+  },
+  {
+    "id": 2,
+    "nombre": "asdf",
+    "email": "asdf@asdf.vom",
+    "pass": "asdf",
+    "date": "0001-12-12",
+    "Usuario": "mas"
+  },
+  {
+    "id": 3,
+    "nombre": "",
+    "email": "",
+    "pass": "",
+    "date": ""
+  },
+  {
+    "id": 4,
+    "nombre": "lucas barria",
+    "email": "",
+    "pass": "",
+    "date": ""
+  }
+]

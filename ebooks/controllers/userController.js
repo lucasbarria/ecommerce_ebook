@@ -1,25 +1,42 @@
 const fs = require('fs');
 let usersList = JSON.parse(fs.readFileSync('./database/users.json'));
+let { check, validationResult, body} = require('express-validator');
+const bcrypt = require('bcrypt');
+
 
 const userController = {
+    iniciasesion: function(req, res, next) {
+        res.render("iniciasesion");
+      },
+    sesioniniciada: function(req, res, next){
+        res.render("home");
+    },
     create: function (req, res){
         res.render('register')
     },
     store: function (req, res){
-        let nuevoId = usersList.length > 0 ? usersList[usersList.length - 1].id + 1 : 1;
-        let users = {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+
+            let nuevoId = usersList.length > 0 ? usersList[usersList.length - 1].id + 1 : 1;
+            let passEncriptada = bcrypt.hashSync(req.body.pass, 10);
+            let users = {
             // id: req.body.id,
             id: nuevoId,
             nombre: req.body.name,
             email: req.body.email,
-            pass: req.body.pass,
+            passEncriptada,
             date: req.body.date,
             Usuario: req.body.usuario
+            }
+            usersList.push(users);
+            let usersListJSON = JSON.stringify(usersList,null,2);
+            fs.writeFileSync('./database/users.json', usersListJSON);
+            res.redirect('/');
+        } else {
+            res.render('register', {errors: errors.errors});
         }
-        usersList.push(users);
-        let usersListJSON = JSON.stringify(usersList,null,2);
-        fs.writeFileSync('./database/users.json', usersListJSON);
-        res.redirect('/');
     },
     edit: function (req, res){
         let id = req.params.id;
