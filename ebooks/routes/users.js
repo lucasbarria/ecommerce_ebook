@@ -6,16 +6,12 @@ var router = express.Router();
 
 // Creación de usuarios
 router.get('/registro', userController.create);
-<<<<<<< HEAD
-router.post('/registro',  userController.store);
-=======
 router.post('/registro', [
     check('name').isLength().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),
     check('pass').isLength({min:8}).withMessage('La contrasena debe tener al menos 8 caracteres'),
     check('usuario')
 ], userController.store);
->>>>>>> 373e214a727f25ebd822d972aee36df1f3a260d7
 
 // Edicion de usuarios 
 router.get('/editar/:id', userController.edit);
