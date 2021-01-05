@@ -1,7 +1,7 @@
 const fs = require('fs');
 let usersList = JSON.parse(fs.readFileSync('./database/users.json'));
 let { check, validationResult, body} = require('express-validator');
-const bcrypt = require('bcrypt');
+
 
 
 const userController = {
@@ -20,13 +20,12 @@ const userController = {
         if(errors.isEmpty()) {
 
             let nuevoId = usersList.length > 0 ? usersList[usersList.length - 1].id + 1 : 1;
-            let passEncriptada = bcrypt.hashSync(req.body.pass, 10);
             let users = {
             // id: req.body.id,
             id: nuevoId,
             nombre: req.body.name,
             email: req.body.email,
-            passEncriptada,
+            pass: req.body.pass,
             date: req.body.date,
             Usuario: req.body.usuario
             }
