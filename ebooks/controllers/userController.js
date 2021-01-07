@@ -1,7 +1,7 @@
 const fs = require('fs');
-let usersList = JSON.parse(fs.readFileSync('./database/users.json'));
+let usersList = [];
 let { check, validationResult, body} = require('express-validator');
-
+const db = require('../dataBase/models');
 
 
 const userController = {
@@ -30,9 +30,7 @@ const userController = {
             Usuario: req.body.usuario
             }
             usersList.push(users);
-            let usersListJSON = JSON.stringify(usersList,null,2);
-            fs.writeFileSync('./database/users.json', usersListJSON);
-            res.redirect('/');
+            
         } else {
             res.render('register', {errors: errors.errors});
         }
@@ -64,7 +62,7 @@ const userController = {
             }
             return userFound;
         });
-        fs.writeFileSync('./database/users.json', JSON.stringify(usersListEdit,null,2));
+        
         return res.redirect('/');
     },
     delete: function (req, res){
@@ -81,7 +79,7 @@ const userController = {
                 return userFound.id != id;
             });
             deleteUserJSON = JSON.stringify(deleteUser);
-            fs.writeFileSync('./database/users.json', deleteUserJSON);
+            
             res.send("Usuario Eliminado");
         }else {
             res.send("Usuario No Encontrado");

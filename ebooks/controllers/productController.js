@@ -1,6 +1,5 @@
 const fs = require('fs');
-let productos = fs.readFileSync("./database/products.json");
-productos = JSON.parse(productos);
+let productos = [];
 
 const productController = {
     create: function (req, res) {
@@ -24,8 +23,7 @@ const productController = {
         
         // productos.push(producto, nuevoId);
         productos.push(producto);
-        let productosJSON = JSON.stringify(productos,null,2);
-        fs.writeFileSync("./database/products.json", productosJSON);
+       
         res.redirect("/paginadeproducto");
     },
     edit: function (req, res) {
@@ -50,7 +48,7 @@ const productController = {
             }
             return producto;
         });
-        fs.writeFileSync("./database/products.json",JSON.stringify(arrayNuevo,null,2));
+        
         return res.redirect('/paginadeproducto');
     },
     delete: (req, res) => {
@@ -62,8 +60,7 @@ const productController = {
           let productoNoEliminado = productos.filter(function (producto){
               return producto.id != id;
             });
-            productoEliminadoJSON = JSON.stringify(productoNoEliminado);
-            fs.writeFileSync("./database/products.json", productoEliminadoJSON);
+           
             res.send("Producto Eliminado");
         } else {
             res.send("Producto No Encontrado");

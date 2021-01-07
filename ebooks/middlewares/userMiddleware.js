@@ -1,5 +1,5 @@
 const fs = require('fs');
-let usersList = fs.readFileSync('./database/users.json');
+let usersList = [];
 
 const userMiddleware = {
     sesioniniciada: function(req, res, next) {
