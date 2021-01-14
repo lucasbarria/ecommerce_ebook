@@ -15,7 +15,14 @@ const userController = {
         res.render('register')
     },
     store: function (req, res){
-        let errors = validationResult(req);
+        db.users.create({
+            nombre: req.body.name,
+            email: req.body.email,
+            password: req.body.pass
+        }).then(function (user){
+            res.render('home')
+        });
+        /* let errors = validationResult(req);
 
         if(errors.isEmpty()) {
 
@@ -33,7 +40,7 @@ const userController = {
             
         } else {
             res.render('register', {errors: errors.errors});
-        }
+        } */
     },
     edit: function (req, res){
         let id = req.params.id;
