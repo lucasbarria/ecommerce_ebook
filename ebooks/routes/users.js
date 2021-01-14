@@ -7,7 +7,7 @@ var router = express.Router();
 // Creación de usuarios
 router.get('/registro', userController.create);
 router.post('/registro', [
-    check('name').isLength().withMessage('Este campo esta incompleto'),
+    check('name').isEmpty().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),
     check('pass').isLength({min:8}).withMessage('La contrasena debe tener al menos 8 caracteres'),
     check('usuario')
