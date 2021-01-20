@@ -10,10 +10,14 @@
         </form>
       </div>
       <div  class="header-personal"> 
-        <a href="#categorias">Categorias -</a>
-        <a href="/users/registro"> Registrarse -</a>
-        <a href="/users/iniciasesion"> Ingresar</a>
+        <% if(typeof usuario != 'undefined'){ %>
+          <p>bienvenido <%= usuario.nombre %></p> 
+        <% }else { %>
+          <a href="#categorias">Categorias -</a>
+          <a href="/users/registro"> Registrarse -</a>
+          <a href="/users/iniciasesion"> Ingresar</a>
         <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
+        <% } %>
       </div>
     </div>
   </header>

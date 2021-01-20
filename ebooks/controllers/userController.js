@@ -9,22 +9,37 @@ const userController = {
         res.render("iniciasesion");
       },
     sesioniniciada: function(req, res, next){
-        res.render("home");
+        let usuario = req.body;
+        db.users.findOne({where: {email: usuario.email}}).then(function(userFound){
+            if(userFound.password == usuario.pass){
+                req.session.usuario = {id: userFound.id, nombre: userFound.nombre};
+                res.redirect("/");
+            }else{
+                res.send('error')
+            }
+        })
     },
     create: function (req, res){
         res.render('register')
     },
     store: function (req, res){
-        db.users.create({
-            nombre: req.body.name,
-            email: req.body.email,
-            password: req.body.pass
-        }).then(function (user){
-            res.render('home')
-        });
-        /* let errors = validationResult(req);
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            db.users.create({
+                nombre: req.body.name,
+                email: req.body.email,
+                password: req.body.pass
+            }).then(function (user){
+                res.render('home')
+            });
+        } else {
+            console.log(errors.mapped());
+            res.render('register', {errors: errors.errors});
+        }
 
-        if(errors.isEmpty()) {
+
+
+        /*if(errors.isEmpty()) {
 
             let nuevoId = usersList.length > 0 ? usersList[usersList.length - 1].id + 1 : 1;
             let users = {
@@ -40,7 +55,7 @@ const userController = {
             
         } else {
             res.render('register', {errors: errors.errors});
-        } */
+        }*/
     },
     edit: function (req, res){
         let id = req.params.id;

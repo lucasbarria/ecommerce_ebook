@@ -2,13 +2,19 @@ const fs = require('fs');
 let usersList = [];
 
 const userMiddleware = {
-    sesioniniciada: function(req, res, next) {
-        let user = req.body;
-        for(i = 0; i < usersList.length; i++){
-            if(usersList[i].email && usersList[i].pass != user){
-                res.send('usuario incorrecto');
-            }else next();
+    usuarioLogueado: function(req, res, next) {
+        if(req.session && req.session.usuario){
+            /*res.locals.usuario = req.session.usuario;*/
+            res.send('no funciono')
+        }else {
+            next()
         }
+    },
+    validarUsuario: function(req, res, next) {
+        if(req.session && req.session.usuario){
+            res.locals.usuario = req.session.usuario;
+        }
+        next();
     },
 }
 

@@ -19,11 +19,12 @@
         <main id="register">
             <% if(typeof errors != 'undefined'){ %>
                 <ul>
-                    <% for(i=0; i<errors.lenght; i++){ %>
+    
+                    <% for(i=0; i<errors.length; i++){ %>
                         <li>
                             <%= errors[i].msg %>
                         </li>
-                   <% } %>
+                   <% } %> 
                 </ul>
                 <% } %>
             <form action="/users/registro" id="form" method="POST">
