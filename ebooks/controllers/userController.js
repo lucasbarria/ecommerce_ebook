@@ -43,19 +43,14 @@ const userController = {
         } */
     },
     edit: function (req, res){
-        let id = req.params.id;
-        let userFound;
-        for(let i=0; i<usersList.length; i++){
-            if (usersList[i].id == id){
-                userFound = usersList[i];
-                break;
+       db.users.findByPk(req.params.id).then(function(userFound){
+           if (userFound){
+               console.log(userFound);
+               return res.render('editarusuario', {userFound});
+            }else {
+                return res.send("Usuario Invalido");
             }
-        }
-        if (userFound){
-            return res.render('editarusuario', {userFound});
-        }else {
-            return res.send("Usuario Invalido");
-        }
+       });
     },
     update: function (req, res){
         let id = req.params.id;

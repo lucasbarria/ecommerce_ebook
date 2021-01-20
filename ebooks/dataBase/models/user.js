@@ -12,5 +12,8 @@ module.exports = function (sequelize, dataTypes){
         tableName: "usuarios",
         timestamps: false
     })
+    users.associate = function(models){
+        users.hasMany(models.carrito, {foreignKey: "id_usuario", as: "cart"})
+    }
     return users;
 };
