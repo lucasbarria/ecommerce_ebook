@@ -22,11 +22,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session( {secret: 'mensaje secreto', resave: true, saveUninitialized: true}));
-<<<<<<< HEAD
-app.use(userMiddleware.validarUsuario);
-=======
-
->>>>>>> bb11c1b98949f17289c699101b3a44e1138a576c
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
