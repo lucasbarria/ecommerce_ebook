@@ -1,7 +1,9 @@
 <header>
     <div class="content">
       <div class="header-brand inlineblock">
-        <img class="logo" src="/imagenes/logo.png" alt="E-coomerces Ebooks Universirarios" >
+        <a href="/">
+          <img class="logo" src="/imagenes/logo.png" alt="E-coomerces Ebooks Universirarios" >
+        </a>
       </div>
       <div class="header-search">
         <form method="post">
@@ -11,12 +13,14 @@
       </div>
       <div  class="header-personal"> 
         <% if(typeof usuario != 'undefined'){ %>
-          <p>bienvenido <%= usuario.nombre %></p> 
+          <p><%= usuario.nombre %></p> 
+          <a href="#categorias">Categorias - </a>
+          <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
+          <a href="/products/crear"> - Crear un producto</a>
         <% }else { %>
-          <a href="#categorias">Categorias -</a>
           <a href="/users/registro"> Registrarse -</a>
           <a href="/users/iniciasesion"> Ingresar</a>
-        <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
+          <a href="#categorias"> - Categorias</a>
         <% } %>
       </div>
     </div>

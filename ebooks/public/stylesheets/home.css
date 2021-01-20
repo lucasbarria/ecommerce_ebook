@@ -52,6 +52,9 @@ div .novedades, #categorias {
 #ver-mas a:hover {
     color: rgba(38, 135, 190, 0.781);
 }
+main div a:hover {
+    color: rgba(38, 135, 190, 0.781);
+}
 div .img {
     display: flex;
     justify-content: center;

@@ -11,6 +11,10 @@ header .content{
     justify-content: space-around;
 }
 
+header p {
+  font-size: 20px;
+}
+
 .header-brand {
     background-color: #5c7287;
     display: inline-block;
