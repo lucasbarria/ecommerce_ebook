@@ -1,5 +1,5 @@
 const fs = require('fs');
-let productos = [];
+const db = require('../dataBase/models');
 
 const productController = {
     create: function (req, res) {
@@ -7,24 +7,18 @@ const productController = {
     },
     store: function (req, res) {
 
-        let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
+        //let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
         //producto.id = nuevoId;
-        let producto = {
+        db.products.create({
             // id: req.body.id,
-            id: nuevoId,
             nombre: req.body.nombre,
+            precio: req.body.precio,
             descripcion: req.body.descripcion,
             imagen: req.body.imagen,
-            categoria: req.body.categoria,
-            precio: req.body.precio
-        }
-       
-        
-        
-        // productos.push(producto, nuevoId);
-        productos.push(producto);
-       
-        res.redirect("/paginadeproducto");
+            categoria: req.body.categoria 
+        }).then(function (product){
+            res.render('home')
+        });
     },
     edit: function (req, res) {
         let id = req.params.id;

@@ -23,11 +23,10 @@
                 <h1>Crear cuenta</h1>
                 <div id="nombre-email-pass">
                     <input type="text" name="name" id="name" placeholder="Nombre y apellido"
-                        value="<%= userFound.name %>" required>
+                        value="<%= userFound.nombre %>" required>
                     <input type="email" name="email" id="email" placeholder="E-mail" value="<%= userFound.email %>"
                         required>
-                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña"
-                        value="<%= userFound.pass %>" required>
+                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" required>
                 </div>
                 <div id="fecha-de-nacimiento">
                     <h3>Fecha de nacimiento</h3>
@@ -35,11 +34,11 @@
                 </div>
                 <h3>Genero</h3>
                 <section>
-                    <input type="radio" name="usuario" value="mas" id="masculino" required> <label for="masculino">
+                    <input type="radio" name="genero" value="mas" id="masculino"<%= userFound.genero == "mas" ? "checked" : null %> required> <label for="masculino">
                         Masculino</label>
-                    <input type="radio" name="usuario" value="fem" id="femenino" required> <label for="femenino">
+                    <input type="radio" name="genero" value="fem" id="femenino"<%= userFound.genero == "fem" ? "checked" : null %> required> <label for="femenino">
                         Femenino</label>
-                    <input type="radio" name="usuario" value="otr" id="otro" required> <label for="otro"> Otro</label>
+                    <input type="radio" name="genero" value="otr" id="otro"<%= userFound.genero == "otr" ? "checked" : null %> required> <label for="otro"> Otro</label>
                 </section>
                 <div id="ingresa">
                     <button type="submit">Editar</button>
