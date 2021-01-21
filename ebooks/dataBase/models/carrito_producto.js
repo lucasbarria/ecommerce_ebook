@@ -10,7 +10,7 @@ module.exports = function (sequelize, dataTypes){
         precio: dataTypes.STRING,
         cantidad: dataTypes.INTEGER
     },{
-        tableName: "carrito",
+        tableName: "carrito_producto",
         timestamps: false
     })
     return carrito_producto;
