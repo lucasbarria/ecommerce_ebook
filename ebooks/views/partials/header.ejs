@@ -13,7 +13,7 @@
       </div>
       <div  class="header-personal"> 
         <% if(typeof usuario != 'undefined'){ %>
-          <p><%= usuario.nombre %></p> 
+          <a href="/users/perfil"><p><%= usuario.nombre %></p></a> 
           <a href="#categorias">Categorias - </a>
           <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
           <a href="/products/crear"> - Crear un producto</a>

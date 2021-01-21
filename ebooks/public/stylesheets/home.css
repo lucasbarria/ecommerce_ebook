@@ -37,7 +37,7 @@ main {
     align-items: center;
     flex-direction: column;
 }
-div .novedades, #categorias {
+div .novedades, .lo_mas_buscado, #categorias {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;

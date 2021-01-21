@@ -24,7 +24,7 @@ hr {
 
 /* MAIN*/
 
-h1 {
+ h1 {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
@@ -111,27 +111,21 @@ p {
     background-color: #292c2f;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
-    height: 159px;
     width: 100%;
     text-align: left;
     font: normal normal normal 14px/1 FontAwesome;
     padding: 45px 50px;
   }
   
-  .footer-distributed span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  .footer-distributed .footer-left p {
     color: #8f9296;
     font-size: 14px;
-    padding-top: 40px;
+    margin: 0;
+    text-align: left;
   }
   
   
   .footer-distributed p.footer-links {
-      display: flex;
-      justify-content: center;
       font-size: 14px;
       font-weight: bold;
       color: #ffffff;
@@ -177,14 +171,6 @@ p {
       line-height: 35px;
       margin-left: 3px;
       transition:all .25s;
-    }
-    footer div:nth-child(3) {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-end;
-        padding-top: 60px;
-        margin-top: 50px;
     }
 
 

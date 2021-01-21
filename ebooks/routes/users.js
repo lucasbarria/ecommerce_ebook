@@ -25,4 +25,7 @@ router.get('/iniciasesion', usermiddleware.usuarioLogueado, userController.inici
 router.post('/iniciasesion', usermiddleware.usuarioLogueado, userController.sesioniniciada);
 
 
+router.get('/perfil', userController.perfilusuario);
+
+
 module.exports = router;

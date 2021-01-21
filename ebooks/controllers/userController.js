@@ -101,7 +101,11 @@ const userController = {
         }else {
             res.send("Usuario No Encontrado");
         }
+    },
+    perfilusuario: function(req, res, next) {
+        res.render('perfil');
     }
 }
+
 
 module.exports = userController;
