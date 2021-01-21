@@ -15,7 +15,8 @@ const productController = {
             precio: req.body.precio,
             descripcion: req.body.descripcion,
             imagen: req.body.imagen,
-            categoria: req.body.categoria 
+            categoria: req.body.categoria,
+            editorial: req.body.editorial
         }).then(function (product){
             res.render('home')
         });

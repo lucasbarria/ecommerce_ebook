@@ -8,6 +8,8 @@ module.exports = function (sequelize, dataTypes){
         nombre: dataTypes.STRING,
         email: dataTypes.STRING,
         password: dataTypes.STRING,
+        fecha: dataTypes.INTEGER,
+        genero: dataTypes.STRING
     },{
         tableName: "usuarios",
         timestamps: false

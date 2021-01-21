@@ -28,7 +28,9 @@ const userController = {
             db.users.create({
                 nombre: req.body.name,
                 email: req.body.email,
-                password: req.body.pass
+                password: req.body.pass,
+                fecha: req.body.date,
+                genero: req.body.genero
             }).then(function (user){
                 res.render('home')
             });

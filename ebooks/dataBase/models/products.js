@@ -9,7 +9,8 @@ module.exports = function (sequelize, dataTypes){
         precio: dataTypes.NUMBER,
         descripcion: dataTypes.STRING,
         imagen: dataTypes.STRING,
-        categoria: dataTypes.STRING
+        categoria: dataTypes.STRING,
+        editorial: dataTypes.STRING
     },{
         tableName: "productos",
         timestamps: false
