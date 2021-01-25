@@ -17,7 +17,7 @@
         </header>
         <hr>
         <main id="register">
-            <% if(typeof errors != 'undefined'){ %>
+            <!-- <% if(typeof errors != 'undefined'){ %>
                 <ul>
     
                     <% for(i=0; i<errors.length; i++){ %>
@@ -26,7 +26,7 @@
                         </li>
                    <% } %> 
                 </ul>
-                <% } %>
+                <% } %> -->
             <form action="/users/registro" id="form" method="POST">
                 <h1>Crear cuenta</h1>
                 <div id="nombre-email-pass">
@@ -52,7 +52,7 @@
         </main>
 
         <%-include('./partials/footer') %>
-        
+        <script src="../public/js/validaciones.js"></script>
     </div>
 </body>
 </html>

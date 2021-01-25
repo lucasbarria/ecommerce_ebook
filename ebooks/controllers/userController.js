@@ -23,8 +23,8 @@ const userController = {
         res.render('register')
     },
     store: function (req, res){
-        let errors = validationResult(req);
-        if(errors.isEmpty()){
+        /* let errors = validationResult(req); */
+        /* if(errors.isEmpty()){ */
             db.users.create({
                 nombre: req.body.name,
                 email: req.body.email,
@@ -34,10 +34,10 @@ const userController = {
             }).then(function (user){
                 res.render('home')
             });
-        } else {
+       /*  } else {
             console.log(errors.mapped());
             res.render('register', {errors: errors.errors});
-        }
+        } */
 
 
 
