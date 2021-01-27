@@ -13,49 +13,49 @@
 
 <body>
     <%-include('./partials/header') %>
-    <form class="form" action="/products/edit/<%= products.id %>" method="POST">
+    <form class="form" action="/products/edit" method="POST">
         <div>
             <label for="name">Nombre del producto:</label>
-            <input type="text" name="name" value="<%= products.name %>">
+            <input type="text" name="name" value="<%= product.name %>">
         </div>
         <hr>
         <div>
             <label for="description">Descripcion:</label>
-            <input type="text" name="description" value="<%= products.description %>">
+            <input type="text" name="description" value="<%= product.description %>">
         </div>
         <hr>
         <div>
             <label for="image">Imagen:</label>
-            <input type="file" name="image" value="products.image">
+            <input type="file" name="image" value="product.image">
         </div>
         <hr>
         <h2>Categoria:</h2>
         <div id="category">
             <div class=category">
                 <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
-                <input type="radio" name="category" id="Arquitectura y Diseño" value="<%= products.category%>">
+                <input type="radio" name="category" id="Arquitectura y Diseño" value="<%= product.category%>">
                 <label for="Ciencias Economicas">Ciencias Economicas</label>
-                <input type="radio" name="category" id="Ciencias Economicas" value="<%= products.category %>">
+                <input type="radio" name="category" id="Ciencias Economicas" value="<%= product.category %>">
                 <label for="Ciencias Sociales">Ciencias Sociales</label>
-                <input type="radio" name="category" id="Ciencias Sociales" value="<%= products.category %>">
+                <input type="radio" name="category" id="Ciencias Sociales" value="<%= product.category %>">
                 <label for="Derecho">Derecho</label>
-                <input type="radio" name="category" id="Derecho" value="<%= products.category %>">
+                <input type="radio" name="category" id="Derecho" value="<%= product.category %>">
             </div>
             <div class="categoria">
                 <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
-                <input type="radio" name="category" id="Farmacia y Bioquímica" value="<%= products.category %>">
+                <input type="radio" name="category" id="Farmacia y Bioquímica" value="<%= product.category %>">
                 <label for="Ingenieria">Ingenieria</label>
-                <input type="radio" name="category" id="Ingenieria" value="<%= products.category %>">
+                <input type="radio" name="category" id="Ingenieria" value="<%= product.category %>">
                 <label for="Medicina">Medicina</label>
-                <input type="radio" name="category" id="Medicina" value="<%= products.category %>">
+                <input type="radio" name="category" id="Medicina" value="<%= product.category %>">
                 <label for="Psicología">Psicología</label>
-                <input type="radio" name="category" id="Psicología" value="<%= products.category %>">
+                <input type="radio" name="category" id="Psicología" value="<%= product.category %>">
             </div>
         </div>
         <hr>
         <div>
             <label for="price">Precio:</label>
-            <input type="text" name="price" value="<%= products.price %>">
+            <input type="text" name="price" value="<%= product.price %>">
         </div>
         <hr>
         <div id="button">
