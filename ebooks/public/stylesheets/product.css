@@ -16,11 +16,11 @@
   height: 190px;
 }
 
-#compra {
+#purchase {
   margin-left: 500px;
 }
 
-#product, #compra {
+#product, #purchase {
   position: relative;
   top: 50px;
 }
@@ -53,7 +53,7 @@ div .img {
   margin: 40px;
 }
 
-#imagenes {
+#image {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,27 +63,27 @@ div .img {
 }
 
 @media (max-width: 768px){
-  #compra {
+  #purchase {
     display: flex;
     flex-direction: column;
   }
-  #compra p {
+  #purchase p {
     text-align: center;
   }
-  #compra button {
+  #purchase button {
     margin: 2px;
   }
 }
 
 @media (max-width: 425px){
-  #compra, #product {
+  #purchase, #product {
     margin: 20px;
   }
   #product p, #product h3{
     position: relative;
     top: 10px;
   }
-  #compra {
+  #purchase {
     display: flex;
     position: relative;
     top: 80px;

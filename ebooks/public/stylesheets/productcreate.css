@@ -2,7 +2,7 @@ body {
     background-color: #FAF6F6;
 }
 
-.formulario {
+.form {
      display: flex;
      align-items: center;
      justify-content: center;
@@ -16,16 +16,16 @@ form  div{
     margin: 30px;
 }
 
-#categorias {
+#category {
     display: flex;
     flex-direction: row;
 }
 
-#categorias input {
+#category input {
     margin: 10px;
 }
 
-.categoria {
+.category {
     display: flex;
     flex-direction: column;
     margin: 5px;
@@ -50,19 +50,19 @@ hr {
     width: 50%;
 }
 
-#botones {
+#button {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#borrar{
+#delete{
     border: 1px solid #626567;
     padding: 2px 13px;
     background-color: #E5E7E9;
     border-radius: 2px;
 }
 
-#borrar:hover {
+#delete:hover {
     color: #E52626;
 }

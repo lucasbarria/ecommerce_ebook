@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-footer.css">
+    <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/productcreate.css">
+    <title>University ebooks</title>
+</head>
+
+<body>
+    <%-include('./partials/header') %>
+    <form class="form" action="/products/edit/<%= products.id %>" method="POST">
+        <div>
+            <label for="name">Nombre del producto:</label>
+            <input type="text" name="name" value="<%= products.name %>">
+        </div>
+        <hr>
+        <div>
+            <label for="description">Descripcion:</label>
+            <input type="text" name="description" value="<%= products.description %>">
+        </div>
+        <hr>
+        <div>
+            <label for="image">Imagen:</label>
+            <input type="file" name="image" value="products.image">
+        </div>
+        <hr>
+        <h2>Categoria:</h2>
+        <div id="category">
+            <div class=category">
+                <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
+                <input type="radio" name="category" id="Arquitectura y Diseño" value="<%= products.category%>">
+                <label for="Ciencias Economicas">Ciencias Economicas</label>
+                <input type="radio" name="category" id="Ciencias Economicas" value="<%= products.category %>">
+                <label for="Ciencias Sociales">Ciencias Sociales</label>
+                <input type="radio" name="category" id="Ciencias Sociales" value="<%= products.category %>">
+                <label for="Derecho">Derecho</label>
+                <input type="radio" name="category" id="Derecho" value="<%= products.category %>">
+            </div>
+            <div class="categoria">
+                <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
+                <input type="radio" name="category" id="Farmacia y Bioquímica" value="<%= products.category %>">
+                <label for="Ingenieria">Ingenieria</label>
+                <input type="radio" name="category" id="Ingenieria" value="<%= products.category %>">
+                <label for="Medicina">Medicina</label>
+                <input type="radio" name="category" id="Medicina" value="<%= products.category %>">
+                <label for="Psicología">Psicología</label>
+                <input type="radio" name="category" id="Psicología" value="<%= products.category %>">
+            </div>
+        </div>
+        <hr>
+        <div>
+            <label for="price">Precio:</label>
+            <input type="text" name="price" value="<%= products.price %>">
+        </div>
+        <hr>
+        <div id="button">
+            <button type="submit">Enviar</button>
+            <a id="delete" href="/products/borrar/<%= products.id %>">Borrar</a>
+        </div>
+    </form>
+
+    <%-include('./partials/footer') %>
+</body>
+
+</html>

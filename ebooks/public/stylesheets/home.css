@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#carrusel h2 {
+/* #carrusel h2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,20 +12,20 @@
     border: 2px solid black;   
     width: 40vw;
     height: 120px;
-}
+} */
 
-body #carrusel {
+/* body #carrusel {
     display: flex;
     justify-content: center;
     margin: 40px;
-}
+} */
 
-body #carrusel i {
+/* body #carrusel i {
     display: flex;
     align-items: center;
     margin: 8px;
     font-size: 20px;
-}
+} */
 
 img {
     width: 130px;
@@ -37,7 +37,7 @@ main {
     align-items: center;
     flex-direction: column;
 }
-div .novedades, .lo_mas_buscado, #categorias {
+div .news, .mostwanted, #category {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -49,7 +49,7 @@ div .novedades, .lo_mas_buscado, #categorias {
     flex-wrap: wrap;
     background-color: #FAF6F6;
 }
-#ver-mas a:hover {
+#more a:hover {
     color: rgba(38, 135, 190, 0.781);
 }
 main div a:hover {
@@ -62,7 +62,7 @@ div .img {
     flex-direction: column;
     padding: 40px;
 }
-#imagenes {
+#image {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -76,18 +76,18 @@ ul div p {
     align-items: flex-start;
 }
 
-main #novedades h2, p {
+main #news h2, p {
     text-align: start;
 }
 
-div #categorias ul {
+div #category ul {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
-#categorias ul li {
+#category ul li {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -98,7 +98,7 @@ div #categorias ul {
     width: 20%;
 }
 
-#categorias ul li a:hover {
+#category ul li a:hover {
     color: rgba(38, 135, 190, 0.781);
 }
 

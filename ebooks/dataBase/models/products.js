@@ -5,14 +5,14 @@ module.exports = function (sequelize, dataTypes){
             autoIncrement: true,
             primaryKey: true
         }, 
-        nombre: dataTypes.STRING,
-        precio: dataTypes.NUMBER,
-        descripcion: dataTypes.STRING,
-        imagen: dataTypes.STRING,
-        categoria: dataTypes.STRING,
+        name: dataTypes.STRING,
+        price: dataTypes.NUMBER,
+        description: dataTypes.STRING,
+        image: dataTypes.STRING,
+        category: dataTypes.STRING,
         editorial: dataTypes.STRING
     },{
-        tableName: "productos",
+        tableName: "products",
         timestamps: false
     })
     return products;

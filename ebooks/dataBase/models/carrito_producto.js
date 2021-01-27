@@ -1,17 +1,17 @@
 module.exports = function (sequelize, dataTypes){
-    const carrito_producto = sequelize.define("carrito_producto", {
+    const product_cart = sequelize.define("product_cart", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         }, 
-        id_carrito: dataTypes.INTEGER,
-        id_producto: dataTypes.INTEGER,
-        precio: dataTypes.STRING,
-        cantidad: dataTypes.INTEGER
+        id_cart: dataTypes.INTEGER,
+        id_product: dataTypes.INTEGER,
+        price: dataTypes.STRING,
+        quantity: dataTypes.INTEGER
     },{
-        tableName: "carrito_producto",
+        tableName: "product_cart",
         timestamps: false
     })
-    return carrito_producto;
+    return product_cart;
 };
