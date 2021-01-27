@@ -30,7 +30,7 @@ hr {
     padding-bottom: 30px;
 }
 
-#nombre-email-pass{
+#name-email-pass{
 display: flex;
 justify-content: center;
 align-items: center;
@@ -38,7 +38,7 @@ flex-direction: column;
 width: 100%;
 }
 
-form #nombre-email-pass input {
+form #name-email-pass input {
     font-size: large;
     width: 39vw;
     height: 50px;
@@ -46,7 +46,7 @@ form #nombre-email-pass input {
     padding: 10px;
     margin: 10px;
 }
-#fecha-de-nacimiento {
+#dateOfBirthay {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +72,7 @@ section {
 section input {
     margin: 7px;
 }
-#ingresa {
+#enter {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,7 +80,7 @@ section input {
     width: 100%;
 }
 
-#ingresa input {
+#enter input {
     width: 30%;
     height: 30px;
     margin-top: 20px;
@@ -179,10 +179,10 @@ p {
          a {
             padding-right: 70px;
         }
-        form #nombre-email-pass input {
+        form #name-email-pass input {
             width: 45%;
         }
-        #ingresa input {
+        #enter input {
             width: 35%;
         }
     }
@@ -191,10 +191,10 @@ p {
         a {
           padding-right: 20px;
         }
-        form #nombre-email-pass input {
+        form #name-email-pass input {
             width: 100%;
         }
-        #ingresa input {
+        #enter input {
             width: 45%;
         }
       }
@@ -203,10 +203,10 @@ p {
         a {
           padding-right: 30px;
         }
-        form #nombre-email-pass input {
+        form #name-email-pass input {
             width: 45%;
         }
-        #ingresa input {
+        #enter input {
             width: 37%;
         }
       }

@@ -7,61 +7,61 @@
     <link rel="stylesheet" href="/stylesheets/header-footer.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/crearproducto.css">
+    <link rel="stylesheet" href="/stylesheets/productcreate.css">
     <title>University ebooks</title>
 </head>
 
 <body>
     <%-include('./partials/header') %>
-    <form class="formulario" action="/products/crear" method="POST">
+    <form class="form" action="/products/create" method="POST">
     
         <div>
-            <label for="nombre">Nombre del producto:</label>
-            <input type="text" name="nombre">
+            <label for="name">Nombre del producto:</label>
+            <input type="text" name="name">
         </div>
         <hr>
         <div>
-            <label for="nombre">Editorial:</label>
+            <label for="editorial">Editorial:</label>
             <input type="text" name="editorial">
         </div>
         <hr>
         <div>
-            <label for="descripcion">Descripcion:</label>
-            <input type="text" name="descripcion">
+            <label for="description">Descripcion:</label>
+            <input type="text" name="description">
         </div>
         <hr>
         <div>
-            <label for="img">Imagen:</label>
-            <input type="file" name="imagen">
+            <label for="image">Imagen:</label>
+            <input type="file" name="image">
         </div>
         <hr>
         <h2>Categoria:</h2>
-        <div id="categorias">
-            <div class="categoria">
+        <div id="category">
+            <div class="category">
                 <label for="Arquitectura y Diseño">Arquitectura y Diseño</label>
-                <input type="radio" name="categoria" value="arquitectura" id="Arquitectura y Diseño">
+                <input type="radio" name="category" value="arquitectura" id="Arquitectura y Diseño">
                 <label for="Ciencias Economicas">Ciencias Economicas</label>
-                <input type="radio" name="categoria" value="economicas"id="Ciencias Economicas">
+                <input type="radio" name="category" value="economicas"id="Ciencias Economicas">
                 <label for="Ciencias Sociales">Ciencias Sociales</label>
-                <input type="radio" name="categoria" value="sociales"id="Ciencias Sociales">
+                <input type="radio" name="category" value="sociales"id="Ciencias Sociales">
                 <label for="Derecho">Derecho</label>
-                <input type="radio" name="categoria" value="derecho"id="Derecho">
+                <input type="radio" name="category" value="derecho"id="Derecho">
             </div>
-            <div class="categoria">
+            <div class="category">
                 <label for="Farmacia y Bioquímica">Farmacia y Bioquímica</label>
-                <input type="radio" name="categoria" value="far_y_bio"id="Farmacia y Bioquímica">
+                <input type="radio" name="category" value="far_y_bio"id="Farmacia y Bioquímica">
                 <label for="Ingenieria">Ingenieria</label>
-                <input type="radio" name="categoria" value="inge"id="Ingenieria">
+                <input type="radio" name="category" value="inge"id="Ingenieria">
                 <label for="Medicina">Medicina</label>
-                <input type="radio" name="categoria" value="medic"id="Medicina">
+                <input type="radio" name="category" value="medic"id="Medicina">
                 <label for="Psicología">Psicología</label>
-                <input type="radio" name="categoria"value="psico" id="Psicología">
+                <input type="radio" name="category" value="psico" id="Psicología">
             </div>
         </div>
         <hr>
         <div>
-            <label for="precio">Precio:</label>
-            <input type="text" name="precio">
+            <label for="price">Precio:</label>
+            <input type="text" name="price">
         </div>
         <hr>
         <button type="submit">Enviar</button>

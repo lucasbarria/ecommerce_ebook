@@ -10,7 +10,7 @@ const indexController = {
       },
     editar: function(req, res, next) {
 
-      res.render('editarusuario');
+      res.render('userEdit');
     }
 }
 

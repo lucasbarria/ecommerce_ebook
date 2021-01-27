@@ -5,14 +5,14 @@ const db = require('../dataBase/models');
 
 
 const userController = {
-    iniciasesion: function(req, res, next) {
-        res.render("iniciasesion");
+    login: function(req, res, next) {
+        res.render("login");
       },
-    sesioniniciada: function(req, res, next){
-        let usuario = req.body;
-        db.users.findOne({where: {email: usuario.email}}).then(function(userFound){
-            if(userFound.password == usuario.pass){
-                req.session.usuario = {id: userFound.id, nombre: userFound.nombre};
+    loggedin: function(req, res, next){
+        let user = req.body;
+        db.users.findOne({where: {email: user.email}}).then(function(userFound){
+            if(userFound.password == user.pass){
+                req.session.user = {id: userFound.id, nombre: userFound.name};
                 res.redirect("/");
             }else{
                 res.send('error')
@@ -26,13 +26,13 @@ const userController = {
         /* let errors = validationResult(req); */
         /* if(errors.isEmpty()){ */
             db.users.create({
-                nombre: req.body.name,
+                name: req.body.name,
                 email: req.body.email,
                 password: req.body.pass,
-                fecha: req.body.date,
-                genero: req.body.genero
+                date: req.body.date,
+                genre: req.body.genre
             }).then(function (user){
-                res.render('home')
+                res.render('home', {user: user.user})
             });
        /*  } else {
             console.log(errors.mapped());
@@ -63,7 +63,7 @@ const userController = {
        db.users.findByPk(req.params.id).then(function(userFound){
            if (userFound){
                console.log(userFound);
-               return res.render('editarusuario', {userFound});
+               return res.render('userEdit', {userFound});
             }else {
                 return res.send("Usuario Invalido");
             }
@@ -104,7 +104,7 @@ const userController = {
             res.send("Usuario No Encontrado");
         }
     },
-    perfilusuario: function(req, res, next) {
+    userProfile: function(req, res, next) {
         res.render('perfil');
     }
 }

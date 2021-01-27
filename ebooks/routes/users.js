@@ -5,27 +5,27 @@ const usermiddleware = require('../middlewares/userMiddleware');
 var router = express.Router();
 
 // Creación de usuarios
-router.get('/registro', usermiddleware.usuarioLogueado, userController.create);
-router.post('/registro', [
+router.get('/register', usermiddleware.userlogged, userController.create);
+router.post('/register', [
     check('name').notEmpty().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),
     check('pass').isLength({min:8}).withMessage('La contrasena debe tener al menos 8 caracteres'),
-    check('usuario')
+    check('user')
 ], userController.store);
 
 // Edicion de usuarios 
-router.get('/editar/:id', userController.edit);
-router.post('/editar/:id', userController.update);
+router.get('/edit/:id', userController.edit);
+router.post('/edit/:id', userController.update);
 
 //Eliminar usuario
-router.get("/borrar/:id", userController.delete);
+router.get("/delete/:id", userController.delete);
 
 //iniciar sesion
-router.get('/iniciasesion', usermiddleware.usuarioLogueado, userController.iniciasesion);
-router.post('/iniciasesion', usermiddleware.usuarioLogueado, userController.sesioniniciada);
+router.get('/login', usermiddleware.userlogged, userController.login);
+router.post('/login', usermiddleware.userlogged, userController.loggedin);
 
 
-router.get('/perfil', userController.perfilusuario);
+router.get('/porfile', userController.userProfile);
 
 
 module.exports = router;

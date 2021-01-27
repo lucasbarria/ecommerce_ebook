@@ -1,17 +1,17 @@
 module.exports = function (sequelize, dataTypes){
-    const carrito = sequelize.define("carrito", {
+    const cart = sequelize.define("cart", {
         id: {
             type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         }, 
-        id_usuario: dataTypes.INTEGER,
+        id_user: dataTypes.INTEGER,
     },{
-        tableName: "carrito",
+        tableName: "cart",
         timestamps: false
     })
-    carrito.associate = function(models){
-        carrito.belongsTo(models.users, {foreignKey: "id_usuario", as: "cart"})
+    cart.associate = function(models){
+        cart.belongsTo(models.users, {foreignKey: "id_user", as: "cart"})
     }
-    return carrito;
+    return cart;
 };

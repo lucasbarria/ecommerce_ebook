@@ -17,11 +17,11 @@ main {
     background-color: #FAF6F6;
   }
 
-#productos h2 {
+#products h2 {
     margin: 30px 50px;
 }
 
-#productos div {
+#products div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,7 +29,7 @@ main {
     margin: 50px;
 }
 
-#compra, #compra div {
+#purchase, #purchase div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,29 +37,29 @@ main {
     padding-top: 20px;
 }
 
-#compra div {
+#purchase div {
     position: absolute;
     left: 62%;
     border-top: 1px black solid;
 }
 
-#compra button {
+#purchase button {
     margin-left: 20px;
 }
 
 @media (max-width: 768px){
-    #compra {
+    #purchase {
         position: relative;
         right: 20px;
     }
 }
 
 @media (max-width: 425px){
-    #compra {
+    #purchase {
         position: relative;
         right: 80px;
     }
-    #compra button {
+    #purchase button {
         margin: 5px;
     }
     main {

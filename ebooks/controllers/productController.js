@@ -1,9 +1,10 @@
 const fs = require('fs');
 const db = require('../dataBase/models');
+const products = require('../dataBase/models/products');
 
 const productController = {
     create: function (req, res) {
-        res.render('crearProducto');
+        res.render('productCreate');
     },
     store: function (req, res) {
 
@@ -11,18 +12,23 @@ const productController = {
         //producto.id = nuevoId;
         db.products.create({
             // id: req.body.id,
-            nombre: req.body.nombre,
-            precio: req.body.precio,
-            descripcion: req.body.descripcion,
-            imagen: req.body.imagen,
-            categoria: req.body.categoria,
+            name: req.body.name,
+            price: req.body.price,
+            descripction: req.body.description,
+            image: req.body.image,
+            category: req.body.category,
             editorial: req.body.editorial
         }).then(function (product){
             res.render('home')
         });
     },
     edit: function (req, res) {
-        let id = req.params.id;
+        db.products.findByPk(req.params.id)
+        .then(function(products){
+            res.render('editarProducto', {products: products.products});
+        })
+
+        /* let id = req.params.id;
         let productoEncontrado = productos.find(function (producto) {
             return producto.id == id;
         });
@@ -30,10 +36,24 @@ const productController = {
             return res.render('editarProducto', { producto: productoEncontrado });
         }else{
             return res.send("Producto No Encontrado");
-        }
+        }  */
     },
     update: (req, res) => {
-        let datosActualizados = req.body;
+        db.products.update({
+            name: products.name,
+            descripction: products.description,
+            image: products.image,
+            category: products.category,
+            price: products.price
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }).then(function(product) {
+            res.send('funciona');
+        });
+        /* let datosActualizados = req.body;
         let arrayNuevo = productos.map(function(producto){
                 if(producto.id == req.params.id){
                 producto = {
@@ -44,7 +64,7 @@ const productController = {
             return producto;
         });
         
-        return res.redirect('/paginadeproducto');
+        return res.redirect('/paginadeproducto'); */
     },
     delete: (req, res) => {
         let id = req.params.id;

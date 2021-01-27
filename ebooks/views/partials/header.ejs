@@ -2,7 +2,7 @@
     <div class="content">
       <div class="header-brand inlineblock">
         <a href="/">
-          <img class="logo" src="/imagenes/logo.png" alt="E-coomerces Ebooks Universirarios" >
+          <img class="logo" src="/image/logo.png" alt="E-coomerces Ebooks Universirarios" >
         </a>
       </div>
       <div class="header-search">
@@ -12,15 +12,15 @@
         </form>
       </div>
       <div  class="header-personal"> 
-        <% if(typeof usuario != 'undefined'){ %>
-          <a href="/users/perfil"><p><%= usuario.nombre %></p></a> 
-          <a href="#categorias">Categorias - </a>
+        <% if(typeof user != 'undefined'){ %>
+          <a href="/users/porfile"><p><%= user.name %></p></a> 
+          <a href="#category">Categorias - </a>
           <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
-          <a href="/products/crear"> - Crear un producto</a>
+          <a href="/products/create"> - Crear un producto</a>
         <% }else { %>
-          <a href="/users/registro"> Registrarse -</a>
-          <a href="/users/iniciasesion"> Ingresar</a>
-          <a href="#categorias"> - Categorias</a>
+          <a href="/users/register"> Registrarse -</a>
+          <a href="/users/login"> Ingresar</a>
+          <a href="#category"> - Categorias</a>
         <% } %>
       </div>
     </div>

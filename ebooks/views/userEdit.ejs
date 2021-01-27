@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University ebooks</title>
-    <link rel="stylesheet" href="/stylesheets/registro.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
 </head>
 
@@ -13,36 +13,36 @@
     <div id="container">
         <header>
             <div>
-                <img src="/imagenes/logo.png" alt="logo">
+                <img src="/image/logo.png" alt="logo">
             </div>
-            <a href="iniciasesion">inicia sesion</a>
+            <a href="login">inicia sesion</a>
         </header>
         <hr>
         <main id="register">
-            <form action="/users/editar/<%= userFound.id %>" id="form" method="POST">
+            <form action="/users/edit/<%= userFound.id %>" id="form" method="POST">
                 <h1>Crear cuenta</h1>
-                <div id="nombre-email-pass">
+                <div id="name-email-pass">
                     <input type="text" name="name" id="name" placeholder="Nombre y apellido"
-                        value="<%= userFound.nombre %>" required>
+                        value="<%= userFound.name %>" required>
                     <input type="email" name="email" id="email" placeholder="E-mail" value="<%= userFound.email %>"
                         required>
                     <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" required>
                 </div>
-                <div id="fecha-de-nacimiento">
+                <div id="date">
                     <h3>Fecha de nacimiento</h3>
                     <input type="date" name="date" id="date" value="<%= userFound.date %>" required>
                 </div>
                 <h3>Genero</h3>
                 <section>
-                    <input type="radio" name="genero" value="mas" id="masculino"<%= userFound.genero == "mas" ? "checked" : null %> required> <label for="masculino">
+                    <input type="radio" name="genre" value="male" id="male"<%= userFound.genre == "male" ? "checked" : null %> required> <label for="male">
                         Masculino</label>
-                    <input type="radio" name="genero" value="fem" id="femenino"<%= userFound.genero == "fem" ? "checked" : null %> required> <label for="femenino">
+                    <input type="radio" name="genre" value="fem" id="female"<%= userFound.genre == "fem" ? "checked" : null %> required> <label for="female">
                         Femenino</label>
-                    <input type="radio" name="genero" value="otr" id="otro"<%= userFound.genero == "otr" ? "checked" : null %> required> <label for="otro"> Otro</label>
+                    <input type="radio" name="genre" value="other" id="other"<%= userFound.genre == "other" ? "checked" : null %> required> <label for="other"> Otro</label>
                 </section>
-                <div id="ingresa">
+                <div id="login">
                     <button type="submit">Editar</button>
-                    <a id="borrar" href="/users/borrar/<%= userFound.id %>">Borrar</a>
+                    <a id="borrar" href="/users/delete/<%= userFound.id %>">Borrar</a>
                     <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
                 </div>
             </form>
