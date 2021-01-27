@@ -11,7 +11,7 @@ const productController = {
         //let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
         //producto.id = nuevoId;
         db.products.create({
-            // id: req.body.id,
+            //id: req.body.id,
             name: req.body.name,
             price: req.body.price,
             descripction: req.body.description,
@@ -19,13 +19,13 @@ const productController = {
             category: req.body.category,
             editorial: req.body.editorial
         }).then(function (product){
-            res.render('home')
+            res.render('home', {product: product.product})
         });
     },
     edit: function (req, res) {
         db.products.findByPk(req.params.id)
-        .then(function(products){
-            res.render('editarProducto', {products: products.products});
+        .then(function(product){
+            res.render('productEdit', {product: product.product});
         })
 
         /* let id = req.params.id;
