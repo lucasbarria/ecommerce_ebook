@@ -30,8 +30,8 @@ const userController = {
                 password: req.body.pass,
                 date: req.body.date,
                 genre: req.body.genre
-            }).then(function (users){
-                res.render('home', {users:users})
+            }).then(function (user){
+                res.render('home', {user: user.user})
             });
        /*  } else {
             console.log(errors.mapped());
