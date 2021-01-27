@@ -1,5 +1,4 @@
 const fs = require('fs');
-let usersList = [];
 let { check, validationResult, body} = require('express-validator');
 const db = require('../dataBase/models');
 
