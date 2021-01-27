@@ -85,7 +85,16 @@ const userController = {
         return res.redirect('/');
     },
     delete: function (req, res){
-        let id = req.params.id;
+
+        db.users.destroy({
+            where: {
+                id: req.params.id
+            }.then(function(users) {
+                res.render('home');
+            })
+        })
+
+        /* let id = req.params.id;
         let userFound;
         for(let i=0; i<usersList.length; i++){
             if (usersList[i].id == id){
@@ -102,7 +111,7 @@ const userController = {
             res.send("Usuario Eliminado");
         }else {
             res.send("Usuario No Encontrado");
-        }
+        } */
     },
     userProfile: function(req, res, next) {
         res.render('perfil');
