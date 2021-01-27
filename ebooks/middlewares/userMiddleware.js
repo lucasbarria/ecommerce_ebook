@@ -5,7 +5,7 @@ const userMiddleware = {
     userlogged: function(req, res, next) {
         if(req.session && req.session.user){
             /*res.locals.usuario = req.session.usuario;*/
-            res.send('no funciono')
+            res.send('error')
         }else {
             next()
         }
