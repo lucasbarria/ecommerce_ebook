@@ -30,9 +30,18 @@
             <form action="/users/register" id="form" method="POST">
                 <h1>Crear cuenta</h1>
                 <div id="name-email-pass">
-                    <input type="text" name="name" id="name" placeholder="Nombre y apellido" >
-                    <input type="email" name="email" id="email" placeholder="E-mail" >
-                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" >
+                    <div class="name name-error">
+                        <input type="text" name="name" id="name" placeholder="Nombre y apellido">
+                        <p>Error</p>
+                    </div>
+                    <div class="email email-error">
+                        <input type="email" name="email" id="email" placeholder="E-mail">
+                        <p>Error</p>
+                    </div>
+                    <div class="pass pass-error">
+                        <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña">
+                        <p>Error</p>
+                    </div>
                 </div>
                 <div id="dateOfBirthay">
                 <h3>Fecha de nacimiento</h3>
@@ -54,6 +63,7 @@
         <%-include('./partials/footer') %>
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"></script>
     <script src="../js/validaciones.js"></script>
 </body>
 </html>
