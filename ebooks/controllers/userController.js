@@ -1,4 +1,5 @@
 const fs = require('fs');
+let usersList = [];
 let { check, validationResult, body} = require('express-validator');
 const db = require('../dataBase/models');
 
@@ -30,8 +31,9 @@ const userController = {
                 password: req.body.pass,
                 date: req.body.date,
                 genre: req.body.genre
-            }).then(function (user){
-                res.render('home', {user: user.user})
+            }).then(function (users){
+                
+                res.redirect('/')
             });
        /*  } else {
             console.log(errors.mapped());
@@ -84,6 +86,12 @@ const userController = {
         return res.redirect('/');
     },
     delete: function (req, res){
+
+
+        db.users.destroy(req.params.id).then(function(userFound){
+           
+        });
+
 
         db.users.destroy({
             where: {
