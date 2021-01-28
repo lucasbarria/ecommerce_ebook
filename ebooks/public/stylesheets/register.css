@@ -48,9 +48,13 @@ form #name-email-pass input {
 }
 
 
-p.name-error, p.email-error, p.pass-error{
-    color: red;
+p.error{
     display: none
+}
+
+p.error-activo{
+    color: red;
+    display: block;
 }
 
 #dateOfBirthay {
