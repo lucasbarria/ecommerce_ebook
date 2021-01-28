@@ -46,6 +46,13 @@ form #name-email-pass input {
     padding: 10px;
     margin: 10px;
 }
+
+
+p.name-error, p.email-error, p.pass-error{
+    color: red;
+    display: none
+}
+
 #dateOfBirthay {
     display: flex;
     align-items: center;
