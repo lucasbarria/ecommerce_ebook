@@ -47,12 +47,14 @@ form #name-email-pass input {
     margin: 10px;
 }
 
-p .name, p.email, p.pass{
-    display: none;
+
+p.error{
+    display: none
 }
-p.name-error, p.email-error, p.pass-error{
+
+p.error-activo{
     color: red;
-    display: flex
+    display: block;
 }
 
 #dateOfBirthay {
