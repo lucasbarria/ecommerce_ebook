@@ -56,7 +56,7 @@ form {
    padding-top: 50px;
 }
 input:hover {
-  border: none;
+  border: solid #292c2f;
 }
 
 /*footer*/
