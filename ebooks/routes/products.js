@@ -13,4 +13,6 @@ router.post('/edit/:id', productController.update);
 //Borrar producto
 router.get("/delete/:id", productController.delete);
 
+//detalle de producto
+router.get("/:id", productController.detail);
 module.exports = router;
