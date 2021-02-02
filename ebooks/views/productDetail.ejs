@@ -5,23 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/product.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="stylesheets\header-footer.css">
+        <link rel="stylesheet" href="/stylesheets/header-footer.css">
         <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
 
-      <%-include('./partials/header') %> 
+      <%- include('./partials/header') %> 
 
     <main>
         <div>
+
+          
             <div id="product">
-                <img src="image\administracion de empresas.jpg" alt="book">
-                <h3> <%= product.name %> </h3> 
-                <p>Descripcion</p>
+                <img src="/<%=products.image%>">
+                <h3><%= products.name%></h3>
+                <p><%= products.Descripcion%></p>
             </div>            
             <div id="purchase">
-                <p>$$$</p>
+                <p>$ <%= products.price%></p>
                 <button type="button">Comprar</button>
                 <button type="button">Añadir al carrito</button>
             </div>
@@ -62,7 +64,7 @@
         </div>
     </main>
 
-    <%-include('./partials/footer') %> 
+    <%- include('./partials/footer') %> 
     
     </body>
 </html>

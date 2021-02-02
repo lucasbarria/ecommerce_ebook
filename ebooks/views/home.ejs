@@ -25,48 +25,27 @@
         <a href="/news">Ver mas</a>
       </div>
   
-        <ul id="image">
+      <ul id="image">
+        <div class="img"></div>
+        <% for(i=0; i< products.length; i++){ %>
+          <a href="/productdetail/<%= products[i].id%>">
+            <img src="/products[i].image" alt="">
+            <li>
+              <p><%= products[i].name%></p>
+              <p>por <%= products[i].editorial%></p>
+              <p>$ <%= products[i].price%></p>
+            </li>
+          </a>
+       <% } %> 
+      </div>
+    </ul>
+     
 
-          <div class="img">
-            
-            <a href="/productdetail">
-              <li><img src="/image/Roos.jpg" alt="portada libro Roos"></li>
-              <p><%= products.name%></p>
-              <pre>por <strong><%= products.editorial %></strong></pre>
-              <p>$</p>
-            </a>
-        </div>
 
-          <div class="img">
-            <a href="/productdetail">
-              <li><img src="/image/la politica economica.jpg" alt="portada libro politica economica si importa"></li>
-              <p>La politica economica si importa</p>
-              <pre>por <strong> Expansion</strong></pre>
-              <p>$</p>
-            </a>
-        </div>
 
-          <div class="img">
-            <a href="/productdetail">
-              <li><img src="/image/la era de la revolucion.webp" alt="portada libro la era de la revolucion"></li>
-              <p>La era de la revolucion</p>
-              <pre>por <strong> Eric Hobsbawn</strong></pre>
-              <p>$</p>
-            </a>  
-        </div>
 
-          <div class="img">
-            <a href="/productdetail">
-              <li><img src="/image/administracion de empresas.jpg" alt="portada libro Administrastive Behavior"></li>
-              <p>Administrastive Behavior</p>
-              <pre>por <strong>Herbert A. Simon</strong></pre>
-              <p>$</p>
-            </a>
-        </div>
-        </ul>
-    </div>
 
-    <div id="category">
+              <div id="category">
       <h2 name="category">Categorias</h2>
       <ul>
         <li><a href="#">Arquitectura y Diseño</a></li>
@@ -125,7 +104,7 @@
           </a>
       </div>
       </ul>
-  </div>
+  </div> 
 
     </main>
 

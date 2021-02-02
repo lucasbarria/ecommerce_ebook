@@ -83,10 +83,11 @@ const productController = {
     },
     detail: function(req, res){
         db.products.findByPk(req.params.id)
-                 .then(function(product){
-                    res.render('productDetail', {product});
+                 .then(function(products){
+                   return  res.render('productDetail', {products});
         })
     }
+    
 }
 
 module.exports = productController;
