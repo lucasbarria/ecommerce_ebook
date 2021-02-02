@@ -7,6 +7,8 @@
 header div {
     display: flex;
     justify-content: center;
+    position: relative;
+    left: 30px;
 }
 header a {
     display: flex;
@@ -48,11 +50,11 @@ form #name-email-pass input {
 }
 
 
-p.error{
+.error{
     display: none
 }
 
-p.error-activo{
+.error-activo{
     color: red;
     display: block;
 }
@@ -98,7 +100,7 @@ section input {
     border-radius: 10px;
 }
 input:hover {
-    border: none;
+    border: solid #292c2f;
 }
 
 p {

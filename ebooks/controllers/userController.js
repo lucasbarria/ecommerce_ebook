@@ -19,6 +19,12 @@ const userController = {
             }
         })
     },
+    logout: function(req, res, next){
+        if(req.session){
+            req.session.destroy();
+        }
+        res.redirect('/');
+    },
     create: function (req, res){
         res.render('register')
     },
