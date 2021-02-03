@@ -26,10 +26,10 @@
       </div>
   
       <ul id="image">
-        <% for(i=0; i< products.length; i++){ %>
-          <div class="img">
+        <div class="img"></div>
+        <% for(let i=0; i< products.length; i++){ %>
           <a href="/productdetail/<%= products[i].id%>">
-            <img src="/products[i].image" alt="">
+            <img src="<%=products[i].image%>" alt="">
             <li>
               <p><%= products[i].name%></p>
               <p>por <%= products[i].editorial%></p>
