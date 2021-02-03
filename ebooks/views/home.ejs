@@ -26,8 +26,8 @@
       </div>
   
       <ul id="image">
-        <div class="img"></div>
         <% for(i=0; i< products.length; i++){ %>
+          <div class="img">
           <a href="/productdetail/<%= products[i].id%>">
             <img src="/products[i].image" alt="">
             <li>
@@ -36,16 +36,11 @@
               <p>$ <%= products[i].price%></p>
             </li>
           </a>
+        </div>
        <% } %> 
-      </div>
     </ul>
-     
-
-
-
-
-
-              <div id="category">
+    </div>
+    <div id="category">
       <h2 name="category">Categorias</h2>
       <ul>
         <li><a href="#">Arquitectura y Diseño</a></li>

@@ -13,14 +13,13 @@
     <div id="container">
         <header>
             <div>
-                <img src="/image/logo.png" alt="logo">
+                <a href="/"><img src="/image/logo.png" alt="logo"></a>
             </div>
-            <a href="login">inicia sesion</a>
         </header>
         <hr>
         <main id="register">
             <form action="/users/edit/<%= userFound.id %>" id="form" method="POST">
-                <h1>Crear cuenta</h1>
+                <h1>Editar cuenta</h1>
                 <div id="name-email-pass">
                     <input type="text" name="name" id="name" placeholder="Nombre y apellido"
                         value="<%= userFound.name %>" required>
@@ -28,7 +27,7 @@
                         required>
                     <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" required>
                 </div>
-                <div id="date">
+                <div id="dateOfBirthay">
                     <h3>Fecha de nacimiento</h3>
                     <input type="date" name="date" id="date" value="<%= userFound.date %>" required>
                 </div>
@@ -42,9 +41,11 @@
                 </section>
                 <div id="login">
                     <button type="submit">Editar</button>
-                    <a id="borrar" href="/users/delete/<%= userFound.id %>">Borrar</a>
-                    <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
+                    <button> 
+                        <a id="delete" href="/users/delete/<%= user.id %>">Borrar</a>
+                     </button>
                 </div>
+                <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
             </form>
         </main>
 

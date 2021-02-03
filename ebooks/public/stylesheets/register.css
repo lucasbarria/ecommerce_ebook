@@ -104,6 +104,8 @@ input:hover {
 }
 
 p {
+    display: flex;
+    justify-content: center;
     margin-top: 5px;
     font-size: 10px;
 }
@@ -118,6 +120,13 @@ p {
      justify-content: center;
      margin-top: 20px;
  }
+
+#login {
+    display: flex;
+     justify-content: center;
+     margin-top: 20px;
+ 
+}
 
 /*footer*/
 .footer-distributed {

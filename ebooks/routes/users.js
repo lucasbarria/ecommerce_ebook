@@ -27,7 +27,7 @@ router.post('/login', usermiddleware.userlogged, userController.loggedin);
 //cerrar sesion
 router.get('/logout', userController.logout);
 
-router.get('/profile', userController.userProfile);
+router.get('/profile/:id', userController.userProfile);
 
 
 module.exports = router;

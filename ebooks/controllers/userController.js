@@ -79,7 +79,19 @@ const userController = {
        });
     },
     update: function (req, res){
-        let id = req.params.id;
+
+        db.users.update({
+            name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        date: req.body.date,
+        genre: req.body.genre 
+        },
+        {
+            where: {id: req.params.id}
+        });
+        res.redirect('/profile/' + req.params.id)
+        /* let id = req.params.id;
         let editUser = req.body;
         let usersListEdit = usersList.map(function(userFound){
             if (userFound.id == id){
@@ -91,20 +103,14 @@ const userController = {
             return userFound;
         });
         
-        return res.redirect('/');
+        return res.redirect('/'); */
     },
     delete: function (req, res){
 
 
-        db.users.destroy(req.params.id).then(function(userFound){
-           
-        });
-
-
         db.users.destroy({
-            where: {
-                id: req.params.id
-            }.then(function(users) {
+            where: {id: req.params.id}
+            .then(function(users) {
                 res.render('home');
             })
         })
@@ -129,7 +135,11 @@ const userController = {
         } */
     },
     userProfile: function(req, res, next) {
-        res.render('perfil');
+        db.users.findByPk(req.params.id)
+        .then(function(user) {
+            return res.render('profile', {user})
+        })
+       
     }
 }
 

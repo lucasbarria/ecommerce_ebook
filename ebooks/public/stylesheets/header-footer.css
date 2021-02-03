@@ -21,10 +21,10 @@ header p {
     justify-content: center;
 }
 .header-brand .logo {
-    height: 100px;
+    height: 150px;
     display: inline-block;
     justify-content: center;
-    width: 100px;
+    width: 150px;
 }
 
 form .header-search {

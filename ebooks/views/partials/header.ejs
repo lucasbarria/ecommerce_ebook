@@ -13,12 +13,11 @@
       </div>
       <div  class="header-personal"> 
         <% if(typeof user != 'undefined'){ %>
-          <a href="/users/profile"><p><%= user.name %></p></a> 
+          <a href="/users/profile/<%= user.id%>"><p><%= user.name %></p></a> 
           <a href="/users/logout" id="logout">Cerrar sesion</a>
           <br>
           <a href="#category">Categorias - </a>
           <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
-          <a href="/products/create"> - Crear un producto</a>
         <% }else { %>
           <a href="/users/register"> Registrarse -</a>
           <a href="/users/login"> Ingresar</a>
