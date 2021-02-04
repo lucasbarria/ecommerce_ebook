@@ -4,22 +4,29 @@ const users= require('../dataBase/models/users');
 
 const apiController = {
     user: function(req, res, next) {
-        db.users.findAll({users: users.id})
+        db.users.findAll({users})
         .then(function(data){
-            console.log(data)
-            return data.json();
+            let response = {
+                status: "ok",
+                state: 200,
+                response: JSON.stringify(data.length)
+            }
+            res.send(response)
         })
-        .then(function(users){
-            console.log(users)
+    },
+    products: function(req, res, next){
+        db.products.findAll({products})
+        .then(function(data){
+            let response = {
+                status: "ok",
+                state: 200,
+                response: JSON.stringify(data.length)
+            }
+            res.send(response)
         })
-        .catch(function(error){
-            console.log(error)
-        });
-
     },
-    products: function(req, res){
-    },
-    sales: function(req, res){
+    sales: function(req, res, next){
+        
     }
 };
 
