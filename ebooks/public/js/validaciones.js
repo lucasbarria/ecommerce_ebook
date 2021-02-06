@@ -1,11 +1,15 @@
 window.addEventListener('load', function() {
     const form = document.querySelector('form');
     const input = document.querySelectorAll('input');
+    const error = document.querySelectorAll('.error');
+
+    let errorMessages = [];
 
     input.addEventListener('blur', function(e){
-        switch (e.target.name) {
+        switch(e.target.name) {
             case "name":
-                
+                console.log("works");
+            break;
         }
     })
 
