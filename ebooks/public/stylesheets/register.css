@@ -53,8 +53,9 @@ form #name-email-pass input {
 }
 
 .error-activo{
-    color: red;
+    color: #FF2020;
     display: block;
+    font-size: 15px;
 }
 
 #dateOfBirthay {
@@ -97,8 +98,9 @@ section input {
     margin-top: 20px;
     border-radius: 10px;
 }
+
 input:hover {
-    border: solid #292c2f;
+    border: 2px solid #292c2f;
 }
 
 p {
