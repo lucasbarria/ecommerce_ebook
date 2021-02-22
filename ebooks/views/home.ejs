@@ -25,21 +25,25 @@
         <a href="/news">Ver mas</a>
       </div>
   
-      <ul id="image">
-        <div class="img"></div>
-        <% for(let i=0; i< products.length; i++){ %>
-          <a href="/productdetail/<%= products[i].id%>">
-            <img src="<%=products[i].image%>" alt="">
-            <li>
-              <p><%= products[i].name%></p>
-              <p>por <%= products[i].editorial%></p>
-              <p>$ <%= products[i].price%></p>
-            </li>
-          </a>
-        </div>
-       <% } %> 
-    </ul>
+
+          <ul id="image"></ul>
+          <% for(let i=0; i< products.length; i++){ %>
+            <ul id="image">
+            <div class="img">
+            <a href="/productdetail/<%= products[i].id%>">
+              <img src="<%=products[i].image%>" alt="">
+              <li>
+                <p><%= products[i].name%></p>
+                <pre>por <strong> <%= products[i].editorial%> </strong> </re>
+                <p>$ <%= products[i].price%></p>
+              </li>
+            </a>
+          </div>
+        
+         <% } %> 
+        </ul>
     </div>
+      
     <div id="category">
       <h2 name="category">Categorias</h2>
       <ul>

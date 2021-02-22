@@ -6,9 +6,25 @@
 
 #product img {
   float: left;
-  width: 130px;
-  height: 190px;
+  width: 210px;
+  height: 290px;
   margin-right: 50px;
+}
+
+#purchase p {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-size: large;
+}
+
+#product h3{
+  width: 600px;
+  font-size: xx-large;
+  padding-bottom: 10px;
+}
+
+#product p {
+    width: 500px;
 }
 
 .extra img {
@@ -17,7 +33,7 @@
 }
 
 #purchase {
-  margin-left: 500px;
+  margin-left: 200px;
 }
 
 #product, #purchase {

@@ -6,6 +6,7 @@
     <title>University ebooks</title>
     <link rel="stylesheet" href="/stylesheets/profile.css">
     <link rel="stylesheet" href="/stylesheets/header-footer.css">
+    <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -17,39 +18,43 @@
             </div>
     </header>
 
-
+             <h2>Mi perfil</h2>
     <div id="profile">
-        <div>
-                    <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name" placeholder="Nombre y apellido" value="<%= user.name %>" required>
+
+        <p>Nombre: </p>
+        <div class="name">
+                    <p> <%= user.name %></p>
         </div>
 
-        <div>
-                    <label for="email">Correo electronico</label>
-                    <input type="email" name="email" id="email" placeholder="E-mail" value="<%= user.email %>" required>
+        <div class="email">
+                   <p>Correo electronico: </p>
+                   <p> <%= user.email %></p>
+            </div>
+            
+        <div class="Bdate">
+                    <p>Fecha de nacimiento: </p>
+                    <p><%= user.date %></p>
             </div>
 
-        <div>
-                    <label for="date">Fecha de nacimiento</label>
-                    <input type="date" name="date" id="date" value="<%= user.date %>" required>
-            </div>
-
+            <h3>Genero:</h3>
         <div id="genre">
-                    <h3>Genero</h3>
-                    <input type="radio" name="genre" value="male" id="male"<%= user.genre == "male" ? "checked" : null %> required> <label for="male"> Masculino</label>
-                    <input type="radio" name="genre" value="fem" id="female"<%= user.genre == "fem" ? "checked" : null %> required> <label for="female"> Femenino</label>
+                    <input type="radio" name="genre" value="male" id="male"<%= user.genre == "male" ? "checked" : null %> required> <label for="male"> Masculino </label>
+                    <input type="radio" name="genre" value="fem" id="female"<%= user.genre == "fem" ? "checked" : null %> required> <label for="female"> Femenino </label>
                     <input type="radio" name="genre" value="other" id="other"<%= user.genre == "other" ? "checked" : null %> required> <label for="other"> Otro</label>
             </div>
 
-        <p>Mis pedidos</p>
-    </div>
+        <p>Mis pedidos:</p>
+        <div class="">
+            <p>pedidos</p>
+        </div>
+    
     <button> 
             <a id="delete" href="/users/delete/<%= user.id %>">Borrar</a>
     </button>
     <button>
         <a id="edit" href="/users/edit/<%= user.id %>">Editar</a>
-    </button>
-
+    </button> 
+</div>
     <%-include('./partials/footer') %> 
 </body>
 </html>

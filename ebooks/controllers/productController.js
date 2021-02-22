@@ -67,7 +67,17 @@ const productController = {
         return res.redirect('/paginadeproducto'); */
     },
     delete: (req, res) => {
-        let id = req.params.id;
+
+
+        db.products.destroy({
+            where: {id: req.params.id}
+            .then(function(products) {
+                res.render('home');
+            })
+        })
+
+
+       /*  let id = req.params.id;
         let productoEncontrado = productos.find(function (producto) {
             return producto.id == id;
         });
@@ -79,7 +89,7 @@ const productController = {
             res.send("Producto Eliminado");
         } else {
             res.send("Producto No Encontrado");
-        }
+        } */
     },
     detail: function(req, res){
         db.products.findByPk(req.params.id)

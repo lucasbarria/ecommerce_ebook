@@ -1,24 +1,69 @@
-div label {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
-    font-size: 30px;
-}
-
-#profile {
-    display: flex;
     align-items: center;
     flex-direction: column;
-    margin-left: 50%;
-    margin-right: 50%;
+    flex-wrap: wrap;
+}
+header {
+    width: 100%;
+}
+h2 {
+    font-size: xx-large;
+    padding: 10px;
+    color: #727272;
+    padding-top: 40px;
+}
+#profile{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    flex-direction: column;
+}
+.name {
+    display: inline-flex;
+    font-size: x-large;
+    padding: 20px;
+}
+.name p {
+    padding-left: 5px;
+    border: 1px solid black;
 }
 
+.email {
+    display: inline-flex;
+    font-size: x-large;
+    padding: 20px;
+    padding-left: 40px;
+}
+.email p {
+    padding-left: 5px;
+}
+
+.Bdate{
+    display: flex;
+    font-size: x-large;
+    padding: 20px;
+}
+.Bdate p {
+    padding-left: 5px;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
 #genre{
     display: flex;
-    align-content: center;
-    flex-direction: row;
+    padding: 30px;
 }
-
 #genre label {
-    font-size: 22px;
+    padding: 5px;
 }
