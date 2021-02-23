@@ -19,13 +19,13 @@ const productController = {
             category: req.body.category,
             editorial: req.body.editorial
         }).then(function (product){
-            res.render('home', {product: product.product})
+            res.render('home', {products: product})
         });
     },
     edit: function (req, res) {
         db.products.findByPk(req.params.id)
         .then(function(product){
-            res.render('productEdit', {product: product.product});
+            res.render('productEdit', {products: product});
         })
 
         /* let id = req.params.id;
