@@ -15,7 +15,7 @@ const userController = {
                 req.session.user = {id: userFound.id, name: userFound.name};
                 res.redirect("/");
             }else{
-                res.send('error')
+                res.send('error');
             }
         })
     },

@@ -19,6 +19,10 @@ const indexController = {
       },
     editar: function(req, res, next) {
       res.render('userEdit');
+    },
+    search: function(req, res, next) {
+      var value = req.body.value;
+      console.log(value)
     }
 }
 
