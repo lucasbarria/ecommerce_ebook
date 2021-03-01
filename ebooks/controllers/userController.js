@@ -81,7 +81,7 @@ const userController = {
     update: function (req, res){
 
         db.users.update({
-            name: req.body.name,
+        name: req.body.name,
         email: req.body.email,
         password: req.body.password,
         date: req.body.date,
