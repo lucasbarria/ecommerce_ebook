@@ -1,4 +1,3 @@
-const fs = require('fs');
 const db = require('../dataBase/models');
 const products = require('../dataBase/models/products');
 
@@ -17,7 +16,10 @@ const productController = {
             descripction: req.body.description,
             image: req.body.image,
             category: req.body.category,
-            editorial: req.body.editorial
+            editorial: req.body.editorial,
+        },
+        {
+            limit: 4
         }).then(function (product){
             res.render('home', {product: product.product})
         });

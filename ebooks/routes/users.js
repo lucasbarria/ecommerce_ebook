@@ -9,7 +9,7 @@ router.get('/register', usermiddleware.userlogged, userController.create);
 router.post('/register', [
     check('name').notEmpty().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),
-    check('pass').isLength({min:8}).withMessage('La contrasena debe tener al menos 8 caracteres'),
+    check('pass').isLength({min:6}).withMessage('La contrasena debe tener al menos 6 caracteres'),
     check('user')
 ], userController.store);
 

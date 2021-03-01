@@ -1,5 +1,6 @@
 const fs = require('fs');
 let usersList = [];
+const db = require('../dataBase/models');
 
 const userMiddleware = {
     userlogged: function(req, res, next) {
@@ -16,6 +17,12 @@ const userMiddleware = {
         }
         next();
     },
+    admin: function(req,res ,next){
+       if(db.users.admin == 1){
+           console.log('llego'); 
+       }
+       next()
+    }
 }
 
 module.exports = userMiddleware;

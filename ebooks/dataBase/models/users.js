@@ -9,7 +9,8 @@ module.exports = function (sequelize, dataTypes){
         email: dataTypes.STRING,
         password: dataTypes.STRING,
         date: dataTypes.INTEGER,
-        genre: dataTypes.STRING
+        genre: dataTypes.STRING,
+        admin: dataTypes.INTEGER
     },{
         tableName: "users",
         timestamps: false
