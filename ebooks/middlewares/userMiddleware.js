@@ -6,7 +6,7 @@ const db = require('../dataBase/models');
 const userMiddleware = {
     userlogged: function(req, res, next) {
         if(req.session && req.session.user){
-            /*res.locals.usuario = req.session.usuario;*/
+            /* res.locals.usuario = req.session.usuario; */
             res.send('error')
         }else {
             next()
@@ -20,28 +20,34 @@ const userMiddleware = {
     },
     admin: function(req,res ,next){
         // ver admin
-        var admin = db.users.admin;
-       if(admin != 1){
-           res.send('no tenes acceso');
-       }else next()
+        if(req.session && req.session.user){
+            var id = req.session.user.id;
+            db.users.findOne({where: {id: id}}).then(function(userFound){
+                console.log(userFound);
+                if(userFound.admin == '1'){
+                        return next()
+                }else {
+                        res.send('error')
+    }
+            })
+        }else{
+            res.send('no estas logueado')
+        }
+       
     },
     validateEmail: function(req, res, next) {
         var email = req.body.email
         db.users.findOne({where: {email: email}}).then(function(userFound){
-            if(userFound.email == email){
+            console.log(userFound);
+            if(userFound && userFound.email == email){
                 return res.send('dos igaules')
             }else {
                 next()
             }
         })
-       
-       
-        /* var email = req.body.email
-        let user = req.body
-        db.users.findOne({where: {email: user.email}}).then(function(userFound){
-                  
-        }) */
     }
 }
 
 module.exports = userMiddleware;
+
+

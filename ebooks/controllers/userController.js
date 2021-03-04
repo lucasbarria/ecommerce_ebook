@@ -12,7 +12,7 @@ const userController = {
         let user = req.body;
         db.users.findOne({where: {email: user.email}}).then(function(userFound){
             if(userFound.password == user.pass){
-                req.session.user = {id: userFound.id, name: userFound.name};
+                req.session.user = userFound;
                  return res.redirect("/");
             }else {
                 return res.send("error");
@@ -36,7 +36,7 @@ const userController = {
                 password: req.body.pass,
                 date: req.body.date,
                 genre: req.body.genre,
-                admin: db.users.admin
+                admin: 0
             }).then(function (user){
                 if(user){
                     req.session.user = {id: user.id, name: user.name, admin: user.admin}
