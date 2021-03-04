@@ -5,7 +5,7 @@ const usermiddleware = require('../middlewares/userMiddleware');
 var router = express.Router();
 
 // Creación de usuarios
-router.get('/register', usermiddleware.userlogged, userController.create);
+router.get('/register',usermiddleware.userlogged, userController.create);
 router.post('/register', [
     check('name').notEmpty().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),

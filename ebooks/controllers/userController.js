@@ -36,10 +36,11 @@ const userController = {
                 email: req.body.email,
                 password: req.body.pass,
                 date: req.body.date,
-                genre: req.body.genre
+                genre: req.body.genre,
+                admin: db.users.admin
             }).then(function (user){
                 if(user){
-                    req.session.user = {id: user.id, name: user.name}
+                    req.session.user = {id: user.id, name: user.name, admin: user.admin}
                 }
                 res.redirect('/')
             });

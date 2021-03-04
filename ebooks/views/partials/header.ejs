@@ -18,13 +18,19 @@
           <a href="/users/profile/<%= user.id%>"><p><%= user.name %></p></a> 
           <a href="/users/logout" id="logout">Cerrar sesion</a>
           <br>
+          <%if(user.admin == '1'){%>
+            <%=console.log(user.admin)%>
+            <a href="">soy diferente</a>
+          <%}else{%>
+            <a href="">no soy diferente</a>
+          <%}%>
           <a href="#category">Categorias - </a>
           <a href="#"><span>10 </span><i class="fas fa-shopping-cart"></i></a>
         <% }else { %>
           <a href="/users/register"> Registrarse -</a>
           <a href="/users/login"> Ingresar</a>
           <a href="#category"> - Categorias</a>
-        <% } %>
+        <% } %> 
       </div>
     </div>
     <script src="../js/search.js"></script>

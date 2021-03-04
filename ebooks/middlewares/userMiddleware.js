@@ -18,10 +18,10 @@ const userMiddleware = {
         next();
     },
     admin: function(req,res ,next){
-       if(db.users.admin == 1){
-           console.log('llego'); 
-       }
-       next()
+        var admin = db.users.admin;
+       if(admin != 1){
+           res.send('no tenes acceso');
+       }else next()
     }
 }
 

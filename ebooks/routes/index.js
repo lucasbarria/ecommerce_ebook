@@ -4,7 +4,7 @@ const indexController = require('../controllers/indexController');
 const usermiddleware = require('../middlewares/userMiddleware');
 
 /* GET home page. */
-router.get('/', usermiddleware.admin, indexController.home);
+router.get('/', indexController.home);
 router.get('/productDetail/:id', indexController.productDetail);
 router.get('/cart', indexController.productCart);
 router.get('/search', indexController.search);
