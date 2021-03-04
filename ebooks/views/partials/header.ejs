@@ -13,13 +13,14 @@
       </div>
       <div  class="header-personal"> 
 
-        
+        <!-- admin undefined -->
         <% if(typeof user != 'undefined'){ %>
+          
           <a href="/users/profile/<%= user.id%>"><p><%= user.name %></p></a> 
           <a href="/users/logout" id="logout">Cerrar sesion</a>
           <br>
-          <%if(user.admin == '1'){%>
-            <%=console.log(user.admin)%>
+          <%if(user.admin == 1){%>
+            <%= console.log(user.admin) %>
             <a href="">soy diferente</a>
           <%}else{%>
             <a href="">no soy diferente</a>

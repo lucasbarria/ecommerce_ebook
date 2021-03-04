@@ -2,10 +2,11 @@ let { check, validationResult, body} = require('express-validator');
 var express = require('express');
 const userController = require('../controllers/userController');
 const usermiddleware = require('../middlewares/userMiddleware');
+const { user } = require('../controllers/apisController');
 var router = express.Router();
 
 // Creación de usuarios
-router.get('/register',usermiddleware.userlogged, userController.create);
+router.get('/register',usermiddleware.userlogged, usermiddleware.validateEmail, userController.create);
 router.post('/register', [
     check('name').notEmpty().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),

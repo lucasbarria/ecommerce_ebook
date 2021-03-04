@@ -99,7 +99,7 @@ window.addEventListener('load', function(){
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        
+        //NO ANDA EL IF
         if(campos.name && campos.email && campos.password && campos.password2 && campos.date){
             console.log("todo ok")
         } else {

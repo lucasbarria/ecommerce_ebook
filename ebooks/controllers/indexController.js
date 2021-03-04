@@ -21,6 +21,7 @@ const indexController = {
       res.render('userEdit');
     },
     search: function(req, res, next) {
+      //que busque por todo no solo por nonmbre
       let value = req.query.textbox
       db.products.findAll({where: {name: value}})
       .then(function(product){

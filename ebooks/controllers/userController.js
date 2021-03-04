@@ -8,13 +8,14 @@ const userController = {
         res.render("login");
       },
     loggedin: function(req, res, next){
+        //inconvenientes con el if
         let user = req.body;
         db.users.findOne({where: {email: user.email}}).then(function(userFound){
             if(userFound.password == user.pass){
                 req.session.user = {id: userFound.id, name: userFound.name};
-                res.redirect("/");
+                 return res.redirect("/");
             }else {
-                res.send("error");
+                return res.send("error");
             }
         })
     },
@@ -28,6 +29,7 @@ const userController = {
         res.render('register')
     },
     store: function (req, res){
+        //revisar admin y email
             db.users.create({
                 name: req.body.name,
                 email: req.body.email,
