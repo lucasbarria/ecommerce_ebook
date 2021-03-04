@@ -21,8 +21,11 @@ const indexController = {
       res.render('userEdit');
     },
     search: function(req, res, next) {
-      var value = req.body.value;
-      console.log(value)
+      let value = req.query.textbox
+      db.products.findAll({where: {name: value}})
+      .then(function(product){
+        return res.render('productDetail', {product});
+      })
     }
 }
 

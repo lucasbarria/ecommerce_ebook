@@ -1,5 +1,4 @@
 const fs = require('fs');
-let usersList = [];
 let { check, validationResult, body} = require('express-validator');
 const db = require('../dataBase/models');
 
@@ -14,8 +13,8 @@ const userController = {
             if(userFound.password == user.pass){
                 req.session.user = {id: userFound.id, name: userFound.name};
                 res.redirect("/");
-            }else{
-                res.send('error');
+            }else {
+                res.send("error");
             }
         })
     },
@@ -29,8 +28,6 @@ const userController = {
         res.render('register')
     },
     store: function (req, res){
-        /* let errors = validationResult(req); */
-        /* if(errors.isEmpty()){ */
             db.users.create({
                 name: req.body.name,
                 email: req.body.email,
@@ -44,30 +41,6 @@ const userController = {
                 }
                 res.redirect('/')
             });
-       /*  } else {
-            console.log(errors.mapped());
-            res.render('register', {errors: errors.errors});
-        } */
-
-
-
-        /*if(errors.isEmpty()) {
-
-            let nuevoId = usersList.length > 0 ? usersList[usersList.length - 1].id + 1 : 1;
-            let users = {
-            // id: req.body.id,
-            id: nuevoId,
-            nombre: req.body.name,
-            email: req.body.email,
-            pass: req.body.pass,
-            date: req.body.date,
-            Usuario: req.body.usuario
-            }
-            usersList.push(users);
-            
-        } else {
-            res.render('register', {errors: errors.errors});
-        }*/
     },
     edit: function (req, res){
        db.users.findByPk(req.params.id).then(function(userFound){
@@ -82,7 +55,7 @@ const userController = {
     update: function (req, res){
 
         db.users.update({
-            name: req.body.name,
+        name: req.body.name,
         email: req.body.email,
         password: req.body.password,
         date: req.body.date,
@@ -92,23 +65,8 @@ const userController = {
             where: {id: req.params.id}
         });
         res.redirect('/profile/' + req.params.id)
-        /* let id = req.params.id;
-        let editUser = req.body;
-        let usersListEdit = usersList.map(function(userFound){
-            if (userFound.id == id){
-                userFound = {
-                    id: req.params.id,
-                    ...editUser
-                }
-            }
-            return userFound;
-        });
-        
-        return res.redirect('/'); */
     },
     delete: function (req, res){
-
-
         db.users.destroy({
             where: {id: req.params.id}
             .then(function(users) {
@@ -116,31 +74,12 @@ const userController = {
             })
         })
 
-        /* let id = req.params.id;
-        let userFound;
-        for(let i=0; i<usersList.length; i++){
-            if (usersList[i].id == id){
-                userFound = usersList[i];
-                break;
-            }
-        }
-        if (userFound){
-            let deleteUser = usersList.filter(function(userFound){
-                return userFound.id != id;
-            });
-            deleteUserJSON = JSON.stringify(deleteUser);
-            
-            res.send("Usuario Eliminado");
-        }else {
-            res.send("Usuario No Encontrado");
-        } */
     },
     userProfile: function(req, res, next) {
         db.users.findByPk(req.params.id)
         .then(function(user) {
             return res.render('profile', {user})
         })
-       
     }
 }
 
