@@ -22,9 +22,13 @@ const indexController = {
     },
     search: function(req, res, next) {
       let value = req.query.textbox
-      db.products.findAll({where: {name: value}})
+      db.products.findOne({where: {name: value}})
       .then(function(product){
-        return res.render('productDetail', {product});
+        if (product){
+          return res.render('productDetail', {product});
+        } else {
+          return res.send('Libro no encontrado');
+        }
       })
     }
 }
