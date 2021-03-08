@@ -16,4 +16,9 @@ router.get("/delete/:id",productController.delete);
 
 //detalle de producto
 router.get("/:id", productController.detail);
+
+//listado de busqueda
+router.get("/list", productController.list);
+
+
 module.exports = router;

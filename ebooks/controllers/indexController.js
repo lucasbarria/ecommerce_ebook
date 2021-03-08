@@ -1,5 +1,7 @@
+const { Sequelize } = require('../dataBase/models');
 const db = require('../dataBase/models');
 const products = require('../dataBase/models/products');
+const Op = Sequelize.Op;
 
 const indexController = {
     home: function(req, res, next) {
@@ -15,15 +17,18 @@ const indexController = {
         })
     },
     productCart: function(req, res) {
-        res.render("productCart");
-      },
+      db.products.findByPk(req.params.id)
+                 .then(function(products){
+                   return  res.render("productCart", {products: products});
+                 });
+    },
     editar: function(req, res, next) {
       res.render('userEdit');
     },
     search: function(req, res, next) {
       //que busque por todo no solo por nonmbre
       let value = req.query.textbox
-      db.products.findOne({where: {name: value}})
+      db.products.findOne({where: {name: {[db.Sequelize.Op.like]:value}}})
       .then(function(product){
         if (product){
           return res.render('productDetail', {product});
@@ -31,7 +36,7 @@ const indexController = {
           return res.send('Libro no encontrado');
         }
       })
-    }
+    },
 }
 
 module.exports = indexController

@@ -16,23 +16,19 @@
       <main>
         <div id="products">
           <h2>Carrito</h2>
-          <div>
-            <img src="image/administracion de empresas.jpg" alt="book">
-            <h3>Titulo</h3>
-            <p>Precio</p>
-          </div>
-          <div>
-            <img src="image/la era de la revolucion.webp" alt="book">
-            <h3>Titulo</h3>
-            <p>Precio</p>
-          </div>
+            <% for(i=0; i<=products.lenght; i++){%>
+              <div>
+                <p>products.name</p>
+                <p>products.precio</p>
+              </div>
+            <%}%>           
         </div>
         <div id="purchase">
             <button type="button">Seguir Comprando</button>
             <button type="reset">Vaciar Carrito</button>
           <div>
             <h4>Precio Total</h4>
-            <button type="button">Comprar</button>
+            <button type="button">Finalizar comprar</button>
           </div>  
         </div>
       </main>

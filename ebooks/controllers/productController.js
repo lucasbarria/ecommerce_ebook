@@ -96,9 +96,12 @@ const productController = {
     detail: function(req, res){
         db.products.findByPk(req.params.id)
                  .then(function(products){
-                   return  res.render('productDetail', {products});
+                   return  res.render('productDetail', {products: products});
         })
-    }
+    },
+    list: function(req,res) {
+        res.render('productlist');
+      }
     
 }
 

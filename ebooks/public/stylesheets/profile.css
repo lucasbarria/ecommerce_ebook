@@ -9,10 +9,12 @@ body {
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+    background-color: #f8f2f2;
 }
 header {
     width: 100%;
 }
+
 h2 {
     font-size: xx-large;
     padding: 10px;
@@ -26,22 +28,30 @@ h2 {
     align-items: center;
     margin: 40px;
     flex-direction: column;
+    background-color: rgb(247, 236, 236);
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 20px;
 }
 .name {
     display: inline-flex;
     font-size: x-large;
-    padding: 20px;
+    padding: 15px;
+    border: black solid 1px;
+    border-radius: 5px;
 }
 .name p {
     padding-left: 5px;
-    border: 1px solid black;
 }
 
 .email {
     display: inline-flex;
     font-size: x-large;
-    padding: 20px;
+    margin: 10px;
+    padding: 15px;
     padding-left: 40px;
+    border: black solid 1px;
+    border-radius: 5px;
 }
 .email p {
     padding-left: 5px;
@@ -50,7 +60,10 @@ h2 {
 .Bdate{
     display: flex;
     font-size: x-large;
-    padding: 20px;
+    padding: 15px;
+    border: black solid 1px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 .Bdate p {
     padding-left: 5px;
@@ -66,4 +79,7 @@ h3{
 }
 #genre label {
     padding: 5px;
+}
+.orders{
+    padding-bottom: 30px
 }

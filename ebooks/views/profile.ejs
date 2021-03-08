@@ -18,12 +18,13 @@
             </div>
     </header>
 
-             <h2>Mi perfil</h2>
+            
     <div id="profile">
 
-        <p>Nombre: </p>
+        
         <div class="name">
-                    <p> <%= user.name %></p>
+            <p>Nombre: </p>
+            <p> <%= user.name %></p>
         </div>
 
         <div class="email">
@@ -43,18 +44,21 @@
                     <input type="radio" name="genre" value="other" id="other"<%= user.genre == "other" ? "checked" : null %> required> <label for="other"> Otro</label>
             </div>
 
-        <p>Mis pedidos:</p>
-        <div class="">
-            <p>pedidos</p>
+        <div class="orders">
+            <h3>Mis pedidos:</h3> 
+            
         </div>
-    
-    <button> 
-            <a id="delete" href="/users/delete/<%= user.id %>">Borrar</a>
+    <div>
+        <button> 
+            <a id="delete" href="/users/delete/<%= user.id %>">Borrar usuario</a>
     </button>
     <button>
         <a id="edit" href="/users/edit/<%= user.id %>">Editar</a>
     </button> 
+    </div>
 </div>
     <%-include('./partials/footer') %> 
+    <script src="../public/js/myprofile.js"></script>
 </body>
+
 </html>
