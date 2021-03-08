@@ -28,13 +28,20 @@ const indexController = {
     search: function(req, res, next) {
       //que busque por todo no solo por nonmbre
       let value = req.query.textbox
-      db.products.findOne({where: {name: {[db.Sequelize.Op.like]:value}}})
+      db.products.findAll({where: 
+        { [db.Sequelize.Op.or]: {
+          name: {[db.Sequelize.Op.like]: "%"+ value +'%' },
+          editorial: {[db.Sequelize.Op.like]: "%"+ value +'%' },
+          category: {[db.Sequelize.Op.like]: "%"+ value +'%' }}
+      } 
+     })
       .then(function(product){
-        if (product){
+        res.json(product);
+       /*  if (product){
           return res.render('productDetail', {product});
         } else {
           return res.send('Libro no encontrado');
-        }
+        } */
       })
     },
 }
