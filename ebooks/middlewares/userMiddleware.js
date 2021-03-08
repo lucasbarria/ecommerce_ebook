@@ -19,17 +19,20 @@ const userMiddleware = {
         next();
     },
     admin: function(req,res ,next){
-        // ver admin
-        var admin = db.users.admin;
-       if(admin != 1){
-           res.send('no tenes acceso');
-       }else next()
+        var id = req.session.user.id
+        db.users.findOne({where: {id: id}}).then(function(userFound){
+            if(userFound && userFound.email == email){
+                return res.send('dos iguales')
+            }else {
+                next()
+            }
+        })
     },
     validateEmail: function(req, res, next) {
         var email = req.body.email
         db.users.findOne({where: {email: email}}).then(function(userFound){
-            if(userFound.email == email){
-                return res.send('dos igaules')
+            if(userFound && userFound.email == email){
+                return res.send('dos iguales')
             }else {
                 next()
             }
