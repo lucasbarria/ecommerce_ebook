@@ -26,15 +26,14 @@ const indexController = {
       res.render('userEdit');
     },
     search: function(req, res, next) {
-      //que busque por todo no solo por nonmbre
       let value = req.query.textbox
       db.products.findAll({where: 
         { [db.Sequelize.Op.or]: {
           name: {[db.Sequelize.Op.like]: "%"+ value +'%' },
           editorial: {[db.Sequelize.Op.like]: "%"+ value +'%' },
-          category: {[db.Sequelize.Op.like]: "%"+ value +'%' }}
-      } 
-     })
+          category: {[db.Sequelize.Op.like]: "%"+ value +'%' }
+      }
+    }})
       .then(function(product){
         res.json(product);
        /*  if (product){

@@ -11,9 +11,10 @@ window.addEventListener('load', function(){
     const campos = {
         name: false,
         email: false,
-        password: false,
-        password2: false,
+        pass: false,
+        pass2: false,
         date: false,
+        genre: false
     }
 
     function setError(input, message) {
@@ -30,7 +31,6 @@ window.addEventListener('load', function(){
         const error = div.querySelector('p');
         input.style.borderColor = '#10DF0D';
         error.className = 'error';
-        console.log('este es el input:', input.name);
         campos[input.name] = true;
     }
 
@@ -68,7 +68,7 @@ window.addEventListener('load', function(){
                 } else if (passwordValue.length < 8){
                     setError(password, 'La contraseña debe tener al menos 8 caracteres');
                 } else {
-                    setSucces(password);
+                    setSucces(pass);
                 }
             break;
 
@@ -80,7 +80,7 @@ window.addEventListener('load', function(){
                 } else if (password2Value !== passwordValue){
                     setError(password2, 'Las contrasñeas no coinciden');
                 } else {
-                    setSucces(password2);
+                    setSucces(pass2);
                 }
             break;
 
@@ -100,9 +100,14 @@ window.addEventListener('load', function(){
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        //NO ANDA EL IF
-        console.log(campos)
-        if(campos.name && campos.email && campos.password && campos.password2 && campos.date){
+
+        for (let i = 0; i < genre.length; i++){
+            if (genre[i].checked){
+                campos.genre = true
+            }
+        }
+
+        if(campos.name && campos.email && campos.pass && campos.pass2 && campos.date && campos.genre){
             console.log("todo ok")
         } else {
             console.log("no se envia")
