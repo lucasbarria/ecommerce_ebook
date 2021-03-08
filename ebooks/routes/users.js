@@ -6,8 +6,8 @@ const { user } = require('../controllers/apisController');
 var router = express.Router();
 
 // Creación de usuarios
-router.get('/register',usermiddleware.userlogged, usermiddleware.validateEmail, userController.create);
-router.post('/register', [
+router.get('/register',usermiddleware.userlogged, userController.create);
+router.post('/register', usermiddleware.validateEmail,[
     check('name').notEmpty().withMessage('Este campo esta incompleto'),
     check('email').isEmail().withMessage('Email invalido'),
     check('pass').isLength({min:6}).withMessage('La contrasena debe tener al menos 6 caracteres'),

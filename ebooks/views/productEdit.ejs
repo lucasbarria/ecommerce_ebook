@@ -13,7 +13,7 @@
 
 <body>
     <%-include('./partials/header') %>
-    <form class="form" action="/products/edit" method="POST">
+    <form class="form" action="/products/edit/<%=product.id%>" method="POST">
         <div>
             <label for="name">Nombre del producto:</label>
             <input type="text" name="name" value="<%= product.name %>">

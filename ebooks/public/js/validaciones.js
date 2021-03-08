@@ -22,7 +22,7 @@ window.addEventListener('load', function(){
         const error = div.querySelector('p');
         error.innerText = message;
         error.className = 'error-activo';
-        campos[input] = false;
+        campos[input.name] = false;
     }
 
     function setSucces(input){
@@ -30,7 +30,8 @@ window.addEventListener('load', function(){
         const error = div.querySelector('p');
         input.style.borderColor = '#10DF0D';
         error.className = 'error';
-        campos[input] = true;
+        console.log('este es el input:', input.name);
+        campos[input.name] = true;
     }
 
     function checkInputs(e) {
@@ -100,6 +101,7 @@ window.addEventListener('load', function(){
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         //NO ANDA EL IF
+        console.log(campos)
         if(campos.name && campos.email && campos.password && campos.password2 && campos.date){
             console.log("todo ok")
         } else {

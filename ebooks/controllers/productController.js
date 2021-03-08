@@ -27,7 +27,7 @@ const productController = {
     edit: function (req, res) {
         db.products.findByPk(req.params.id)
         .then(function(product){
-            res.render('productEdit', {products: product});
+            res.render('productEdit', {product: product});
         })
 
         /* let id = req.params.id;
@@ -96,9 +96,12 @@ const productController = {
     detail: function(req, res){
         db.products.findByPk(req.params.id)
                  .then(function(products){
-                   return  res.render('productDetail', {products});
+                   return  res.render('productDetail', {products: products});
         })
-    }
+    },
+    list: function(req,res) {
+        res.render('productlist');
+      }
     
 }
 

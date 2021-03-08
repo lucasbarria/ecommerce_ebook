@@ -25,7 +25,7 @@
                         value="<%= userFound.name %>" required>
                     <input type="email" name="email" id="email" placeholder="E-mail" value="<%= userFound.email %>"
                         required>
-                    <input type="password" name="pass" id="pass" placeholder="Elegi tu contraseña" required>
+                    <input type="password" name="pass" id="pass" placeholder="Contraseña" required>
                 </div>
                 <div id="dateOfBirthay">
                     <h3>Fecha de nacimiento</h3>
@@ -39,7 +39,7 @@
                         Femenino</label>
                     <input type="radio" name="genre" value="other" id="other"<%= userFound.genre == "other" ? "checked" : null %> required> <label for="other"> Otro</label>
                 </section>
-                <div id="login">
+                <div id="useredit">
                     <button type="submit">Editar</button>
                     <button> 
                         <a id="delete" href="/users/delete/<%= user.id %>">Borrar</a>
