@@ -11,5 +11,7 @@ router.get('/cart', indexController.productCart);
 /* Search bar */
 router.get('/search', indexController.search)
 
+router.get('/purchaseCompleted', indexController.purchaseComplete);
+
 
 module.exports = router;

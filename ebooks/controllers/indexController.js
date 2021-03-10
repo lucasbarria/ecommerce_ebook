@@ -43,6 +43,9 @@ const indexController = {
         } */
       })
     },
+    purchaseComplete: function(req, res){
+      res.render('purchase_completed');
+    }
 }
 
 module.exports = indexController

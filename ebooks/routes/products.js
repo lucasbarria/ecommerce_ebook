@@ -3,8 +3,10 @@ var router = express.Router();
 const productController = require('../controllers/productController');
 const usermiddleware = require('../middlewares/userMiddleware');
 
+
 // Creación de productos
-router.get('/create', usermiddleware.admin,productController.create);
+router.get('/create', usermiddleware.admin, productController.create);
+
 router.post('/create', productController.store);
 
 // Edicion de productos 

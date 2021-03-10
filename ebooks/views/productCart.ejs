@@ -16,10 +16,10 @@
       <main>
         <div id="products">
           <h2>Carrito</h2>
-            <% for(i=0; i<=products.lenght; i++){%>
+            <% for(i=0; i<=product.lenght; i++){%>
               <div>
-                <p>products.name</p>
-                <p>products.precio</p>
+                <p>product.name</p>
+                <p>product.precio</p>
               </div>
             <%}%>           
         </div>
@@ -28,7 +28,7 @@
             <button type="reset">Vaciar Carrito</button>
           <div>
             <h4>Precio Total</h4>
-            <button type="button">Finalizar comprar</button>
+            <a href="/purchaseCompleted"><button type="button">Finalizar comprar</button></a>
           </div>  
         </div>
       </main>
