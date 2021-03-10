@@ -108,9 +108,9 @@ window.addEventListener('load', function(){
         }
 
         if(campos.name && campos.email && campos.pass && campos.pass2 && campos.date && campos.genre){
-            console.log("todo ok")
+            this.submit();
         } else {
-            console.log("no se envia")
+            alert('Tenes campos incompletos');
         }
     });
 

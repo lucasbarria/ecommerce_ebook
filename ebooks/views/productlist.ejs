@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/header-footer.css">
     <title>Document</title>
 </head>
 <body>
     <%-include('./partials/header') %>
-    <div>
-        <img src="" alt="">
-        <img src="" alt="">
-    </div>
+    
+    <ul>
+        <% for(let i = 0; i <= productList.length; i++){ %>
+            <li><%= productList[i] %></li>
+        <% } %>
+    </ul>
+
     <%-include('./partials/footer') %> 
 </body>
 </html>

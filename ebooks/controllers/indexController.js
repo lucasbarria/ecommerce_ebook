@@ -35,16 +35,18 @@ const indexController = {
       }
     }})
       .then(function(product){
-        res.json(product);
-       /*  if (product){
-          return res.render('productDetail', {product});
+        if (product){
+          let productList = [];
+          productList.push(product)
+          console.log(productList)
+          return res.render('productList', {productList});
         } else {
           return res.send('Libro no encontrado');
-        } */
+        }
       })
     },
     purchaseComplete: function(req, res){
-      res.render('purchase_completed');
+      res.render('purchaseCompleted');
     }
 }
 
