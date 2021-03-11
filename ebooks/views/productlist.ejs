@@ -11,8 +11,8 @@
     <%-include('./partials/header') %>
     
     <ul>
-        <% for(let i = 0; i <= productList.length; i++){ %>
-            <li><%= productList[i] %></li>
+        <% for(let i = 0; i < product.length; i++){ %>
+            <li><%= product[i].name %></li>
         <% } %>
     </ul>
 

@@ -35,11 +35,9 @@ const indexController = {
       }
     }})
       .then(function(product){
+        console.log(product)
         if (product){
-          let productList = [];
-          productList.push(product)
-          console.log(productList)
-          return res.render('productList', {productList});
+          return res.render('productList', {product});
         } else {
           return res.send('Libro no encontrado');
         }

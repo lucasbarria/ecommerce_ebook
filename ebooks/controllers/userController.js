@@ -11,7 +11,7 @@ const userController = {
         //inconvenientes con el if
         let user = req.body;
         db.users.findOne({where: {email: user.email}}).then(function(userFound){
-            if(userFound.password == user.pass){
+            if(userFound != null && userFound.password == user.pass){
                 req.session.user = userFound;
                  return res.redirect("/");
             }/* else {
