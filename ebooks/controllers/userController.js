@@ -13,9 +13,15 @@ const userController = {
             if(userFound != null && userFound.password == user.pass){
                 req.session.user = userFound;
                  return res.redirect("/");
-            }else {
-                return res.send("error");
-            }
+            }/* else {
+                var error = {
+                    mensaje: 'error',
+                    status: 404,
+                }
+                return res.render('error', {error}); 
+            }*/
+        }).catch(function(e){
+            console.error(e.name + ': ' + e.message)
         })
     },
     logout: function(req, res, next){
