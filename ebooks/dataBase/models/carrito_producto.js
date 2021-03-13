@@ -14,5 +14,4 @@ module.exports = function (sequelize, dataTypes){
         timestamps: false
     })
     return product_cart;
-    //relacion carrito con producto y user
 };

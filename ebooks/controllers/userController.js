@@ -8,7 +8,6 @@ const userController = {
         res.render("login");
       },
     loggedin: function(req, res, next){
-        //inconvenientes con el if
         let user = req.body;
         db.users.findOne({where: {email: user.email}}).then(function(userFound){
             if(userFound != null && userFound.password == user.pass){

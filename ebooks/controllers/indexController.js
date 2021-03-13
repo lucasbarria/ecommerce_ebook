@@ -17,9 +17,17 @@ const indexController = {
         })
     },
     productCart: function(req, res) {
-      db.products.findByPk(req.params.id)
-                 .then(function(products){
-                   return  res.render("productCart", {products: products});
+      let userLogged = req.session.userLogged
+      console.log(userLogged)
+
+          db.cart.findOne({
+            where:{
+                user_id: userLogged.id,
+                state: "abierto"
+            }
+        })
+                 .then(function(cart){
+                   return  res.render("productCart", {cart});
                  });
     },
     editar: function(req, res, next) {

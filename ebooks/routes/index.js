@@ -6,6 +6,8 @@ const usermiddleware = require('../middlewares/userMiddleware');
 /* GET home page. */
 router.get('/', indexController.home);
 router.get('/productDetail/:id', indexController.productDetail);
+
+// Cart
 router.get('/cart/:id', indexController.productCart);
 
 /* Search bar */
