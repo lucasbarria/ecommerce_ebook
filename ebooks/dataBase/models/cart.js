@@ -1,29 +1,17 @@
-module.exports = (sequelize, DataTypes) => {
-    const cart = sequelize.define('cart', {
+module.exports = function (sequelize, dataTypes){
+    const cart = sequelize.define("cart", {
         id: {
-            type: DataTypes.BIGINT,
+            type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
-        },
-        id_user: DataTypes.BIGINT,
-        status: DataTypes.BOOLEAN
-    },
-    {
-        tableName: 'cart',
+        }, 
+        id_user: dataTypes.INTEGER,
+    },{
+        tableName: "cart",
         timestamps: false
     })
-
-    cart.associate = models => {
-        cart.belongsToMany(models.products, {
-            foreignKey: "id_cart",
-            otherKey: 'id_product',
-            through: models.cartProduct
-        }),
-
-        cart.belongsTo(models.users, {
-            foreignKey: "id_user"
-        })
+    cart.associate = function(models){
+        cart.belongsTo(models.users, {foreignKey: "id_user", as: "cart"})
     }
-
     return cart;
-}
+};

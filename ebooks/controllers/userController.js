@@ -72,8 +72,8 @@ const userController = {
                 genre: req.body.genre,
                 admin: 0
             }).then(function (user){
-                if(user){
-                    req.session.user = {id: user.id, name: user.name, admin: user.admin}
+                if(userFound){
+                    req.session.userFound = {id: user.id, name: user.name, admin: user.admin}
                 }
                 res.redirect('/')
             });
