@@ -39,7 +39,7 @@ const userMiddleware = {
         db.users.findOne({where: {email: email}}).then(function(userFound){
             console.log(userFound);
             if(userFound && userFound.email == email){
-                return res.send('dos igaules')
+                return res.send('Ya existe una cuenta con este email, porfavor crea otrao verfique su email')
             }else {
                 next()
             }

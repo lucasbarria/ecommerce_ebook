@@ -11,11 +11,12 @@ const userController = {
             {email: req.body.email},
             include: db.cart
         })
-        .then(function(user){
-                if(user && user.password == req.body.password){
+        .then(function(userFound){
+            if(userFound != null && userFound.password == user.pass){
+                req.session.user = userFound;
                 let cart = userFound.carts.find(cart => cart.status == true)
                 if (cart) {
-                    userFound = {
+                    req.session.userFound = {
                         name: user.name,
                         id: user.id,
                         id_cart: cart.id
@@ -26,7 +27,7 @@ const userController = {
                     status: 1,
                     id_user: user.id
                 }).then(cart => {
-                    userFound = {
+                    req.session.userFound = {
                         name: user.name,
                         id: user.id,
                         id_cart: cart.id
@@ -38,6 +39,18 @@ const userController = {
                 return res.send('El usuario y/o contraseña son incorrectos...')
         }
     })
+
+
+               /*  req.session.user = userFound;
+                return res.redirect("/");
+            } else {
+                var error = {
+                    mensaje: 'error',
+                    status: 404,
+                }
+                return res.render('error', {error}); 
+            }
+        }) */
     },
     logout: function(req, res, next){
         if(req.session){
@@ -58,8 +71,8 @@ const userController = {
                 genre: req.body.genre,
                 admin: 0
             }).then(function (user){
-                if(user){
-                    req.session.user = {id: user.id, name: user.name, admin: user.admin}
+                if(userFound){
+                    req.session.userFound = {id: user.id, name: user.name, admin: user.admin}
                 }
                 res.redirect('/')
             });
