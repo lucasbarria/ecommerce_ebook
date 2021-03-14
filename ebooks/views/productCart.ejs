@@ -18,13 +18,14 @@
           <h2>Carrito</h2>
             <% for(i=0; i<=products.length; i++){ %>
               <div>
-                <p><%=products.name%></p>
+                <p><%console.log(products)%></p>
                 <p><%=products.precio%></p>
               </div>
             <% } %>           
         </div>
+        <p><%=products.precio%></p>
         <div id="purchase">
-            <button type="button">Seguir Comprando</button>
+            <a href="/"><button type="button">Seguir Comprando</button></a>
             <button type="reset">Vaciar Carrito</button>
           <div>
             <h4>Precio Total</h4>

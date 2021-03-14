@@ -8,14 +8,14 @@ const cartController = {
     store: function(req, res){
         let userLogged = req.session.userLogged;
 
-        let cartLogged = db.Cart.findOne({
+        let cartLogged = db.cart.findOne({
             where:{
                 user_id: userLogged.id,
                 state: "abierto"
             }
         })
 
-        db.Cart_product.create({
+        db.cart_product.create({
             where:{
                 product_id: req.body.product_id,
                 cart_id: cartLogged.id
@@ -31,7 +31,7 @@ const cartController = {
     update: function(req, res){
         let userLogged = req.session.userLogged;
 
-        let cartLogged = db.Cart.findOne({
+        let cartLogged = db.cart.findOne({
             where:{
                 user_id: userLogged.id,
                 state: "abierto"
@@ -39,24 +39,26 @@ const cartController = {
         })
     },
     deleteProduct: function(req,res){
-        db.Cart_product.destroy({
+        db.cart_product.destroy({
             where:{
                 id: req.params.id
             }
         })
     },
     deleteCart: function(req,res){
-        db.Cart_product.destroy({
+        db.cart_product.destroy({
             where: {
                 cart_id: cartLogged.id
             }
         })
         
-        for(let i = 0; i < req.body.qty; i++){
-            db.Cart_product.create({
-                product_id: req.body.product_id[i],
+        for(let i = 0; i < req.body.quantity; i++){ 
+            db.cartProduct.create({
+                id_cart: req.body.id_cart[i],
+                price: req.body.price[i],
+                id_product: req.body.product_id[i],
                 cart_id: cartLogged.id,
-                qty: req.body.qty[i]
+                quantity: req.body.quantity[i]
             })
         }
     }    

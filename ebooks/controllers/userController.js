@@ -1,4 +1,3 @@
-const fs = require('fs');
 let { check, validationResult, body} = require('express-validator');
 const db = require('../dataBase/models');
 
@@ -8,22 +7,51 @@ const userController = {
         res.render("login");
       },
     loggedin: function(req, res, next){
-        //inconvenientes con el if
         let user = req.body;
-        db.users.findOne({where: {email: user.email}}).then(function(userFound){
+        db.users.findOne({where:
+            {email: user.email},
+            include: db.cart
+        })
+        .then(function(userFound){
             if(userFound != null && userFound.password == user.pass){
                 req.session.user = userFound;
-                 return res.redirect("/");
-            }/* else {
+                let cart = userFound.carts.find(cart => cart.status == true)
+                if (cart) {
+                    req.session.userFound = {
+                        name: user.name,
+                        id: user.id,
+                        id_cart: cart.id
+                    }
+                    return res.redirect('/')
+                }else{
+                db.cart.create({
+                    status: 1,
+                    id_user: user.id
+                }).then(cart => {
+                    req.session.userFound = {
+                        name: user.name,
+                        id: user.id,
+                        id_cart: cart.id
+                    }
+                    return res.redirect('/')
+                })
+        }
+        }else{
+                return res.send('El usuario y/o contraseña son incorrectos...')
+        }
+    })
+
+
+               /*  req.session.user = userFound;
+                return res.redirect("/");
+            } else {
                 var error = {
                     mensaje: 'error',
                     status: 404,
                 }
                 return res.render('error', {error}); 
-            }*/
-        }).catch(function(e){
-            console.error(e.name + ': ' + e.message)
-        })
+            }
+        }) */
     },
     logout: function(req, res, next){
         if(req.session){
@@ -90,6 +118,8 @@ const userController = {
         })
     }
 }
+
+
 
 
 module.exports = userController;

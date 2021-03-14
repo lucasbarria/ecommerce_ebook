@@ -27,6 +27,21 @@ const apiController = {
     },
     sales: function(req, res, next){
         
+    },
+    list: function(req, res){
+        db.users.findAll({users})
+        .then(function(users){
+
+            let response = {
+                meta: {
+                    status: 200,
+                    total: users.length,
+                    url: '/api/'
+                },
+                data: users
+            };
+            res.json(response);
+        })
     }
 };
 

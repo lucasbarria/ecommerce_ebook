@@ -6,7 +6,7 @@ const usermiddleware = require('../middlewares/userMiddleware');
 /* GET home page. */
 router.get('/', indexController.home);
 router.get('/productDetail/:id', indexController.productDetail);
-router.get('/cart/:id', indexController.productCart);
+router.get('/cart/:id', usermiddleware.user,indexController.productCart);
 
 /* Search bar */
 router.get('/search', indexController.search)
