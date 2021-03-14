@@ -15,7 +15,7 @@ const userController = {
                 if(user && user.password == req.body.password){
                 let cart = userFound.carts.find(cart => cart.status == true)
                 if (cart) {
-                    req.session.userFound = {
+                    userFound = {
                         name: user.name,
                         id: user.id,
                         id_cart: cart.id
@@ -26,7 +26,7 @@ const userController = {
                     status: 1,
                     id_user: user.id
                 }).then(cart => {
-                    req.session.userFound = {
+                    userFound = {
                         name: user.name,
                         id: user.id,
                         id_cart: cart.id
@@ -38,18 +38,6 @@ const userController = {
                 return res.send('El usuario y/o contraseña son incorrectos...')
         }
     })
-
-
-               /*  req.session.user = userFound;
-                return res.redirect("/");
-            } else {
-                var error = {
-                    mensaje: 'error',
-                    status: 404,
-                }
-                return res.render('error', {error}); 
-            }
-        }) */
     },
     logout: function(req, res, next){
         if(req.session){

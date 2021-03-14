@@ -8,7 +8,8 @@ router.get('/', indexController.home);
 router.get('/productDetail/:id', indexController.productDetail);
 
 // Cart
-router.get('/cart/:id', indexController.productCart);
+router.get('/cart', indexController.productCart);
+router.get('/cart/:id', indexController.addToCart);
 
 /* Search bar */
 router.get('/search', indexController.search)

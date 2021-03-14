@@ -17,18 +17,44 @@ const indexController = {
         })
     },
     productCart: function(req, res) {
-      let userLogged = req.session.userLogged
-      console.log(userLogged)
+      db.cart.findOne({where:
+        {
+            id: req.session.user.id_cart
+        },
+        include: db.products
+      })
+      .then(function(cart){
+        return  res.render("productCart", {cart});
+      });
+    },
+    addToCart: function(req, res) {
+      const product_id = req.params.id;
+        db.cart.findByPk(req.session.user.id_cart, {include: db.products})
+        .then(cart => {
+            let prod = cart.products.find(p => p.id == product_id)
+            if(prod){
+                db.product_cart.findOne({where:{id_product: product_id, id_cart: req.session.user.id_cart}})
+                .then(product => {
+                    db.product_cart.update({
+                        cant: product.cant + 2
+                    },
+                    {
+                        where:{
+                            id_cart: req.session.user.id_cart,
+                            id_product: product_id
+                        }
+                    }).then(() =>{
+                        return res.redirect('/')
+                    })
 
-          db.cart.findOne({
-            where:{
-                user_id: userLogged.id,
-                state: "abierto"
+                })
+            }else{
+                cart.addProduct(product_id, { through: {cant: 1}})
+                .then(() =>{
+                    return res.redirect('/')
+                })
             }
         })
-                 .then(function(cart){
-                   return  res.render("productCart", {cart});
-                 });
     },
     editar: function(req, res, next) {
       res.render('userEdit');
