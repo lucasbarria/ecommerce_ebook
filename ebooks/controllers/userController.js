@@ -7,14 +7,12 @@ const userController = {
         res.render("login");
       },
     loggedin: function(req, res, next){
-        let user = req.body;
         db.users.findOne({where:
-            {email: user.email},
+            {email: req.body.email},
             include: db.cart
         })
-        .then(function(userFound){
-            if(userFound != null && userFound.password == user.pass){
-                req.session.user = userFound;
+        .then(function(user){
+                if(user && user.password == req.body.password){
                 let cart = userFound.carts.find(cart => cart.status == true)
                 if (cart) {
                     req.session.userFound = {
@@ -72,8 +70,8 @@ const userController = {
                 genre: req.body.genre,
                 admin: 0
             }).then(function (user){
-                if(userFound){
-                    req.session.userFound = {id: user.id, name: user.name, admin: user.admin}
+                if(user){
+                    req.session.user = {id: user.id, name: user.name, admin: user.admin}
                 }
                 res.redirect('/')
             });
