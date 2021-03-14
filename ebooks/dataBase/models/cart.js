@@ -6,6 +6,7 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true
         }, 
         id_user: dataTypes.INTEGER,
+        status: dataTypes.BOOLEAN
     },{
         tableName: "cart",
         timestamps: false

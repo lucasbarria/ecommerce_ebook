@@ -7,17 +7,16 @@ const userController = {
         res.render("login");
       },
     loggedin: function(req, res, next){
-        let user = req.body;
         db.users.findOne({where:
-            {email: user.email},
+            {email: req.body.email},
             include: db.cart
         })
-        .then(function(userFound){
-            if(userFound != null && userFound.password == user.pass){
-                req.session.user = userFound;
-                let cart = userFound.carts.find(cart => cart.status == true)
+        .then(function(user){
+            if(user != null && user.password == req.body.pass){
+                req.session.user = user;
+                let cart = user.carts.find(cart => cart.status == true)
                 if (cart) {
-                    userFound = {
+                    user = {
                         name: user.name,
                         id: user.id,
                         id_cart: cart.id
@@ -28,7 +27,7 @@ const userController = {
                     status: 1,
                     id_user: user.id
                 }).then(cart => {
-                    userFound = {
+                    user = {
                         name: user.name,
                         id: user.id,
                         id_cart: cart.id
