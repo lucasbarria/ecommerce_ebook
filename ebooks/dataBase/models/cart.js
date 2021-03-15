@@ -6,6 +6,7 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true
         }, 
         id_user: dataTypes.INTEGER,
+        status: dataTypes.BOOLEAN
     },{
         tableName: "cart",
         timestamps: false
@@ -13,9 +14,11 @@ module.exports = function (sequelize, dataTypes){
     cart.associate = function(models){
         cart.belongsTo(models.users, {foreignKey: "id_user"}),
         cart.belongsToMany(models.products, {
+            as: 'products',
             foreignKey: "id_cart",
             otherKey: "id_product",
-            through: models.product_cart
+            through: 'product_cart',
+            timestamps: false
         })
     }
     return cart;

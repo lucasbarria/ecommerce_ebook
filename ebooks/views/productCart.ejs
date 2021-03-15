@@ -17,10 +17,14 @@
         <div id="products">
           <h2>Carrito</h2>
               <div>
-  
+                <ul>
+                  <% for(let i = 0; i < cart.length; i++){ %>
+                    <li><%=  %></li>
+                  <% } %>
+                </ul>
               </div>        
         </div>
-        <p><%=products.precio%></p>
+        <p></p>
         <div id="purchase">
             <a href="/"><button type="button">Seguir Comprando</button></a>
             <button type="reset">Vaciar Carrito</button>

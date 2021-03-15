@@ -22,7 +22,6 @@ const userMiddleware = {
         if(req.session && req.session.user){
             var id = req.session.user.id;
             db.users.findOne({where: {id: id}}).then(function(userFound){
-                console.log(userFound);
                 if(userFound.admin == '1'){
                         return next()
                 }else {
