@@ -52,8 +52,8 @@ const indexController = {
       db.product_cart.create({
         id_cart: idCart,
         id_product: req.params.id
-      }).then(function(cart){
-        return res.render('productCart', {cart})
+      }).then(function(userCart){
+        return res.redirect('/cart')
       }).catch(function(error){
         return res.send(error)
       })
@@ -81,6 +81,23 @@ const indexController = {
     },
     purchaseComplete: function(req, res){
       res.render('purchaseCompleted');
+    },
+    delete: function(req, res){
+      /* let cart = req.session.user.carts[0].id
+      db.product_cart.destoy(
+        {where: {id:cart}}
+      )
+      .then(function(response){
+        res.redirect('/')
+      }) */
+        let idProduct = req.params.id;
+
+        db.product_cart.destroy({
+                where: { id_product: idProduct }
+            })
+            .then(function(response) {
+                res.redirect('/cart');
+            })
     }
 }
 

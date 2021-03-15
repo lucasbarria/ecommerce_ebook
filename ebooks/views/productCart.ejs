@@ -31,6 +31,7 @@
                           $<%= userCart[i].price %>
                         </div>
                     </div>
+                    <a href="/cart/delete/<%= userCart[i].id %>"><button type="button">Borrar producto</button></a>
                   <% } %>
                 
               </div>        
@@ -38,7 +39,6 @@
         <p></p>
         <div id="purchase">
             <a href="/"><button type="button">Seguir Comprando</button></a>
-            <button type="reset">Vaciar Carrito</button>
             <div class="precioTotal">
               <p></p>
             </div>
