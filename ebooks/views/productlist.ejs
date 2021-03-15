@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/header-footer.css">
+    <link rel="stylesheet" href="/stylesheets/productList.css">
+    <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -12,7 +16,14 @@
     
     <ul>
         <% for(let i = 0; i < product.length; i++){ %>
-            <li><%= product[i].name %></li>
+        <div id="product">
+                <h2><%= product[i].name %></h2>
+            <a href="/productDetail/<%= product[i].id %>">
+                <img src="<%= product[i].image %>" alt="imagen">
+            </a>
+                <strong><%= product[i].editorial %></strong>
+                <p>$<%= product[i].price %></p>
+        </div>
         <% } %>
     </ul>
 

@@ -52,8 +52,8 @@ const indexController = {
       db.product_cart.create({
         id_cart: idCart,
         id_product: req.params.id
-      }).then(function(cart){
-        return res.render('productCart', {cart})
+      }).then(function(userCart){
+        return res.redirect('/cart')
       }).catch(function(error){
         return res.send(error)
       })

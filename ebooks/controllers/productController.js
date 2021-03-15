@@ -21,7 +21,7 @@ const productController = {
         {
             limit: 4
         }).then(function (product){
-            res.render('home', {products: product})
+            res.redirect('/')
         });
     },
     edit: function (req, res) {

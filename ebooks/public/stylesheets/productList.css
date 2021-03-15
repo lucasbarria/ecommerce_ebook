@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
+#product{
+    display: block;
+    margin: 50px 30px;
+    padding: 20px;
+    padding-left: 50px;
+    border: rgba(38, 135, 190, 0.2) solid 1px;
+}
+
+#product p, #product strong {
+    display: flex;
+    position: relative;
+    left: 250px;
+    bottom: 200px;
+}
