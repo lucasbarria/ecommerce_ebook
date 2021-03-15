@@ -16,18 +16,32 @@
       <main>
         <div id="products">
           <h2>Carrito</h2>
-              <div>
-                <ul>
+              <div class="mostrarProductos">
                   <% for(let i = 0; i < userCart.length; i++){ %>
-                    <li><%= userCart[i].name %></li>
+                    <div class="productsInCart">
+                      <div><img src="<%= userCart[i].image %>" alt="foto del producto comprado"></div>
+                      <div class="title">
+                          <h4>Titulo: </h4>
+
+                          <p><%= userCart[i].name %></p>
+
+                        </div>
+                        <div class="price">
+                          <h4>Precio: </h4>
+                          $<%= userCart[i].price %>
+                        </div>
+                    </div>
                   <% } %>
-                </ul>
+                
               </div>        
         </div>
         <p></p>
         <div id="purchase">
             <a href="/"><button type="button">Seguir Comprando</button></a>
             <button type="reset">Vaciar Carrito</button>
+            <div class="precioTotal">
+              <p></p>
+            </div>
           <div>
             <h4>Precio Total</h4>
             <a href="/purchaseCompleted"><button type="button">Finalizar comprar</button></a>
@@ -36,6 +50,5 @@
       </main>
 
       <%-include('./partials/footer') %> 
-    
     </body>
 </html>

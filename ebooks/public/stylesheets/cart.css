@@ -19,13 +19,13 @@ main {
 
 #products h2 {
     margin: 30px 50px;
+    font-size: 40px;
 }
 
 #products div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
     margin: 50px;
 }
 
@@ -40,11 +40,37 @@ main {
 #purchase div {
     position: absolute;
     left: 62%;
-    border-top: 1px black solid;
 }
 
 #purchase button {
     margin-left: 20px;
+}
+
+.mostrarProductos{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.title{
+    display: flex;
+    font-size: x-large;    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.title p {
+    margin: 5px;
+}
+.productsInCart{
+    border: 0.5px rgba(38, 135, 190, 0.2) solid;
+    border-radius: 4px;
+}
+
+.price{
+
+        display: flex;
+        font-size: large;    
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 @media (max-width: 768px){

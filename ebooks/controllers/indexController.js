@@ -18,7 +18,6 @@ const indexController = {
         })
     },
     productCart: function(req, res) {
-      console.log(req.session.user)
       db.cart.findAll({
         where: {
           id: req.session.user.carts[0].id
