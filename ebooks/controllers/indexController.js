@@ -18,10 +18,25 @@ const indexController = {
         })
     },
     productCart: function(req, res) {
-      db.products.findAll({
-        include: [{association: 'carts', where: {id_user: req.session.user.id} }]
+      console.log(req.session.user)
+      db.cart.findAll({
+        where: {
+          id: req.session.user.carts[0].id
+        }
       }).then(function(response){
-        res.json(response);
+        db.products.findAll({
+          include: [{
+              association: 'carts',
+              where: {
+                  id_user: req.session.user.id,
+              }
+          }]
+      })
+      .then(function(userCart) {
+
+          res.render('productCart', {userCart})
+
+      })
       })
      /*  db.cart.findOne({where:
         {
