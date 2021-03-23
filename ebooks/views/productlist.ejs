@@ -17,11 +17,11 @@
     <ul>
         <% for(let i = 0; i < product.length; i++){ %>
         <div id="product">
+                <a href="/productDetail/<%= product[i].id %>">
+                    <img src="image/<%= product[i].image %>" alt="imagen">
+                </a>
                 <h2><%= product[i].name %></h2>
-            <a href="/productDetail/<%= product[i].id %>">
-                <img src="<%= product[i].image %>" alt="imagen">
-            </a>
-                <strong><%= product[i].editorial %></strong>
+                <p>por <strong><%= product[i].editorial %></strong></p>
                 <p>$<%= product[i].price %></p>
         </div>
         <% } %>

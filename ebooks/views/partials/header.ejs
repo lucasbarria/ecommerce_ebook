@@ -10,26 +10,30 @@
           <input type="text" name="textbox" class="textbox" placeholder="Busca por autor, titulo o palabra">
           <input title="search" value="" type="submit" class="button">
         </form>
-      </div>
-      <div  class="header-personal"> 
-
-        
+      </div> 
         <% if(typeof user != 'undefined'){ %>
           
-          <a href="/users/profile/<%= user.id%>"><p><%= user.name %></p></a> 
-          <a href="/users/logout" id="logout">Cerrar sesion</a>
-          <br>
+          <div class="user">
+            <a href="/users/profile/<%= user.id%>"><p><%= user.name %></p></a> 
+            <a href="/users/logout" id="logout">Cerrar sesion</a>
+            <br>
+          </div>
           <%if(user.admin == 1){%>
-            <a href="http://localhost:3000/">Dashboard -</a>
-            <a href="/products/create">Crear producto -</a>
+            <div class="userAdmin">
+              <a href="http://localhost:3000/">Dashboard -</a>
+              <a href="/products/create">Crear producto -</a>
           <%}%>
-          <a href="#category">Categorias - </a>
-          <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
-        <% }else { %>
-          <a href="/users/register"> Registrarse -</a>
-          <a href="/users/login"> Ingresar</a>
-          <a href="#category"> - Categorias</a>
+              <a href="#category">Categorias - </a>
+              <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+          
+          <% }else { %>
+            <div>
+              <a href="/users/register"> Registrarse -</a>
+              <a href="/users/login"> Ingresar</a>
+              <a href="#category"> - Categorias</a>
+            </div>
+        </div>
         <% } %> 
-      </div>
     </div>
   </header>

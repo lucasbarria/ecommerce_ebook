@@ -11,7 +11,14 @@
     </head>
     <body>
 
-      <%-include('./partials/header') %> 
+      <header>
+        <div class="content">
+            <div class="header-brand inlineblock">
+              <a href="/">
+                <img class="logo" src="/image/logo.png" alt="E-coomerces Ebooks Universirarios" >
+              </a>
+            </div>
+    </header>
 
       <main>
         <div id="products">
@@ -19,7 +26,7 @@
               <div class="mostrarProductos">
                   <% for(let i = 0; i < userCart.length; i++){ %>
                     <div class="productsInCart">
-                      <div><img src="<%= userCart[i].image %>" alt="foto del producto comprado"></div>
+                      <div><img src="image/<%= userCart[i].image %>" alt="foto del producto comprado"></div>
                       <div class="title">
                           <h4>Titulo: </h4>
 
@@ -39,11 +46,12 @@
         <p></p>
         <div id="purchase">
             <a href="/"><button type="button">Seguir Comprando</button></a>
-            <div class="precioTotal">
-              <p></p>
-            </div>
           <div>
-            <h4>Precio Total</h4>
+            <div class="precioTotal">
+              <p>$1200</p>
+              <hr>
+              <h4>Precio Total</h4>
+          </div>
             <a href="/purchaseCompleted"><button type="button">Finalizar comprar</button></a>
           </div>  
         </div>

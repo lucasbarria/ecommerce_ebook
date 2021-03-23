@@ -4,32 +4,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* #carrusel h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #081291;
-    border: 2px solid black;   
-    width: 40vw;
-    height: 120px;
-} */
 
-/* body #carrusel {
-    display: flex;
-    justify-content: center;
-    margin: 40px;
-} */
-
-/* body #carrusel i {
-    display: flex;
-    align-items: center;
-    margin: 8px;
-    font-size: 20px;
-} */
 
 img {
-    width: 130px;
-    height: 190px;
+    width: 170px;
+    height: 230px;
 }
 main {
     display: flex;
@@ -37,7 +16,7 @@ main {
     align-items: center;
     flex-direction: column;
 }
-div .news, .mostwanted, #category {
+main #new , .mostwanted, #category {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -48,6 +27,7 @@ div .news, .mostwanted, #category {
     padding: 15px;
     flex-wrap: wrap;
     background-color: #FAF6F6;
+    overflow:hidden;
 }
 #more a:hover {
     color: rgba(38, 135, 190, 0.781);
@@ -70,17 +50,24 @@ div .img {
     margin: 10px;
     flex-wrap: nowrap;
 }
+div .img img {
+    box-shadow: 6px -6px 3px -1px rgba(0, 0, 0, 0.2);
+}
+div .img img:hover {
+    box-shadow: 8px 8px 3px -1px rgba(0, 0, 0, 0.2);
+}
 ul div p {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    font-size: larger;
 }
 
 main #news h2, p {
     text-align: start;
 }
 
-div #category ul {
+#category ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,6 +87,8 @@ div #category ul {
 
 #category ul li a:hover {
     color: rgba(38, 135, 190, 0.781);
+    font-size: x-large;
+    text-shadow: 1px 1px 0px rgba(38, 135, 190, 0.781);
 }
 
 main p {

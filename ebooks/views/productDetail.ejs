@@ -16,48 +16,38 @@
     <main>
         <div>
             <div id="product">
-                <img src="<%=products.image%>">
+                <img src="/image/<%=products.image%>">
                 <h3><%= products.name%></h3>
                 <p><%= products.description%></p>
             </div>            
             <div id="purchase">
                 <p>$ <%= products.price%></p>
-                <a href="/cart/<%= products.id%>"><button type="button">Comprar</button></a>
               </div>
         </div>
-      
+        <hr>
+        <div class="comprar">
+          <a href="/cart/<%= products.id%>"><button type="button">Comprar</button></a>
+        </div>  
+             
         <div class="extra">
-            <h2>Libros recomendados</h2>       
-            <ul id="image">
-    
-              <div class="img">
-                <li><img src="/image/Roos.jpg" alt="portada libro Roos"></li>
-              <p>Histologia, texto y atlas</p>
-              <p>por <strong>Ross</strong></p>
-              <p>$</p>
-            </div>
-    
-              <div class="img">
-                <li><img src="/image/la politica economica.jpg" alt="portada libro politica economica si importa"></li>
-              <p>La politica economica si importa</p>
-              <p>por <strong>Expansion</strong></p>
-              <p>$</p>
-            </div>
+              <h2>Libros recomendados</h2>
         
-              <div class="img">
-                <li><img src="/image/la era de la revolucion.webp" alt="portada libro la era de la revolucion"></li>
-              <p>La era de la revolucion</p>
-              <p>por <strong> Eric Hobsbawn</strong></p>
-              <p>$</p>
-            </div>
-
-              <div class="img">
-                <li><img src="/image/administracion de empresas.jpg" alt="portada libro Administrastive Behavior"></li>
-              <p>Administrastive Behavior</p>
-              <p>por <strong> Herbert A. Simon</strong></p>
-              <p>$</p>
-            </div>
+            <ul id="image">
+              <% for(let i=0; i< products.length; i++){ %>
+                <div class="img">
+                <a href="/productdetail/<%= products[i].id%>">
+                  <img src="image/<%=products[i].image%>" alt="">
+                  <li>
+                    <p><%= products[i].name%></p>
+                    <pre>por <strong> <%= products[i].editorial%> </strong> </pre>
+                    <p>$ <%= products[i].price%></p>
+                  </li>
+                </a>
+              </div>
+            
+             <% } %> 
             </ul>
+          </div>
         </div>
     </main>
 

@@ -2,12 +2,24 @@ var express = require('express');
 var router = express.Router();
 const productController = require('../controllers/productController');
 const usermiddleware = require('../middlewares/userMiddleware');
+const multer = require('multer');
+const path = require('path')
 
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/image')
+    },
+    filename: function (req, file, cb) {
+      cb(null,  file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+   
+  var upload = multer({ storage: storage })
 
 // Creación de productos
 router.get('/create', usermiddleware.admin, productController.create);
 
-router.post('/create', productController.store);
+router.post('/create', upload.any() ,productController.store);
 
 // Edicion de productos 
 router.get('/edit/:id',productController.edit);

@@ -1,4 +1,5 @@
 let { check, validationResult, body} = require('express-validator');
+const bcrypt = require('bcrypt');
 const db = require('../dataBase/models');
 
 
@@ -12,7 +13,7 @@ const userController = {
             include: db.cart
         })
         .then(function(user){
-            if(user != null && user.password == req.body.pass){
+            if(user != null && bcrypt.compareSync(req.body.pass, user.password)){
                 req.session.user = user;
                 let cart = user.carts.find(cart => cart.status == true)
                 if (cart) {
@@ -66,19 +67,20 @@ const userController = {
             db.users.create({
                 name: req.body.name,
                 email: req.body.email,
-                password: req.body.pass,
+                password: bcrypt.hashSync(req.body.pass, 10),
                 date: req.body.date,
                 genre: req.body.genre,
                 admin: 0
             }).then(function (user){
-                if(userFound){
-                    req.session.userFound = {id: user.id, name: user.name, admin: user.admin}
+                if(user){
+                    req.session.user = {id: user.id, name: user.name, admin: user.admin}
                 }
                 res.redirect('/')
             });
     },
     edit: function (req, res){
-       db.users.findByPk(req.params.id).then(function(userFound){
+       db.users.findByPk(req.params.id)
+       .then(function(userFound){
            if (userFound){
                console.log(userFound);
                return res.render('userEdit', {userFound});
@@ -92,14 +94,16 @@ const userController = {
         db.users.update({
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        password: bcrypt.hashSync(req.body.pass, 10),
         date: req.body.date,
         genre: req.body.genre 
         },
         {
             where: {id: req.params.id}
+        }).then(function(user) {
+            return res.render('profile', {user});
         });
-        res.redirect('/profile/' + req.params.id)
+        //Falta terminar
     },
     delete: function (req, res){
         db.users.destroy({
