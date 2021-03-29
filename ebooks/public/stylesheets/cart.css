@@ -7,6 +7,7 @@
 main img {
     width: 150px;
     height: 200px;
+    box-shadow: -6px 10px 3px -1px rgba(0, 0, 0, 0.2);
 }
 
 main {
@@ -16,7 +17,6 @@ main {
     padding: 10px;
     background-color: #FAF6F6;
   }
-
 #products h2 {
     margin: 30px 50px;
     font-size: 40px;
@@ -31,21 +31,40 @@ main {
 
 #purchase, #purchase div {
     display: flex;
-    flex-direction: row;
     align-items: center;
     margin: 30px 100px;
     padding-top: 20px;
 }
-
-#purchase div {
-    position: absolute;
-    left: 62%;
+#purchase {
+    display: flex;
+    justify-content: center;
+    
 }
 
 #purchase button {
+    background: rgba(38, 135, 190, 0.781);
+    width: 130px;
+    height: 50px;
+    border: 5px solid transparent;
+    font-size: 15px;
+    border-radius: 2px;  
     margin-left: 20px;
 }
-
+#purchase button:hover {
+    color: white;
+}
+.mostrarProductos a button {
+    background: rgba(38, 135, 190, 0.781);
+    width: 130px;
+    height: 50px;
+    border: 5px solid transparent;
+    font-size: 15px;
+    border-radius: 2px;  
+    margin-left: 20px;
+} 
+.mostrarProductos a button:hover {
+    color: white
+} 
 .mostrarProductos{
     display: flex;
     justify-content: center;
@@ -72,17 +91,27 @@ main {
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 }
+.precioTotal {
+    display: flex;
+    flex-direction: column;
+}
+.precioTotal p, h4{
+    font-size: larger;    
+}
+.precioTotal hr { 
+    background-color: black;
+    width: 120px;
+    height: 3px;
+}
 
 @media (max-width: 768px){
     #purchase {
-        position: relative;
         right: 20px;
     }
 }
 
 @media (max-width: 425px){
     #purchase {
-        position: relative;
         right: 80px;
     }
     #purchase button {

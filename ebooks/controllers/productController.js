@@ -7,22 +7,22 @@ const productController = {
     },
     store: function (req, res, next) {
         console.log(req)
-        //let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
-        //producto.id = nuevoId;
         db.products.create({
-            //id: req.body.id,
             name: req.body.name,
             price: req.body.price,
             descripction: req.body.description,
-            image: req.body.image,
+            image: req.files[0].filename,
             category: req.body.category,
             editorial: req.body.editorial,
         },
         {
             limit: 4
         }).then(function (product){
+
+            console.log(product)
             res.redirect('/')
         });
+        console.log(products.image)
     },
     edit: function (req, res) {
         db.products.findByPk(req.params.id)

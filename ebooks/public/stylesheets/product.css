@@ -3,24 +3,31 @@
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
-
+main hr {
+  color: red;
+  width: 60%;
+  height: 2px;
+  margin-bottom: 10px;
+}
 #product img {
   float: left;
   width: 210px;
   height: 290px;
   margin-right: 50px;
+  box-shadow: 8px -8px 3px -2px rgba(0, 0, 0, 0.2);
 }
 
 #purchase p {
   padding-top: 20px;
   padding-bottom: 30px;
-  font-size: large;
+  font-size: xx-large;
 }
 
 #product h3{
   width: 600px;
   font-size: xx-large;
   padding-bottom: 10px;
+  text-shadow: 1px 1px 0px rgba(38, 135, 190, 0.781);
 }
 
 #product p {
@@ -33,11 +40,18 @@
 }
 
 #purchase {
-  margin-left: 200px;
+  display: flex;
+  justify-content: center;
+  
+}
+div .comprar {
+  margin: 50px;
+  display: block;
+  justify-content: center;
 }
 
-#product, #purchase {
-  position: relative;
+#product {
+  margin: 50px;
   top: 50px;
 }
 
@@ -78,6 +92,20 @@ div .img {
   flex-wrap: wrap;
 }
 
+.comprar button {
+  background: rgba(38, 135, 190, 0.781);
+  width: 130px;
+  height: 50px;
+  border: 5px solid transparent;
+  font-size: 20px;
+  border-radius: 2px;
+  
+}
+.comprar button:hover{
+  width: 135px;
+  height: 55px;
+  font-size: 25px;
+}
 @media (max-width: 768px){
   #purchase {
     display: flex;

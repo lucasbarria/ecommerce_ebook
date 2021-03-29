@@ -25,9 +25,6 @@ const apiController = {
             res.send(response)
         })
     },
-    sales: function(req, res, next){
-        
-    },
     list: function(req, res){
         db.users.findAll({users})
         .then(function(users){

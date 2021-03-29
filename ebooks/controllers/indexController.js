@@ -6,7 +6,7 @@ const Op = Sequelize.Op;
 
 const indexController = {
     home: function(req, res, next) {
-        db.products.findAll()
+        db.products.findAll({ limit: 5 })
         .then(function(products){
           return res.render('home', {products});
         })

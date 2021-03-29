@@ -17,7 +17,7 @@
     <%-include('./partials/header') %> 
 
     <main>
-    <div class="news">
+    <div id="new">
         <h2>Novedades</h2>
         <p>Lo ultimo en libros universitarios</p> 
       <div id="more">
@@ -29,7 +29,7 @@
           <% for(let i=0; i< products.length; i++){ %>
             <div class="img">
             <a href="/productdetail/<%= products[i].id%>">
-              <img src="<%=products[i].image%>" alt="">
+              <img src="image/<%= products[i].image %>" alt="">
               <li>
                 <p><%= products[i].name%></p>
                 <pre>por <strong> <%= products[i].editorial%> </strong> </pre>
@@ -67,7 +67,7 @@
       <% for(let i=0; i< products.length; i++){ %>
         <div class="img">
         <a href="/productdetail/<%= products[i].id%>">
-          <img src="<%=products[i].image%>" alt="">
+          <img src="image/<%=products[i].image%>" alt="">
           <li>
             <p><%= products[i].name%></p>
             <pre>por <strong> <%= products[i].editorial%> </strong> </pre>
