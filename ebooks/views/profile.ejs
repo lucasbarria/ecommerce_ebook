@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,56 +9,60 @@
     <link rel="stylesheet" href="/stylesheets/header-footer.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <div class="content">
             <div class="header-brand inlineblock">
-              <a href="/">
-                <img class="logo" src="/image/logo.png" alt="E-coomerces Ebooks Universirarios" >
-              </a>
+                <a href="/">
+                    <img class="logo" src="/image/logo.png" alt="E-coomerces Ebooks Universirarios">
+                </a>
             </div>
     </header>
 
-            
+
     <div id="profile">
 
-        
+
         <div class="name">
             <p>Nombre: </p>
             <p> <%= user.name %></p>
         </div>
 
         <div class="email">
-                   <p>Correo electronico: </p>
-                   <p> <%= user.email %></p>
-            </div>
-            
-        <div class="Bdate">
-                    <p>Fecha de nacimiento: </p>
-                    <p><%= user.date %></p>
-            </div>
+            <p>Correo electronico: </p>
+            <p> <%= user.email %></p>
+        </div>
 
-            <h3>Genero:</h3>
+        <div class="Bdate">
+            <p>Fecha de nacimiento: </p>
+            <p><%= user.date %></p>
+        </div>
+
+        <h3>Genero:</h3>
         <div id="genre">
-                    <input type="radio" name="genre" value="male" id="male"<%= user.genre == "male" ? "checked" : null %> required> <label for="male"> Masculino </label>
-                    <input type="radio" name="genre" value="fem" id="female"<%= user.genre == "fem" ? "checked" : null %> required> <label for="female"> Femenino </label>
-                    <input type="radio" name="genre" value="other" id="other"<%= user.genre == "other" ? "checked" : null %> required> <label for="other"> Otro</label>
-            </div>
+            <input type="radio" name="genre" value="male" id="male" <%= user.genre == "male" ? "checked" : null %>
+                required> <label for="male"> Masculino </label>
+            <input type="radio" name="genre" value="fem" id="female" <%= user.genre == "fem" ? "checked" : null %>
+                required> <label for="female"> Femenino </label>
+            <input type="radio" name="genre" value="other" id="other" <%= user.genre == "other" ? "checked" : null %>
+                required> <label for="other"> Otro</label>
+        </div>
 
         <div class="orders">
-            <h3>Mis pedidos:</h3> 
-            
+            <h3>Mis pedidos:</h3>
+
         </div>
-    <div>
-        <button> 
-            <a id="delete" href="/users/delete/<%= user.id %>">Borrar usuario</a>
-    </button>
-    <button>
-        <a id="edit" href="/users/edit/<%= user.id %>">Editar</a>
-    </button> 
+        <div>
+            <button>
+                <a id="delete" href="/users/delete/<%= user.id %>">Borrar usuario</a>
+            </button>
+            <button>
+                <a id="edit" href="/users/edit/<%= user.id %>">Editar</a>
+            </button>
+        </div>
     </div>
-</div>
-    <%-include('./partials/footer') %> 
+    <%-include('./partials/footer') %>
     <script src="../public/js/myprofile.js"></script>
 </body>
 

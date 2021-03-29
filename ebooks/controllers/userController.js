@@ -39,18 +39,6 @@ const userController = {
                 return res.send('El usuario y/o contraseña son incorrectos...')
         }
     })
-
-
-               /*  req.session.user = userFound;
-                return res.redirect("/");
-            } else {
-                var error = {
-                    mensaje: 'error',
-                    status: 404,
-                }
-                return res.render('error', {error}); 
-            }
-        }) */
     },
     logout: function(req, res, next){
         if(req.session){
@@ -62,7 +50,6 @@ const userController = {
         res.render('register')
     },
     store: function (req, res){
-        //revisar admin y email
             db.users.create({
                 name: req.body.name,
                 email: req.body.email,

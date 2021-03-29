@@ -1,54 +1,55 @@
 <html>
-    <head>
-        <title>Carrito de compras</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/stylesheets/cart.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="/stylesheets/header-footer.css">
-        <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    </head>
-    <body>
 
-      <%-include('./partials/header') %> 
+<head>
+  <title>Carrito de compras</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/header-footer.css">
+  <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
 
-      <main>
-        <div id="products">
-          <h2>Carrito</h2>
-              <div class="mostrarProductos">
-                  <% for(let i = 0; i < userCart.length; i++){ %>
-                    <div class="productsInCart">
-                      <div><img src="<%= userCart[i].image %>" alt="foto del producto comprado"></div>
-                      <div class="title">
-                          <h4>Titulo: </h4>
+<body>
 
-                          <p><%= userCart[i].name %></p>
+  <%-include('./partials/header') %>
 
-                        </div>
-                        <div class="price">
-                          <h4>Precio: </h4>
-                          $<%= userCart[i].price %>
-                        </div>
-                    </div>
-                    <a href="/cart/delete/<%= userCart[i].id %>"><button type="button">Borrar producto</button></a>
-                  <% } %>
-                
-              </div>        
+  <main>
+    <div id="products">
+      <h2>Carrito</h2>
+      <div class="mostrarProductos">
+        <% for(let i = 0; i < userCart.length; i++){ %>
+        <div class="productsInCart">
+          <div><img src="<%= userCart[i].image %>" alt="foto del producto comprado"></div>
+          <div class="title">
+            <h4>Titulo: </h4>
+
+            <p><%= userCart[i].name %></p>
+
+          </div>
+          <div class="price">
+            <h4>Precio: </h4>
+            <p>$<%= userCart[i].price %></p>
+          </div>
         </div>
+        <a href="/cart/delete/<%= userCart[i].id %>"><button type="button">Borrar producto</button></a>
+        <% } %>
+
+      </div>
+    </div>
+    <p></p>
+    <div id="purchase">
+      <a href="/"><button type="button">Seguir Comprando</button></a>
+      <div id="totalPrice">
+        <h4>Precio Total:</h4>
         <p></p>
-        <div id="purchase">
-            <a href="/"><button type="button">Seguir Comprando</button></a>
-            <div class="precioTotal">
-              <p></p>
-            </div>
-          <div>
-            <h4>Precio Total</h4>
-            <a href="/purchaseCompleted"><button type="button">Finalizar comprar</button></a>
-          </div>  
-        </div>
-      </main>
+        <a href="/purchaseCompleted"><button type="button">Finalizar comprar</button></a>
+      </div>
+    </div>
+  </main>
 
-      <%-include('./partials/footer') %> 
-    </body>
+  <%-include('./partials/footer') %>
+</body>
+
 </html>

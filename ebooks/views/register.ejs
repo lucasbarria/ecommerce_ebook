@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/stylesheets/register.css">
     <script src="https://kit.fontawesome.com/2c807fa682.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -49,27 +51,28 @@
                 </div>
                 <div id="dateOfBirthay">
                     <h3>Fecha de nacimiento</h3>
-                    <input type="date" name="date" id="date" >
+                    <input type="date" name="date" id="date">
                     <p class="error">Error</p>
                 </div>
                 <h3>Genero</h3>
                 <section>
-                    <input type="radio" name="genre" value="male" id="male" > <label for="male"> Masculino</label>
-                    <input type="radio" name="genre" value="fem" id="female" > <label for="female"> Femenino</label>
-                    <input type="radio" name="genre" value="other" id="other" > <label for="other"> Otro</label>
+                    <input type="radio" name="genre" value="male" id="male"> <label for="male"> Masculino</label>
+                    <input type="radio" name="genre" value="fem" id="female"> <label for="female"> Femenino</label>
+                    <input type="radio" name="genre" value="other" id="other"> <label for="other"> Otro</label>
                     <p class="error">Error</p>
                 </section>
                 <div id="enter">
                     <input type="submit" value="Registrame">
-                <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
+                    <p>Creando tu cuenta, aceptas nuestros terminos y condiciones.</p>
                 </div>
             </form>
         </main>
 
         <%-include('./partials/footer') %>
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.5.2/validator.min.js"></script>
     <script src="../js/validaciones.js"></script>
 </body>
+
 </html>

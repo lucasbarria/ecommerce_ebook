@@ -13,16 +13,15 @@
 </head>
 <body>
     <%-include('./partials/header') %>
-    
     <ul>
         <% for(let i = 0; i < product.length; i++){ %>
         <div id="product">
-                <h2><%= product[i].name %></h2>
+            <h2><%= product[i].name %></h2>
             <a href="/productDetail/<%= product[i].id %>">
                 <img src="<%= product[i].image %>" alt="imagen">
             </a>
-                <strong><%= product[i].editorial %></strong>
-                <p>$<%= product[i].price %></p>
+            <strong><%= product[i].editorial %></strong>
+            <p>$<%= product[i].price %></p>
         </div>
         <% } %>
     </ul>

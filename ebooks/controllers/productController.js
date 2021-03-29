@@ -5,8 +5,8 @@ const productController = {
     create: function (req, res) {
         res.render('productCreate');
     },
-    store: function (req, res) {
-
+    store: function (req, res, next) {
+        console.log(req)
         //let nuevoId = productos.length > 0 ? productos[productos.length - 1].id + 1 : 1; 
         //producto.id = nuevoId;
         db.products.create({
